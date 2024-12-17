@@ -1,3 +1,26 @@
+
+// Helper function for creating form data
+function createFormData(filePath: string): any {
+  const form = frisby.formData();
+  form.append('image', fs.createReadStream(filePath), 'Valid Image');
+  form.append('caption', 'Valid Image');
+  return form;
+}
+
+// Helper function for user login
+function loginUser(email: string, password: string) {
+  return frisby.post(REST_URL + '/user/login', {
+    headers: jsonHeader,
+    body: { email, password }
+  }).expect('status', 200);
+}
+
+// Helper function to generate Authorization headers
+function getAuthHeaders(token: string, contentType: string = 'application/json') {
+  return { Authorization: 'Bearer ' + token, 'Content-Type': contentType };
+}
+
+
 /*
  * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
  * SPDX-License-Identifier: MIT
@@ -29,7 +52,7 @@ describe('/rest/memories', () => {
       .expect('status', 200)
       .then(({ json: jsonLogin }) => {
         return frisby.get(REST_URL + '/memories', {
-          headers: { Authorization: 'Bearer ' + jsonLogin.authentication.token, 'content-type': 'application/json' }
+          headers: { getAuthHeaders(jsonLogin.authentication.token), 'content-type': 'application/json' }
         })
           .expect('status', 200)
       })
@@ -68,7 +91,7 @@ describe('/rest/memories', () => {
       .then(({ json: jsonLogin }) => {
         return frisby.post(REST_URL + '/memories', {
           headers: {
-            Authorization: 'Bearer ' + jsonLogin.authentication.token,
+            getAuthHeaders(jsonLogin.authentication.token),
             // @ts-expect-error FIXME form.getHeaders() is not found
             'Content-Type': form.getHeaders()['content-type']
           },
@@ -95,7 +118,7 @@ describe('/rest/memories', () => {
       .then(({ json: jsonLogin }) => {
         return frisby.post(REST_URL + '/memories', {
           headers: {
-            Authorization: 'Bearer ' + jsonLogin.authentication.token,
+            getAuthHeaders(jsonLogin.authentication.token),
             // @ts-expect-error FIXME form.getHeaders() is not found
             'Content-Type': form.getHeaders()['content-type']
           },
