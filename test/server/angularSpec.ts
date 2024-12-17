@@ -11,9 +11,9 @@ chai.use(sinonChai)
 
 describe('angular', () => {
   const serveAngularClient = require('../../routes/angular')
-  let req: any
-  let res: any
-  let next: any
+  let req: unknown
+  let res: unknown
+  let next: unknown
 
   beforeEach(() => {
     req = { }

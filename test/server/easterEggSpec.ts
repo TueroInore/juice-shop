@@ -12,9 +12,9 @@ chai.use(sinonChai)
 describe('easterEgg', () => {
   const serveEasterEgg = require('../../routes/easterEgg')
   const challenges = require('../../data/datacache').challenges
-  let req: any
-  let res: any
-  let save: any
+  let req: unknown
+  let res: unknown
+  let save: unknown
 
   beforeEach(() => {
     res = { sendFile: sinon.spy() }

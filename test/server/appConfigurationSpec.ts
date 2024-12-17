@@ -11,8 +11,8 @@ chai.use(sinonChai)
 
 describe('appConfiguration', () => {
   const retrieveAppConfiguration = require('../../routes/appConfiguration')
-  let req: any
-  let res: any
+  let req: unknown
+  let res: unknown
 
   it('should return configuration object', () => {
     req = {}

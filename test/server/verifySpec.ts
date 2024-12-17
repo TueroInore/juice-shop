@@ -17,11 +17,11 @@ const utils = require('../../lib/utils')
 describe('verify', () => {
   const verify = require('../../routes/verify')
   const challenges = require('../../data/datacache').challenges
-  let req: any
-  let res: any
-  let next: any
-  let save: any
-  let err: any
+  let req: unknown
+  let res: unknown
+  let next: unknown
+  let save: unknown
+  let err: unknown
 
   beforeEach(() => {
     req = { body: {}, headers: {} }
@@ -213,7 +213,7 @@ describe('verify', () => {
 
       beforeEach(() => {
         challenges.changeProductChallenge = { solved: false, save }
-        products.osaft = { reload () { return { then (cb: any) { cb() } } } }
+        products.osaft = { reload () { return { then (cb: unknown) { cb() } } } }
       })
 
       it(`is solved when the link in the O-Saft product goes to ${config.get<string>('challenges.overwriteUrlForProductTamperingChallenge')}`, () => {

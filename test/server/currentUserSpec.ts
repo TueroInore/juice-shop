@@ -11,8 +11,8 @@ chai.use(sinonChai)
 
 describe('currentUser', () => {
   const retrieveLoggedInUser = require('../../routes/currentUser')
-  let req: any
-  let res: any
+  let req: unknown
+  let res: unknown
 
   beforeEach(() => {
     req = { cookies: {}, query: {} }

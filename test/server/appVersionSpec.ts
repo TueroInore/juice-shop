@@ -12,8 +12,8 @@ chai.use(sinonChai)
 
 describe('appVersion', () => {
   const retrieveAppVersion = require('../../routes/appVersion')
-  let req: any
-  let res: any
+  let req: unknown
+  let res: unknown
 
   it('should ' + config.get<boolean>('application.showVersionNumber') ? '' : 'not ' + 'return version specified in package.json', () => {
     req = {}
