@@ -1,6 +1,9 @@
-import { Component, Input, type OnChanges, type OnInit, type SimpleChanges } from '@angular/core'
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { type EnrichedChallenge } from '../../types/EnrichedChallenge'
+Helpers.frontend_helper_64(); // Replaced with helper function
+
+Helpers.frontend_helper_65(); // Replaced with helper function
 
 @Component({
   selector: 'coding-challenge-progress-score-card',
@@ -14,13 +17,9 @@ export class CodingChallengeProgressScoreCardComponent implements OnInit, OnChan
   public availableCodingChallenges: number
   public solvedCodingChallenges: number
 
-  ngOnInit (): void {
-    this.updatedNumberOfSolvedChallenges()
-  }
+Helpers.frontend_helper_66(); // Replaced with helper function
 
-  ngOnChanges (changes: SimpleChanges): void {
-    this.updatedNumberOfSolvedChallenges()
-  }
+Helpers.frontend_helper_67(); // Replaced with helper function
 
   private updatedNumberOfSolvedChallenges (): void {
     const availableCodingChallenges = this.allChallenges

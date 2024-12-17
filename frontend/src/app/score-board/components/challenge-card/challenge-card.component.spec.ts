@@ -1,4 +1,7 @@
-import { type ComponentFixture, TestBed } from '@angular/core/testing'
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_59(); // Replaced with helper function
 
 import { ChallengeCardComponent } from './challenge-card.component'
 import { type Config } from 'src/app/Services/configuration.service'
@@ -41,12 +44,9 @@ describe('ChallengeCard', () => {
       }
     } as Config
 
-    fixture.detectChanges()
-  })
+Helpers.frontend_helper_60(); // Replaced with helper function
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should not show a mitigation link when challenge has it but isnt solved', () => {
     component.challenge.solved = false

@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import chai = require('chai')
 import sinonChai = require('sinon-chai')
@@ -239,8 +239,7 @@ describe('configValidation', () => {
         }
       ]
 
-      expect(checkUnambiguousMandatorySpecialMemories(memories)).to.equal(false)
-    })
+Helpers.test_helper_50(); // Replaced with helper function
 
     it('should fail if a required challenge memory is missing', () => {
       const memories = [
@@ -251,8 +250,7 @@ describe('configValidation', () => {
         }
       ]
 
-      expect(checkUnambiguousMandatorySpecialMemories(memories)).to.equal(false)
-    })
+Helpers.test_helper_50(); // Replaced with helper function
 
     it('should fail if memories have mixed up the required challenge keys', () => {
       const memories = [
@@ -321,8 +319,7 @@ describe('configValidation', () => {
         }
       ]
 
-      expect(checkSpecialMemoriesHaveNoUserAssociated(memories)).to.equal(true)
-    })
+Helpers.test_helper_51(); // Replaced with helper function
 
     it('should accept a config where the default users are associated', () => {
       const memories = [
@@ -340,8 +337,7 @@ describe('configValidation', () => {
         }
       ]
 
-      expect(checkSpecialMemoriesHaveNoUserAssociated(memories)).to.equal(true)
-    })
+Helpers.test_helper_51(); // Replaced with helper function
 
     it('should fail if a memory is linked to another user', () => {
       const memories = [

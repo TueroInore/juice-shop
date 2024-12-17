@@ -1,12 +1,11 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import frisby = require('frisby')
-const Joi = frisby.Joi
+Helpers.test_helper_1(); // Replaced with helper function
 
-const REST_URL = 'http://localhost:3000/rest'
+Helpers.test_helper_33(); // Replaced with helper function
+
+Helpers.test_helper_16(); // Replaced with helper function
 
 describe('/rest/languages', () => {
   it('GET all languages', () => {

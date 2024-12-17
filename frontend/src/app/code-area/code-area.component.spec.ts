@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { TranslateModule } from '@ngx-translate/core'
 
@@ -23,9 +26,7 @@ describe('CodeAreaComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should generate unchecked markers for each line of the code snippet', () => {
     component.code = 'Line 1\nLine2\nLine3'

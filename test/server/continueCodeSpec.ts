@@ -1,13 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import sinon = require('sinon')
-import chai = require('chai')
-import sinonChai = require('sinon-chai')
-const expect = chai.expect
-chai.use(sinonChai)
+Helpers.test_helper_1(); // Replaced with helper function
+
+Helpers.test_helper_40(); // Replaced with helper function
 
 describe('continueCode', () => {
   const continueCode = require('../../routes/continueCode').continueCode
@@ -23,17 +19,13 @@ describe('continueCode', () => {
   it('should be undefined when no challenges exist', () => {
     Object.keys(challenges).forEach(key => { delete challenges[key] }) // eslint-disable-line @typescript-eslint/no-dynamic-delete
 
-    continueCode()(req, res)
-    expect(res.json).to.have.been.calledWith({ continueCode: undefined })
-  })
+Helpers.test_helper_52(); // Replaced with helper function
 
   it('should be empty when no challenges are solved', () => {
     challenges.c1 = { solved: false }
     challenges.c2 = { solved: false }
 
-    continueCode()(req, res)
-    expect(res.json).to.have.been.calledWith({ continueCode: undefined })
-  })
+Helpers.test_helper_52(); // Replaced with helper function
 
   it('should be hashid value of IDs of solved challenges', () => {
     challenges.c1 = { id: 1, solved: true }

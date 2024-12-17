@@ -1,5 +1,8 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/score-board', () => {
-  describe('challenge "scoreBoard"', () => {
+  describe('challenge 'scoreBoard'', () => {
     it('should be possible to access score board', () => {
       cy.visit('/#/score-board')
       cy.url().should('match', /\/score-board/)
@@ -7,7 +10,7 @@ describe('/#/score-board', () => {
     })
   })
 
-  describe('challenge "continueCode"', () => {
+  describe('challenge 'continueCode'', () => {
     it('should be possible to solve the non-existent challenge #99', () => {
       cy.window().then(async () => {
         await fetch(
@@ -46,7 +49,7 @@ xdescribe('/#/score-board-legacy', () => { // TODO Replace with test based on ne
           if (showSolvedNotifications && showFlagsInNotifications) {
             cy.get('.challenge-solved-toast').then((arrayOfSolvedToasts) => {
               const alertsBefore = Cypress.$(arrayOfSolvedToasts).length
-              cy.get('[id="Score Board.solved"]').click()
+              cy.get('[id='Score Board.solved']').click()
 
               cy.get('.challenge-solved-toast').should(
                 'not.have.length',
@@ -56,7 +59,7 @@ xdescribe('/#/score-board-legacy', () => { // TODO Replace with test based on ne
           } else {
             cy.get('.challenge-solved-toast').then((arrayOfSolvedToasts) => {
               const alertsBefore = Cypress.$(arrayOfSolvedToasts).length
-              cy.get('[id="Score Board.solved"]').click()
+              cy.get('[id='Score Board.solved']').click()
 
               cy.get('.challenge-solved-toast').should(
                 'have.length',

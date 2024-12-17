@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule } from '@ngx-translate/core'
 import { MatInputModule } from '@angular/material/input'
@@ -74,16 +74,9 @@ describe('DeliveryMethodComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
-  it('should log errors from address service directly to browser console', fakeAsync(() => {
-    addressService.getById.and.returnValue(throwError('Error'))
-    console.log = jasmine.createSpy('log')
-    component.ngOnInit()
-    expect(console.log).toHaveBeenCalledWith('Error')
-  }))
+Helpers.frontend_helper_19(); // Replaced with helper function
 
   it('should log errors from delivery service directly to browser console', fakeAsync(() => {
     deliveryService.get.and.returnValue(throwError('Error'))
@@ -92,11 +85,7 @@ describe('DeliveryMethodComponent', () => {
     expect(console.log).toHaveBeenCalledWith('Error')
   }))
 
-  it('should hold address on ngOnInit', () => {
-    addressService.getById.and.returnValue(of({ address: 'address' }))
-    component.ngOnInit()
-    expect(component.address).toEqual({ address: 'address' })
-  })
+Helpers.frontend_helper_20(); // Replaced with helper function
 
   it('should hold delivery methods on ngOnInit', () => {
     deliveryService.get.and.returnValue(of([{ id: 1, name: '1', price: 1, eta: 1, icon: '1' }]))

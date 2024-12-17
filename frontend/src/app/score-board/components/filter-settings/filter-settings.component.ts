@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { Component, EventEmitter, Input, type OnChanges, Output } from '@angular/core'
 import { FilterSetting } from '../../filter-settings/FilterSetting'
 import { type EnrichedChallenge } from '../../types/EnrichedChallenge'
@@ -13,11 +16,9 @@ export class FilterSettingsComponent implements OnChanges {
   @Input()
   public allChallenges: EnrichedChallenge[]
 
-  @Input()
-  public filterSetting: FilterSetting
+Helpers.frontend_helper_62(); // Replaced with helper function
 
-  @Output()
-  public filterSettingChange = new EventEmitter<FilterSetting>()
+Helpers.frontend_helper_63(); // Replaced with helper function
 
   @Input()
   public reset: () => void

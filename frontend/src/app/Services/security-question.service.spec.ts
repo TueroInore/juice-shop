@@ -1,10 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
-import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_78(); // Replaced with helper function
 
 import { SecurityQuestionService } from './security-question.service'
 
@@ -28,12 +27,7 @@ describe('SecurityQuestionService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(req.request.params.toString()).toBeFalsy()
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_97(); // Replaced with helper function
 
   it('should get security question by user email directly from the rest api', inject([SecurityQuestionService, HttpTestingController],
     fakeAsync((service: SecurityQuestionService, httpMock: HttpTestingController) => {
@@ -43,9 +37,4 @@ describe('SecurityQuestionService', () => {
       req.flush({ question: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
-})
+Helpers.frontend_helper_79(); // Replaced with helper function

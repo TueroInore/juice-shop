@@ -1,10 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
-import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_78(); // Replaced with helper function
 
 import { LanguagesService } from './languages.service'
 
@@ -29,10 +28,6 @@ describe('LanguagesService', () => {
 
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
+Helpers.frontend_helper_89(); // Replaced with helper function
 
-      httpMock.verify()
-    })
-  ))
-})
+Helpers.frontend_helper_90(); // Replaced with helper function

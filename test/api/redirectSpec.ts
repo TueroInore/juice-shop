@@ -1,45 +1,44 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import frisby = require('frisby')
-import config from 'config'
+Helpers.test_helper_1(); // Replaced with helper function
 
-const URL = 'http://localhost:3000'
+Helpers.test_helper_15(); // Replaced with helper function
+
+Helpers.test_helper_14(); // Replaced with helper function
 
 describe('/redirect', () => {
-  it('GET redirected to https://github.com/juice-shop/juice-shop when this URL is passed as "to" parameter', () => {
+  it('GET redirected to https://github.com/juice-shop/juice-shop when this URL is passed as 'to' parameter', () => {
     return frisby.get(`${URL}/redirect?to=https://github.com/juice-shop/juice-shop`, { redirect: 'manual' })
       .expect('status', 302)
   })
 
-  it('GET redirected to https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm when this URL is passed as "to" parameter', () => {
+  it('GET redirected to https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm when this URL is passed as 'to' parameter', () => {
     return frisby.get(`${URL}/redirect?to=https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm`, { redirect: 'manual' })
       .expect('status', 302)
   })
 
-  it('GET redirected to http://shop.spreadshirt.com/juiceshop when this URL is passed as "to" parameter', () => {
+  it('GET redirected to http://shop.spreadshirt.com/juiceshop when this URL is passed as 'to' parameter', () => {
     return frisby.get(`${URL}/redirect?to=http://shop.spreadshirt.com/juiceshop`, { redirect: 'manual' })
       .expect('status', 302)
   })
 
-  it('GET redirected to http://shop.spreadshirt.de/juiceshop when this URL is passed as "to" parameter', () => {
+  it('GET redirected to http://shop.spreadshirt.de/juiceshop when this URL is passed as 'to' parameter', () => {
     return frisby.get(`${URL}/redirect?to=http://shop.spreadshirt.de/juiceshop`, { redirect: 'manual' })
       .expect('status', 302)
   })
 
-  it('GET redirected to https://www.stickeryou.com/products/owasp-juice-shop/794 when this URL is passed as "to" parameter', () => {
+  it('GET redirected to https://www.stickeryou.com/products/owasp-juice-shop/794 when this URL is passed as 'to' parameter', () => {
     return frisby.get(`${URL}/redirect?to=https://www.stickeryou.com/products/owasp-juice-shop/794`, { redirect: 'manual' })
       .expect('status', 302)
   })
 
-  it('GET redirected to https://explorer.dash.org/address/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW when this URL is passed as "to" parameter', () => {
+  it('GET redirected to https://explorer.dash.org/address/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW when this URL is passed as 'to' parameter', () => {
     return frisby.get(`${URL}/redirect?to=https://explorer.dash.org/address/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW`, { redirect: 'manual' })
       .expect('status', 302)
   })
 
-  it('GET redirected to https://etherscan.io/address/0x0f933ab9fcaaa782d0279c300d73750e1311eae6 when this URL is passed as "to" parameter', () => {
+  it('GET redirected to https://etherscan.io/address/0x0f933ab9fcaaa782d0279c300d73750e1311eae6 when this URL is passed as 'to' parameter', () => {
     return frisby.get(`${URL}/redirect?to=https://etherscan.io/address/0x0f933ab9fcaaa782d0279c300d73750e1311eae6`, { redirect: 'manual' })
       .expect('status', 302)
   })
@@ -64,7 +63,7 @@ describe('/redirect', () => {
       .expect('bodyContains', '&#39;includes&#39;')
   })
 
-  it('GET error message hinting at allowlist validation when calling /redirect with an unrecognized "to" target', () => {
+  it('GET error message hinting at allowlist validation when calling /redirect with an unrecognized 'to' target', () => {
     return frisby.get(`${URL}/redirect?to=whatever`)
       .expect('status', 406)
       .expect('header', 'content-type', /text\/html/)
@@ -72,7 +71,7 @@ describe('/redirect', () => {
       .expect('bodyContains', 'Unrecognized target URL for redirect: whatever')
   })
 
-  it('GET redirected to target URL in "to" parameter when a allow-listed URL is part of the query string', () => {
+  it('GET redirected to target URL in 'to' parameter when a allow-listed URL is part of the query string', () => {
     return frisby.get(`${URL}/redirect?to=/score-board?satisfyIndexOf=https://github.com/juice-shop/juice-shop`)
       .expect('status', 200)
       .expect('header', 'content-type', /text\/html/)

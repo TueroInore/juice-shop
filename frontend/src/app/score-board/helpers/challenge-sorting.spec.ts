@@ -1,22 +1,10 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { type EnrichedChallenge } from '../types/EnrichedChallenge'
 import { sortChallenges } from './challenge-sorting'
 
-const CHALLENGE_1 = {
-  category: 'foobar',
-  description: 'lorem ipsum',
-  originalDescription: 'lorem ipsum',
-  difficulty: 1,
-  hasCodingChallenge: true,
-  id: 1,
-  key: 'challenge-1',
-  mitigationUrl: 'https://owasp.example.com',
-  name: 'challenge one',
-  solved: false,
-  codingChallengeStatus: 0,
-  tagList: ['easy'],
-  disabledEnv: null,
-  tutorialOrder: 1
-} as EnrichedChallenge
+Helpers.frontend_helper_69(); // Replaced with helper function
 
 const CHALLENGE_2 = {
   category: 'foobar',
@@ -35,22 +23,7 @@ const CHALLENGE_2 = {
   tutorialOrder: 2
 } as EnrichedChallenge
 
-const CHALLENGE_3 = {
-  category: 'barfoo',
-  description: 'lorem ipsum',
-  originalDescription: 'lorem ipsum',
-  difficulty: 6,
-  hasCodingChallenge: true,
-  id: 3,
-  key: 'challenge-3',
-  mitigationUrl: 'https://owasp.example.com',
-  name: 'challenge three',
-  solved: true,
-  codingChallengeStatus: 1,
-  tagList: ['hard'],
-  disabledEnv: 'docker',
-  tutorialOrder: null
-} as EnrichedChallenge
+Helpers.frontend_helper_70(); // Replaced with helper function
 
 describe('sortChallenges', () => {
   it('sort tutorial challenges correctly', () => {

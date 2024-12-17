@@ -1,9 +1,12 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/dataerasure', () => {
   beforeEach(() => {
     cy.login({ email: 'admin', password: 'admin123' })
   })
 
-  describe('challenge "lfr"', () => {
+  describe('challenge 'lfr'', () => {
     it('should be possible to perform local file read attack using the browser', () => {
       cy.window().then(async () => {
         const params = 'layout=../package.json'

@@ -1,12 +1,11 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import frisby = require('frisby')
-import config from 'config'
+Helpers.test_helper_1(); // Replaced with helper function
 
-const URL = 'http://localhost:3000'
+Helpers.test_helper_15(); // Replaced with helper function
+
+Helpers.test_helper_14(); // Replaced with helper function
 
 const jsonHeader = { 'content-type': 'application/json' }
 let authHeader: { Cookie: any }
@@ -40,7 +39,7 @@ describe('/profile', () => {
     })
       .expect('status', 200)
       .expect('header', 'content-type', /text\/html/)
-      .expect('bodyContains', 'id="email" type="email" name="email" value="jim@juice-sh.op"')
+      .expect('bodyContains', 'id='email' type='email' name='email' value='jim@juice-sh.op'')
   })
 
   it('POST update username of authenticated user', () => {
@@ -56,7 +55,7 @@ describe('/profile', () => {
       .expect('status', 302)
   })
 
-  xit('POST update username is forbidden for unauthenticated user', () => { // FIXME runs into "socket hang up"
+  xit('POST update username is forbidden for unauthenticated user', () => { // FIXME runs into 'socket hang up'
     const form = frisby.formData()
     form.append('username', 'Localhorst')
 

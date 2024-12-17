@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule } from '@ngx-translate/core'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
@@ -44,8 +44,7 @@ describe('WelcomeBannerComponent', () => {
     })
       .compileComponents()
 
-    cookieService = TestBed.inject(CookieService)
-  }))
+Helpers.frontend_helper_71(); // Replaced with helper function
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WelcomeBannerComponent)
@@ -53,9 +52,7 @@ describe('WelcomeBannerComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should not dismiss if cookie not set', () => {
     component.ngOnInit()
@@ -97,10 +94,4 @@ describe('WelcomeBannerComponent', () => {
     expect(component.showDismissBtn).toBe(false)
   })
 
-  it('should log error on failure in retrieving configuration from backend', fakeAsync(() => {
-    configurationService.getApplicationConfiguration.and.returnValue(throwError('Error'))
-    console.log = jasmine.createSpy('log')
-    component.ngOnInit()
-    expect(console.log).toHaveBeenCalledWith('Error')
-  }))
-})
+Helpers.frontend_helper_21(); // Replaced with helper function

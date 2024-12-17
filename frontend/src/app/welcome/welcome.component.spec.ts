@@ -1,14 +1,14 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule } from '@ngx-translate/core'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { MatDialog, MatDialogModule } from '@angular/material/dialog'
 import { CookieModule, CookieService } from 'ngx-cookie'
 
-import { type ComponentFixture, TestBed } from '@angular/core/testing'
+Helpers.frontend_helper_59(); // Replaced with helper function
 
 import { WelcomeComponent } from './welcome.component'
 import { of } from 'rxjs'
@@ -52,9 +52,7 @@ describe('WelcomeComponent', () => {
     cookieService.remove('welcomebanner_status')
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should open the welcome banner dialog if configured to show on start', () => {
     configurationService.getApplicationConfiguration.and.returnValue(of({ application: { welcomeBanner: { showOnFirstStart: true } } }))

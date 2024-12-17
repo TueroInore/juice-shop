@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
 import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
@@ -41,11 +41,4 @@ describe('DataSubjectService', () => {
       const req = httpMock.expectOne('http://localhost:3000/rest/user/data-export')
       req.flush('apiResponse')
 
-      tick()
-      expect(req.request.method).toBe('POST')
-      expect(req.request.body).toBe(1)
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
-})
+Helpers.frontend_helper_92(); // Replaced with helper function

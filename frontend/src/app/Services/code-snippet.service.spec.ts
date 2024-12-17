@@ -1,10 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
-import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_78(); // Replaced with helper function
 
 import { CodeSnippetService } from './code-snippet.service'
 
@@ -29,11 +28,7 @@ describe('CodeSnippetService', () => {
       req.flush({ snippet: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toEqual({ snippet: 'apiResponse' })
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_85(); // Replaced with helper function
 
   it('should get list of challenges with code snippets directly from the rest api', inject([CodeSnippetService, HttpTestingController],
     fakeAsync((service: CodeSnippetService, httpMock: HttpTestingController) => {

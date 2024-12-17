@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { ComplaintService } from '../Services/complaint.service'
 import { UserService } from '../Services/user.service'
@@ -67,9 +67,7 @@ describe('ComplaintComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should have customerControl as disabled', () => {
     expect(component.customerControl.disabled).toBe(true)
@@ -108,11 +106,7 @@ describe('ComplaintComponent', () => {
     expect(component.complaint).toBeUndefined()
   }))
 
-  it('should hold the user email of the currently logged in user', () => {
-    userService.whoAmI.and.returnValue(of({ email: 'x@x.xx' }))
-    component.ngOnInit()
-    expect(component.userEmail).toBe('x@x.xx')
-  })
+Helpers.frontend_helper_17(); // Replaced with helper function
 
   it('should hold no email if current user is not logged in', () => {
     userService.whoAmI.and.returnValue(of({}))

@@ -1,10 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
-import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_78(); // Replaced with helper function
 
 import { ChallengeService } from './challenge.service'
 
@@ -31,11 +30,7 @@ describe('ChallengeService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_83(); // Replaced with helper function
 
   it('should get current continue code directly from the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -46,11 +41,7 @@ describe('ChallengeService', () => {
       req.flush({ continueCode: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_83(); // Replaced with helper function
 
   it('should pass continue code for restoring challenge progress on to the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -61,11 +52,7 @@ describe('ChallengeService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('PUT')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_84(); // Replaced with helper function
 
   it('should get current "Find It" coding challenge continue code directly from the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -76,11 +63,7 @@ describe('ChallengeService', () => {
       req.flush({ continueCode: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_83(); // Replaced with helper function
 
   it('should pass "Find It" coding challenge continue code for restoring progress on to the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -91,11 +74,7 @@ describe('ChallengeService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('PUT')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_84(); // Replaced with helper function
 
   it('should get current "Fix It" coding challenge continue code directly from the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -106,11 +85,7 @@ describe('ChallengeService', () => {
       req.flush({ continueCode: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_83(); // Replaced with helper function
 
   it('should pass "Fix It" coding challenge continue code for restoring progress on to the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -121,11 +96,7 @@ describe('ChallengeService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('PUT')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_84(); // Replaced with helper function
 
   it('should repeat notification directly from the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {

@@ -1,6 +1,9 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { Pipe, type PipeTransform } from '@angular/core'
 
-import sortBy from 'lodash-es/sortBy'
+Helpers.frontend_helper_68(); // Replaced with helper function
 
 interface DifficultyGroup {
   start: number

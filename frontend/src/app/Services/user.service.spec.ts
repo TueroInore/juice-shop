@@ -1,10 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
-import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_78(); // Replaced with helper function
 
 import { UserService } from './user.service'
 
@@ -29,12 +28,7 @@ describe('UserService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(req.request.params.toString()).toBeFalsy()
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_97(); // Replaced with helper function
 
   it('should get single users directly from the rest api', inject([UserService, HttpTestingController],
     fakeAsync((service: UserService, httpMock: HttpTestingController) => {
@@ -45,11 +39,7 @@ describe('UserService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_83(); // Replaced with helper function
 
   it('should create user directly via the rest api', inject([UserService, HttpTestingController],
     fakeAsync((service: UserService, httpMock: HttpTestingController) => {
@@ -60,12 +50,7 @@ describe('UserService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('POST')
-      expect(req.request.body).toBeNull()
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_98(); // Replaced with helper function
 
   it('should login user directly via the rest api', inject([UserService, HttpTestingController],
     fakeAsync((service: UserService, httpMock: HttpTestingController) => {
@@ -76,12 +61,7 @@ describe('UserService', () => {
       req.flush({ authentication: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('POST')
-      expect(req.request.body).toBeNull()
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_98(); // Replaced with helper function
 
   it('should change user password directly via the rest api', inject([UserService, HttpTestingController],
     fakeAsync((service: UserService, httpMock: HttpTestingController) => {
@@ -92,11 +72,7 @@ describe('UserService', () => {
       req.flush({ user: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_83(); // Replaced with helper function
 
   it('should return the logged-in users identity directly from the rest api', inject([UserService, HttpTestingController],
     fakeAsync((service: UserService, httpMock: HttpTestingController) => {
@@ -107,11 +83,7 @@ describe('UserService', () => {
       req.flush({ user: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_83(); // Replaced with helper function
 
   it('should reset the password directly from the rest api', inject([UserService, HttpTestingController],
     fakeAsync((service: UserService, httpMock: HttpTestingController) => {

@@ -1,7 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_40(); // Replaced with helper function
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { UntypedFormControl, Validators } from '@angular/forms'
 import { Component, NgZone, type OnInit } from '@angular/core'
@@ -170,9 +172,7 @@ export class PaymentComponent implements OnInit {
     this.paymentMode = 'card'
   }
 
-  routeToPreviousUrl () {
-    this.location.back()
-  }
+Helpers.frontend_helper_7(); // Replaced with helper function
 
   choosePayment () {
     sessionStorage.removeItem('itemTotal')
@@ -205,8 +205,7 @@ export class PaymentComponent implements OnInit {
     }
   }
 
-  // eslint-disable-next-line no-empty,@typescript-eslint/no-empty-function
-  noop () { }
+Helpers.frontend_helper_49(); // Replaced with helper function
 
   showBitcoinQrCode () {
     this.dialog.open(QrCodeComponent, {

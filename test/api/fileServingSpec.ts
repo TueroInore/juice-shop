@@ -1,14 +1,14 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import config from 'config'
 import type { Product as ProductConfig } from '../../lib/config.types'
 const utils = require('../../lib/utils')
 
-const URL = 'http://localhost:3000'
+Helpers.test_helper_14(); // Replaced with helper function
 
 let blueprint: string
 
@@ -41,13 +41,13 @@ describe('Server', () => {
   xit('GET a restricted file directly from file system path on server via Directory Traversal attack loads index.html instead', () => {
     return frisby.get(URL + '/public/images/../../ftp/eastere.gg')
       .expect('status', 200)
-      .expect('bodyContains', '<meta name="description" content="Probably the most modern and sophisticated insecure web application">')
+      .expect('bodyContains', '<meta name='description' content='Probably the most modern and sophisticated insecure web application'>')
   })
 
   it('GET a restricted file directly from file system path on server via URL-encoded Directory Traversal attack loads index.html instead', () => {
     return frisby.get(URL + '/public/images/%2e%2e%2f%2e%2e%2fftp/eastere.gg')
       .expect('status', 200)
-      .expect('bodyContains', '<meta name="description" content="Probably the most modern and sophisticated insecure web application">')
+      .expect('bodyContains', '<meta name='description' content='Probably the most modern and sophisticated insecure web application'>')
   })
 
   it('GET serves a security.txt file', () => {
@@ -86,25 +86,25 @@ describe('Server', () => {
 })
 
 describe('/public/images/padding', () => {
-  it('GET tracking image for "Score Board" page access challenge', () => {
+  it('GET tracking image for 'Score Board' page access challenge', () => {
     return frisby.get(URL + '/assets/public/images/padding/1px.png')
       .expect('status', 200)
       .expect('header', 'content-type', 'image/png')
   })
 
-  it('GET tracking image for "Administration" page access challenge', () => {
+  it('GET tracking image for 'Administration' page access challenge', () => {
     return frisby.get(URL + '/assets/public/images/padding/19px.png')
       .expect('status', 200)
       .expect('header', 'content-type', 'image/png')
   })
 
-  it('GET tracking image for "Token Sale" page access challenge', () => {
+  it('GET tracking image for 'Token Sale' page access challenge', () => {
     return frisby.get(URL + '/assets/public/images/padding/56px.png')
       .expect('status', 200)
       .expect('header', 'content-type', 'image/png')
   })
 
-  it('GET tracking image for "Privacy Policy" page access challenge', () => {
+  it('GET tracking image for 'Privacy Policy' page access challenge', () => {
     return frisby.get(URL + '/assets/public/images/padding/81px.png')
       .expect('status', 200)
       .expect('header', 'content-type', 'image/png')
@@ -129,7 +129,7 @@ describe('/encryptionkeys', () => {
       .expect('status', 200)
   })
 
-  it('GET a key file whose name contains a "/" fails with a 403 error', () => {
+  it('GET a key file whose name contains a '/' fails with a 403 error', () => {
     return frisby.fetch(URL + '/encryptionkeys/%2fetc%2fos-release%2500.md', {}, { urlEncode: false })
       .expect('status', 403)
       .expect('bodyContains', 'Error: File names cannot contain forward slashes!')
@@ -150,28 +150,28 @@ describe('Hidden URL', () => {
       .expect('header', 'content-type', 'image/jpeg')
   })
 
-  it('GET the missing "Thank you!" image for assembling the URL hidden in the Privacy Policy', () => {
+  it('GET the missing 'Thank you!' image for assembling the URL hidden in the Privacy Policy', () => {
     return frisby.get(URL + '/we/may/also/instruct/you/to/refuse/all/reasonably/necessary/responsibility')
       .expect('status', 404)
   })
 
-  it('GET Klingon translation file for "Extra Language" challenge', () => {
+  it('GET Klingon translation file for 'Extra Language' challenge', () => {
     return frisby.get(URL + '/assets/i18n/tlh_AA.json')
       .expect('status', 200)
       .expect('header', 'content-type', /application\/json/)
   })
 
-  it('GET blueprint file for "Retrieve Blueprint" challenge', () => {
+  it('GET blueprint file for 'Retrieve Blueprint' challenge', () => {
     return frisby.get(URL + '/assets/public/images/products/' + blueprint)
       .expect('status', 200)
   })
 
-  it('GET crazy cat photo for "Missing Encoding" challenge', () => {
+  it('GET crazy cat photo for 'Missing Encoding' challenge', () => {
     return frisby.get(URL + '/assets/public/images/uploads/%F0%9F%98%BC-%23zatschi-%23whoneedsfourlegs-1572600969477.jpg')
       .expect('status', 200)
   })
 
-  it('GET folder containing access log files for "Access Log" challenge', () => {
+  it('GET folder containing access log files for 'Access Log' challenge', () => {
     return frisby.get(URL + '/support/logs/access.log.' + utils.toISO8601(new Date()))
       .expect('status', 200)
       .expect('header', 'content-type', /application\/octet-stream/)

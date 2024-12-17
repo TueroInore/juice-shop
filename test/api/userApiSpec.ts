@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import { challenges } from '../../data/datacache'
 import { expect } from '@jest/globals'
@@ -10,8 +10,7 @@ const Joi = frisby.Joi
 const utils = require('../../lib/utils')
 const security = require('../../lib/insecurity')
 
-const API_URL = 'http://localhost:3000/api'
-const REST_URL = 'http://localhost:3000/rest'
+Helpers.test_helper_12(); // Replaced with helper function
 
 const authHeader = { Authorization: `Bearer ${security.authorize()}`, 'content-type': 'application/json' }
 const jsonHeader = { 'content-type': 'application/json' }
@@ -196,13 +195,13 @@ describe('/api/Users', () => {
       return frisby.post(`${API_URL}/Users`, {
         headers: jsonHeader,
         body: {
-          email: '<iframe src="javascript:alert(`xss`)">',
+          email: '<iframe src='javascript:alert(`xss`)'>',
           password: 'does.not.matter'
         }
       })
         .expect('status', 201)
         .expect('header', 'content-type', /application\/json/)
-        .expect('json', 'data', { email: '<iframe src="javascript:alert(`xss`)">' })
+        .expect('json', 'data', { email: '<iframe src='javascript:alert(`xss`)'>' })
     })
   }
 })

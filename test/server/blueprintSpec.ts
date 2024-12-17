@@ -1,3 +1,6 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 import chai = require('chai')
 import config from 'config'
 import type { Product as ProductConfig } from 'lib/config.types'
@@ -44,7 +47,7 @@ describe('blueprint', () => {
             pathToImage = path.resolve('frontend/src', pathToImage, product.image)
           }
 
-          if (product.exifForBlueprintChallenge?.[0]) { // Prevents failing test for sample or custom themes where null has been explicitly set as value for "exifForBlueprintChallenge". Warning: This makes the "Retrieve Blueprint" challenge probably unsolvable unless hints are placed elsewhere.
+          if (product.exifForBlueprintChallenge?.[0]) { // Prevents failing test for sample or custom themes where null has been explicitly set as value for 'exifForBlueprintChallenge'. Warning: This makes the 'Retrieve Blueprint' challenge probably unsolvable unless hints are placed elsewhere.
             try {
               const exifData = await parseExifData(pathToImage)
               const properties = Object.values(exifData.image)

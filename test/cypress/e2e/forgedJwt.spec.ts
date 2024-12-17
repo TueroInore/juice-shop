@@ -1,5 +1,8 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/', () => {
-  describe('challenge "jwtUnsigned"', () => {
+  describe('challenge 'jwtUnsigned'', () => {
     it('should accept an unsigned token with email jwtn3d@juice-sh.op in the payload ', () => {
       cy.window().then(() => {
         localStorage.setItem(
@@ -12,7 +15,7 @@ describe('/', () => {
     })
   })
 
-  describe('challenge "jwtForged"', () => {
+  describe('challenge 'jwtForged'', () => {
     it('should accept a token HMAC-signed with public RSA key with email rsa_lord@juice-sh.op in the payload ', () => {
       cy.task('isWindows').then((isWindows) => {
         if (!isWindows) {

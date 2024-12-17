@@ -1,3 +1,6 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 /*
  * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
  * SPDX-License-Identifier: MIT
@@ -9,8 +12,7 @@ const Joi = frisby.Joi
 const utils = require('../../lib/utils')
 const security = require('../../lib/insecurity')
 
-const API_URL = 'http://localhost:3000/api'
-const REST_URL = 'http://localhost:3000/rest'
+Helpers.test_helper_12(); // Replaced with helper function
 
 const authHeader = { Authorization: 'Bearer ' + security.authorize(), 'content-type': /application\/json/ }
 const jsonHeader = { 'content-type': 'application/json' }
@@ -29,7 +31,7 @@ describe('/api/Feedbacks', () => {
         return frisby.post(API_URL + '/Feedbacks', {
           headers: jsonHeader,
           body: {
-            comment: 'I am a harm<script>steal-cookie</script><img src="csrf-attack"/><iframe src="evil-content"></iframe>less comment.',
+            comment: 'I am a harm<script>steal-cookie</script><img src='csrf-attack'/><iframe src='evil-content'></iframe>less comment.',
             rating: 1,
             captchaId: json.captchaId,
             captcha: json.answer
@@ -51,7 +53,7 @@ describe('/api/Feedbacks', () => {
           return frisby.post(API_URL + '/Feedbacks', {
             headers: jsonHeader,
             body: {
-              comment: 'The sanitize-html module up to at least version 1.4.2 has this issue: <<script>Foo</script>iframe src="javascript:alert(`xss`)">',
+              comment: 'The sanitize-html module up to at least version 1.4.2 has this issue: <<script>Foo</script>iframe src='javascript:alert(`xss`)'>',
               rating: 1,
               captchaId: json.captchaId,
               captcha: json.answer
@@ -59,7 +61,7 @@ describe('/api/Feedbacks', () => {
           })
             .expect('status', 201)
             .expect('json', 'data', {
-              comment: 'The sanitize-html module up to at least version 1.4.2 has this issue: <iframe src="javascript:alert(`xss`)">'
+              comment: 'The sanitize-html module up to at least version 1.4.2 has this issue: <iframe src='javascript:alert(`xss`)'>'
             })
         })
     })
@@ -128,7 +130,7 @@ describe('/api/Feedbacks', () => {
             return frisby.post(API_URL + '/Feedbacks', {
               headers: { Authorization: 'Bearer ' + jsonLogin.authentication.token, 'content-type': 'application/json' },
               body: {
-                comment: 'Stupid JWT secret "' + security.defaultSecret + '" and being typosquatted by epilogue-js and anuglar2-qrcode!',
+                comment: 'Stupid JWT secret '' + security.defaultSecret + '' and being typosquatted by epilogue-js and anuglar2-qrcode!',
                 rating: 5,
                 UserId: 4,
                 captchaId: json.captchaId,

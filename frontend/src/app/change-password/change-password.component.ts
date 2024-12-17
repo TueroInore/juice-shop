@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { type AbstractControl, UntypedFormControl, Validators } from '@angular/forms'
 import { UserService } from '../Services/user.service'
@@ -12,7 +12,7 @@ import { faEdit } from '@fortawesome/free-regular-svg-icons'
 import { FormSubmitService } from '../Services/form-submit.service'
 import { TranslateService } from '@ngx-translate/core'
 
-library.add(faSave, faEdit)
+Helpers.frontend_helper_14(); // Replaced with helper function
 
 @Component({
   selector: 'app-change-password',

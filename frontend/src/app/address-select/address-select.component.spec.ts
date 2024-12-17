@@ -1,16 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { MatCardModule } from '@angular/material/card'
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { type ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
-import { MatInputModule } from '@angular/material/input'
-import { ReactiveFormsModule } from '@angular/forms'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_8(); // Replaced with helper function
 
 import { MatTableModule } from '@angular/material/table'
 import { MatExpansionModule } from '@angular/material/expansion'
@@ -43,14 +36,7 @@ describe('AddressSelectComponent', () => {
     snackBar = jasmine.createSpyObj('MatSnackBar', ['open'])
     snackBar.open.and.returnValue(null)
 
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule.withRoutes([
-          { path: 'delivery-method', component: DeliveryMethodComponent }
-        ]),
-        TranslateModule.forRoot(),
-        HttpClientTestingModule,
-        ReactiveFormsModule,
+Helpers.frontend_helper_4(); // Replaced with helper function
 
         BrowserAnimationsModule,
         MatCardModule,
@@ -78,9 +64,7 @@ describe('AddressSelectComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should store address id on calling getMessage', () => {
     component.getMessage(1)

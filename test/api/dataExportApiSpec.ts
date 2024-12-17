@@ -1,30 +1,17 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-// Helper function for creating form data
-function createFormData(filePath: string): any {
-  const form = frisby.formData();
-  form.append('image', fs.createReadStream(filePath), 'Valid Image');
-  form.append('caption', 'Valid Image');
-  return form;
-}
+Helpers.test_helper_23(); // Replaced with helper function
 
-// Helper function for user login
-function loginUser(email: string, password: string) {
-  return frisby.post(REST_URL + '/user/login', {
-    headers: jsonHeader,
-    body: { email, password }
-  }).expect('status', 200);
-}
+Helpers.test_helper_24(); // Replaced with helper function
 
-// Helper function to generate Authorization headers
-function getAuthHeaders(token: string, contentType: string = 'application/json') {
-  return { Authorization: 'Bearer ' + token, 'Content-Type': contentType };
-}
+Helpers.test_helper_25(); // Replaced with helper function
 
+Helpers.test_helper_26(); // Replaced with helper function
 
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+Helpers.test_helper_27(); // Replaced with helper function
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import { expect } from '@jest/globals'
@@ -33,8 +20,7 @@ import path from 'path'
 
 const fs = require('fs')
 
-const jsonHeader = { 'content-type': 'application/json' }
-const REST_URL = 'http://localhost:3000/rest'
+Helpers.test_helper_28(); // Replaced with helper function
 
 describe('/rest/user/data-export', () => {
   it('Export data without use of CAPTCHA', () => {

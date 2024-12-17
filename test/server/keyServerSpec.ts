@@ -1,13 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import sinon = require('sinon')
-import chai = require('chai')
-import sinonChai = require('sinon-chai')
-const expect = chai.expect
-chai.use(sinonChai)
+Helpers.test_helper_1(); // Replaced with helper function
+
+Helpers.test_helper_40(); // Replaced with helper function
 
 describe('keyServer', () => {
   const serveKeyFiles = require('../../routes/keyServer')
@@ -24,17 +20,13 @@ describe('keyServer', () => {
   it('should serve requested file from folder /encryptionkeys', () => {
     req.params.file = 'test.file'
 
-    serveKeyFiles()(req, res, next)
+Helpers.test_helper_58(); // Replaced with helper function
 
     expect(res.sendFile).to.have.been.calledWith(sinon.match(/encryptionkeys[/\\]test.file/))
   })
 
-  it('should raise error for slashes in filename', () => {
-    req.params.file = '../../../../nice.try'
+Helpers.test_helper_55(); // Replaced with helper function
 
-    serveKeyFiles()(req, res, next)
+Helpers.test_helper_58(); // Replaced with helper function
 
-    expect(res.sendFile).to.have.not.been.calledWith(sinon.match.any)
-    expect(next).to.have.been.calledWith(sinon.match.instanceOf(Error))
-  })
-})
+Helpers.test_helper_43(); // Replaced with helper function

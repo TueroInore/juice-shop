@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { environment } from '../../environments/environment'
 import { Injectable } from '@angular/core'
@@ -23,7 +23,7 @@ export class BasketService {
   public itemTotal = new Subject<any>()
   private readonly host = this.hostServer + '/api/BasketItems'
 
-  constructor (private readonly http: HttpClient) { }
+Helpers.frontend_helper_73(); // Replaced with helper function
 
   find (id?: number) {
     return this.http.get(`${this.hostServer}/rest/basket/${id}`).pipe(map((response: any) => response.data), catchError((error) => { throw error }))

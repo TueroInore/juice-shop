@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { Component, Input, type OnChanges, type OnInit, type SimpleChanges } from '@angular/core'
 import { type EnrichedChallenge } from '../../types/EnrichedChallenge'
 
@@ -12,13 +15,9 @@ export class HackingChallengeProgressScoreCardComponent implements OnInit, OnCha
 
   public solvedChallenges: number
 
-  ngOnInit (): void {
-    this.updatedNumberOfSolvedChallenges()
-  }
+Helpers.frontend_helper_66(); // Replaced with helper function
 
-  ngOnChanges (changes: SimpleChanges): void {
-    this.updatedNumberOfSolvedChallenges()
-  }
+Helpers.frontend_helper_67(); // Replaced with helper function
 
   private updatedNumberOfSolvedChallenges (): void {
     this.solvedChallenges = this.allChallenges.filter((challenge) => challenge.solved).length

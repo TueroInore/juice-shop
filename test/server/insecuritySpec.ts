@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 // @ts-expect-error FIXME no typescript definitions for z85 :(
 import z85 from 'z85'
@@ -22,11 +22,11 @@ describe('insecurity', () => {
   })
 
   describe('userEmailFrom', () => {
-    it('returns content of "x-user-email" header if present', () => {
+    it('returns content of 'x-user-email' header if present', () => {
       expect(security.userEmailFrom({ headers: { 'x-user-email': 'test@bla.blubb' } })).to.equal('test@bla.blubb')
     })
 
-    it('returns undefined if header "x-user-email" is not present', () => {
+    it('returns undefined if header 'x-user-email' is not present', () => {
       expect(security.userEmailFrom({ headers: {} })).to.equal(undefined)
       expect(security.userEmailFrom({})).to.equal(undefined)
     })
@@ -135,17 +135,17 @@ describe('insecurity', () => {
     })
 
     it('returns input unchanged for HTML input with only harmless links', () => {
-      expect(security.sanitizeHtml('<a href="bla.blubb">Please see here for details!</a>')).to.equal('<a href="bla.blubb">Please see here for details!</a>')
+      expect(security.sanitizeHtml('<a href='bla.blubb'>Please see here for details!</a>')).to.equal('<a href='bla.blubb'>Please see here for details!</a>')
     })
 
     it('removes all Javascript from HTML input', () => {
-      expect(security.sanitizeHtml('Sani<script>alert("ScriptXSS")</script>tizedScript')).to.equal('SanitizedScript')
-      expect(security.sanitizeHtml('Sani<img src="alert("ImageXSS")"/>tizedImage')).to.equal('SanitizedImage')
-      expect(security.sanitizeHtml('Sani<iframe src="alert("IFrameXSS")"></iframe>tizedIFrame')).to.equal('SanitizedIFrame')
+      expect(security.sanitizeHtml('Sani<script>alert('ScriptXSS')</script>tizedScript')).to.equal('SanitizedScript')
+      expect(security.sanitizeHtml('Sani<img src='alert('ImageXSS')'/>tizedImage')).to.equal('SanitizedImage')
+      expect(security.sanitizeHtml('Sani<iframe src='alert('IFrameXSS')'></iframe>tizedIFrame')).to.equal('SanitizedIFrame')
     })
 
     it('can be bypassed by exploiting lack of recursive sanitization', () => {
-      expect(security.sanitizeHtml('<<script>Foo</script>iframe src="javascript:alert(`xss`)">')).to.equal('<iframe src="javascript:alert(`xss`)">')
+      expect(security.sanitizeHtml('<<script>Foo</script>iframe src='javascript:alert(`xss`)'>')).to.equal('<iframe src='javascript:alert(`xss`)'>')
     })
   })
 
@@ -162,7 +162,7 @@ describe('insecurity', () => {
 
     it('removes all opening tags and subsequent character from HTML input', () => {
       expect(security.sanitizeLegacy('<h1>Hello</h1>')).to.equal('ello</h1>')
-      expect(security.sanitizeLegacy('<img src="test">')).to.equal('rc="test">')
+      expect(security.sanitizeLegacy('<img src='test'>')).to.equal('rc='test'>')
     })
 
     it('can be bypassed to allow working HTML payload to be returned', () => {
@@ -187,17 +187,17 @@ describe('insecurity', () => {
     })
 
     it('returns input unchanged for HTML input with only harmless links', () => {
-      expect(security.sanitizeSecure('<a href="bla.blubb">Please see here for details!</a>')).to.equal('<a href="bla.blubb">Please see here for details!</a>')
+      expect(security.sanitizeSecure('<a href='bla.blubb'>Please see here for details!</a>')).to.equal('<a href='bla.blubb'>Please see here for details!</a>')
     })
 
     it('removes all Javascript from HTML input', () => {
-      expect(security.sanitizeSecure('Sani<script>alert("ScriptXSS")</script>tizedScript')).to.equal('SanitizedScript')
-      expect(security.sanitizeSecure('Sani<img src="alert("ImageXSS")"/>tizedImage')).to.equal('SanitizedImage')
-      expect(security.sanitizeSecure('Sani<iframe src="alert("IFrameXSS")"></iframe>tizedIFrame')).to.equal('SanitizedIFrame')
+      expect(security.sanitizeSecure('Sani<script>alert('ScriptXSS')</script>tizedScript')).to.equal('SanitizedScript')
+      expect(security.sanitizeSecure('Sani<img src='alert('ImageXSS')'/>tizedImage')).to.equal('SanitizedImage')
+      expect(security.sanitizeSecure('Sani<iframe src='alert('IFrameXSS')'></iframe>tizedIFrame')).to.equal('SanitizedIFrame')
     })
 
     it('cannot be bypassed by exploiting lack of recursive sanitization', () => {
-      expect(security.sanitizeSecure('Bla<<script>Foo</script>iframe src="javascript:alert(`xss`)">Blubb')).to.equal('BlaBlubb')
+      expect(security.sanitizeSecure('Bla<<script>Foo</script>iframe src='javascript:alert(`xss`)'>Blubb')).to.equal('BlaBlubb')
     })
   })
 
@@ -218,7 +218,7 @@ describe('insecurity', () => {
       expect(() => security.hmac()).to.throw(TypeError)
     })
 
-    it('returns SHA-256 HMAC with "pa4qacea4VK9t9nGv7yZtwmj" as salt any input string', () => {
+    it('returns SHA-256 HMAC with 'pa4qacea4VK9t9nGv7yZtwmj' as salt any input string', () => {
       expect(security.hmac('admin123')).to.equal('6be13e2feeada221f29134db71c0ab0be0e27eccfc0fb436ba4096ba73aafb20')
       expect(security.hmac('password')).to.equal('da28fc4354f4a458508a461fbae364720c4249c27f10fccf68317fc4bf6531ed')
       expect(security.hmac('')).to.equal('f052179ec5894a2e79befa8060cfcb517f1e14f7f6222af854377b6481ae953e')

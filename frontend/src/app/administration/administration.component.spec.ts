@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { UserDetailsComponent } from '../user-details/user-details.component'
 import { FeedbackDetailsComponent } from '../feedback-details/feedback-details.component'
@@ -66,9 +66,7 @@ describe('AdministrationComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should find all users via the UserService', () => {
     component.findAllUsers()
@@ -83,8 +81,7 @@ describe('AdministrationComponent', () => {
 
     tick()
 
-    expect(component.error).toBe('Error')
-  }))
+Helpers.frontend_helper_11(); // Replaced with helper function
 
   it('should find all feedbacks via FeedbackService', () => {
     component.findAllFeedbacks()
@@ -99,8 +96,7 @@ describe('AdministrationComponent', () => {
 
     tick()
 
-    expect(component.error).toBe('Error')
-  }))
+Helpers.frontend_helper_11(); // Replaced with helper function
 
   it('should refresh all feedbacks after deletion', () => {
     spyOn(component, 'findAllFeedbacks')
@@ -115,8 +111,7 @@ describe('AdministrationComponent', () => {
 
     tick()
 
-    expect(component.error).toBe('Error')
-  }))
+Helpers.frontend_helper_11(); // Replaced with helper function
 
   it('should open the UserDetailsComponent to show details', () => {
     component.showUserDetail(1)

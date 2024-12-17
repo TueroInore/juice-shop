@@ -1,5 +1,8 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/track-order', () => {
-  describe('challenge "reflectedXss"', () => {
+  describe('challenge 'reflectedXss'', () => {
     // Cypress alert bug
     xit('Order Id should be susceptible to reflected XSS attacks', () => {
       cy.task('isDocker').then((isDocker) => {
@@ -9,12 +12,10 @@ describe('/#/track-order', () => {
           })
 
           cy.visit('/#/track-result')
-          cy.visit('/#/track-result?id=<iframe src="javascript:alert(`xss`)">')
+          cy.visit('/#/track-result?id=<iframe src='javascript:alert(`xss`)'>')
           cy.reload()
 
-          cy.on('window:alert', (t) => {
-            expect(t).to.equal('xss')
-          })
+Helpers.test_helper_39(); // Replaced with helper function
 
           cy.expectChallengeSolved({ challenge: 'Reflected XSS' })
         }

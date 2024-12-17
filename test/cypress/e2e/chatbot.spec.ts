@@ -1,13 +1,16 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/chatbot', () => {
   beforeEach(() => {
     cy.login({ email: 'admin', password: 'admin123' })
   })
 
-  describe('challenge "killChatbot"', () => {
+  describe('challenge 'killChatbot'', () => {
     it('should be possible to kill the chatbot by setting the process to null', () => {
       cy.visit('/profile')
       cy.get('#username').type(
-        'admin"); process=null; users.addUser("1337", "test'
+        'admin'); process=null; users.addUser('1337', 'test'
       )
       cy.get('#submit').click()
       cy.visit('/#/chatbot')
@@ -20,7 +23,7 @@ describe('/chatbot', () => {
     })
   })
 
-  describe('challenge "bullyChatbot"', () => {
+  describe('challenge 'bullyChatbot'', () => {
     it('should be possible to make the chatbot hand out a coupon code', () => {
       cy.task<any>('GetCouponIntent').then(
         (couponIntent: {
@@ -33,7 +36,7 @@ describe('/chatbot', () => {
         }) => {
           cy.visit('/profile')
           cy.get('#username').type(
-            "admin\"); process=(query, token)=>{ if (users.get(token)) { return model.process(trainingSet.lang, query) } else { return { action: 'unrecognized', body: 'user does not exist' }}}; users.addUser(\"1337\", \"test",
+            'admin\'); process=(query, token)=>{ if (users.get(token)) { return model.process(trainingSet.lang, query) } else { return { action: 'unrecognized', body: 'user does not exist' }}}; users.addUser(\'1337\', \'test',
             { parseSpecialCharSequences: false }
           )
           cy.get('#submit').click()
@@ -51,7 +54,7 @@ describe('/chatbot', () => {
             return cy.get('.speech-bubble-left')
               .invoke('text')
               .then((text: string) => {
-                if (text.includes("Oooookay, if you promise to stop nagging me here's a 10% coupon code for you")) return false
+                if (text.includes('Oooookay, if you promise to stop nagging me here's a 10% coupon code for you')) return false
               })
           })
           cy.expectChallengeSolved({ challenge: 'Bully Chatbot' })

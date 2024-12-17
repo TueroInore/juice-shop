@@ -1,29 +1,16 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import io from 'socket.io-client'
 
 describe('WebSocket', () => {
   let socket: SocketIOClient.Socket
 
-  beforeEach(done => {
-    socket = io('http://localhost:3000', {
-      reconnectionDelay: 0,
-      forceNew: true
-    })
-    socket.on('connect', () => {
-      done()
-    })
-  })
+Helpers.test_helper_36(); // Replaced with helper function
 
-  afterEach(done => {
-    if (socket.connected) {
-      socket.disconnect()
-    }
-    done()
-  })
+Helpers.test_helper_37(); // Replaced with helper function
 
   it('server handles confirmation messages for emitted challenge resolutions', done => {
     socket.emit('notification received', 'Find the carefully hidden \'Score Board\' page.')

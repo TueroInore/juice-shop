@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { type ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/core/testing'
 import { DataExportComponent } from './data-export.component'
@@ -60,9 +60,7 @@ describe('DataExportComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should compile', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_18(); // Replaced with helper function
 
   it('should reinitizalise form by calling resetForm', () => {
     component.captchaControl.setValue('captcha')

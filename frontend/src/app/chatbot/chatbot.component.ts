@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { ChatbotService } from '../Services/chatbot.service'
 import { UserService } from '../Services/user.service'
@@ -13,12 +13,9 @@ import { FormSubmitService } from '../Services/form-submit.service'
 import { TranslateService } from '@ngx-translate/core'
 import { CookieService } from 'ngx-cookie'
 
-library.add(faBomb)
+Helpers.frontend_helper_16(); // Replaced with helper function
 
-enum MessageSources {
-  user = 'user',
-  bot = 'bot'
-}
+Helpers.frontend_helper_15(); // Replaced with helper function
 
 interface ChatMessage {
   author: MessageSources.user | MessageSources.bot

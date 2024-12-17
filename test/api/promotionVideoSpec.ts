@@ -1,11 +1,11 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import frisby = require('frisby')
+Helpers.test_helper_1(); // Replaced with helper function
 
-const URL = 'http://localhost:3000'
+Helpers.test_helper_11(); // Replaced with helper function
+
+Helpers.test_helper_14(); // Replaced with helper function
 
 describe('/promotion', () => {
   it('GET promotion video page is publicly accessible', () => {
@@ -16,13 +16,13 @@ describe('/promotion', () => {
   it('GET promotion video page contains embedded video', () => {
     return frisby.get(URL + '/promotion')
       .expect('header', 'content-type', /text\/html/)
-      .expect('bodyContains', '<source src="./video" type="video/mp4">')
+      .expect('bodyContains', '<source src='./video' type='video/mp4'>')
   })
 
   it('GET promotion video page contains subtitles as <script>', () => {
     return frisby.get(URL + '/promotion')
       .expect('header', 'content-type', /text\/html/)
-      .expect('bodyContains', '<script id="subtitle" type="text/vtt" data-label="English" data-lang="en">')
+      .expect('bodyContains', '<script id='subtitle' type='text/vtt' data-label='English' data-lang='en'>')
   })
 })
 

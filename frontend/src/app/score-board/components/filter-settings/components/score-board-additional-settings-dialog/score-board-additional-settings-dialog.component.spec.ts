@@ -1,4 +1,7 @@
-import { type ComponentFixture, TestBed } from '@angular/core/testing'
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_59(); // Replaced with helper function
 
 import { ScoreBoardAdditionalSettingsDialogComponent } from './score-board-additional-settings-dialog.component'
 import { TranslateModule } from '@ngx-translate/core'
@@ -29,10 +32,6 @@ describe('ScoreBoardAdditionalSettingsDialogComponent', () => {
     )
     component = fixture.componentInstance
 
-    fixture.detectChanges()
-  })
+Helpers.frontend_helper_60(); // Replaced with helper function
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
-})
+Helpers.frontend_helper_22(); // Replaced with helper function

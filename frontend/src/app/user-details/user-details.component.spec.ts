@@ -1,14 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { TranslateModule } from '@ngx-translate/core'
-import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog'
-import { UserService } from '../Services/user.service'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { MatDividerModule } from '@angular/material/divider'
-import { type ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_28(); // Replaced with helper function
 
 import { UserDetailsComponent } from './user-details.component'
 import { of, throwError } from 'rxjs'
@@ -45,9 +40,7 @@ describe('UserDetailsComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should log the error on retrieving user', () => {
     userService.get.and.returnValue(throwError('Error'))

@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import type { Product as ProductConfig } from '../../lib/config.types'
 import { challenges } from '../../data/datacache'
@@ -14,7 +14,7 @@ const security = require('../../lib/insecurity')
 // array index of the items is incremented by one because the db id starts with 1
 const tamperingProductId = config.get<ProductConfig[]>('products').findIndex((product) => !!product.urlForProductTamperingChallenge) + 1
 
-const API_URL = 'http://localhost:3000/api'
+Helpers.test_helper_22(); // Replaced with helper function
 
 const authHeader = { Authorization: 'Bearer ' + security.authorize(), 'content-type': 'application/json' }
 const jsonHeader = { 'content-type': 'application/json' }
@@ -50,13 +50,13 @@ describe('/api/Products', () => {
         headers: authHeader,
         body: {
           name: 'XSS Juice (42ml)',
-          description: '<iframe src="javascript:alert(`xss`)">',
+          description: '<iframe src='javascript:alert(`xss`)'>',
           price: 9999.99,
           image: 'xss3juice.jpg'
         }
       })
         .expect('header', 'content-type', /application\/json/)
-        .expect('json', 'data', { description: '<iframe src="javascript:alert(`xss`)">' })
+        .expect('json', 'data', { description: '<iframe src='javascript:alert(`xss`)'>' })
     })
   }
 })
@@ -90,12 +90,12 @@ describe('/api/Products/:id', () => {
     return frisby.put(API_URL + '/Products/' + tamperingProductId, {
       header: jsonHeader,
       body: {
-        description: '<a href="http://kimminich.de" target="_blank">More...</a>'
+        description: '<a href='http://kimminich.de' target='_blank'>More...</a>'
       }
     })
       .expect('status', 200)
       .expect('header', 'content-type', /application\/json/)
-      .expect('json', 'data', { description: '<a href="http://kimminich.de" target="_blank">More...</a>' })
+      .expect('json', 'data', { description: '<a href='http://kimminich.de' target='_blank'>More...</a>' })
   })
 
   xit('PUT update existing product does not filter XSS attacks', () => { // FIXME Started to fail regularly on CI under Linux

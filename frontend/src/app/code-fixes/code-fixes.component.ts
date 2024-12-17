@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { Component, Input, type OnInit, ViewChild, type DoCheck, KeyValueDiffers, type KeyValueDiffer } from '@angular/core'
 import { NgxTextDiffComponent } from 'ngx-text-diff'
 import { CookieService } from 'ngx-cookie'

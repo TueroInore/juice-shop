@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import config from 'config'
@@ -90,55 +90,15 @@ describe('/profile/image/url', () => {
     const form = frisby.formData()
     form.append('imageUrl', 'https://placekitten.com/g/100/100')
 
-    return frisby.post(`${REST_URL}/user/login`, {
-      headers: jsonHeader,
-      body: {
-        email: `jim@${config.get<string>('application.domain')}`,
-        password: 'ncc-1701'
-      }
-    })
-      .expect('status', 200)
-      .then(({ json: jsonLogin }) => {
-        return frisby.post(`${URL}/profile/image/url`, {
-          headers: {
-            Cookie: `token=${jsonLogin.authentication.token}`,
-            // @ts-expect-error FIXME form.getHeaders() is not found
-            'Content-Type': form.getHeaders()['content-type']
-          },
-          body: form,
-          redirect: 'manual'
-        })
-          .expect('status', 302)
-      })
-  })
+Helpers.test_helper_34(); // Replaced with helper function
 
   it('POST profile image URL redirects even for invalid image URL', () => {
     const form = frisby.formData()
     form.append('imageUrl', 'https://notanimage.here/100/100')
 
-    return frisby.post(`${REST_URL}/user/login`, {
-      headers: jsonHeader,
-      body: {
-        email: `jim@${config.get<string>('application.domain')}`,
-        password: 'ncc-1701'
-      }
-    })
-      .expect('status', 200)
-      .then(({ json: jsonLogin }) => {
-        return frisby.post(`${URL}/profile/image/url`, {
-          headers: {
-            Cookie: `token=${jsonLogin.authentication.token}`,
-            // @ts-expect-error FIXME form.getHeaders() is not found
-            'Content-Type': form.getHeaders()['content-type']
-          },
-          body: form,
-          redirect: 'manual'
-        })
-          .expect('status', 302)
-      })
-  })
+Helpers.test_helper_34(); // Replaced with helper function
 
-  xit('POST profile image URL forbidden for anonymous user', () => { // FIXME runs into "socket hang up"
+  xit('POST profile image URL forbidden for anonymous user', () => { // FIXME runs into 'socket hang up'
     const form = frisby.formData()
     form.append('imageUrl', 'https://placekitten.com/g/100/100')
 

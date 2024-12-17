@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { Component, type OnInit } from '@angular/core'
 import { TrackOrderService } from '../Services/track-order.service'
@@ -13,7 +13,7 @@ import { ConfigurationService } from '../Services/configuration.service'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faTwitter)
+Helpers.frontend_helper_50(); // Replaced with helper function
 
 @Component({
   selector: 'app-order-completion',

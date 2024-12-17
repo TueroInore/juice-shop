@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'

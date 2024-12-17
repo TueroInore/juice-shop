@@ -1,11 +1,11 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import frisby = require('frisby')
+Helpers.test_helper_1(); // Replaced with helper function
 
-const URL = 'http://localhost:3000'
+Helpers.test_helper_11(); // Replaced with helper function
+
+Helpers.test_helper_14(); // Replaced with helper function
 
 describe('/ftp', () => {
   it('GET serves a directory listing', () => {
@@ -99,13 +99,13 @@ describe('/ftp', () => {
   it('GET the package.json.bak file by using Poison Null Byte attack with .pdf suffix', () => {
     return frisby.get(URL + '/ftp/package.json.bak%00.pdf')
       .expect('status', 200)
-      .expect('bodyContains', '"name": "juice-shop",')
+      .expect('bodyContains', ''name': 'juice-shop',')
   })
 
   it('GET the package.json.bak file by using Poison Null Byte attack with .md suffix', () => {
     return frisby.get(URL + '/ftp/package.json.bak%00.md')
       .expect('status', 200)
-      .expect('bodyContains', '"name": "juice-shop",')
+      .expect('bodyContains', ''name': 'juice-shop',')
   })
 
   it('GET a restricted file directly from file system path on server by tricking route definitions fails with 403 error', () => {
@@ -118,7 +118,7 @@ describe('/ftp', () => {
       .expect('status', 403)
   })
 
-  it('GET a file whose name contains a "/" fails with a 403 error', () => {
+  it('GET a file whose name contains a '/' fails with a 403 error', () => {
     return frisby.fetch(URL + '/ftp/%2fetc%2fos-release%2500.md', {}, { urlEncode: false })
       .expect('status', 403)
       .expect('bodyContains', 'Error: File names cannot contain forward slashes!')
@@ -135,10 +135,10 @@ describe('/ftp', () => {
       .expect('status', 404)
   })
 
-  it('GET the package.json.bak file contains a dependency on epilogue-js for "Typosquatting" challenge', () => {
+  it('GET the package.json.bak file contains a dependency on epilogue-js for 'Typosquatting' challenge', () => {
     return frisby.get(URL + '/ftp/package.json.bak%00.md')
       .expect('status', 200)
-      .expect('bodyContains', '"epilogue-js": "~0.7",')
+      .expect('bodyContains', ''epilogue-js': '~0.7',')
   })
 
   it('GET file /ftp/quarantine/juicy_malware_linux_amd_64.url', () => {

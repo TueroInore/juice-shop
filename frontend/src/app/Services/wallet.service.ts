@@ -1,12 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { environment } from '../../environments/environment'
-import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { catchError, map } from 'rxjs/operators'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_72(); // Replaced with helper function
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +12,9 @@ export class WalletService {
   private readonly hostServer = environment.hostServer
   private readonly host = this.hostServer + '/rest/wallet/balance'
 
-  constructor (private readonly http: HttpClient) { }
+Helpers.frontend_helper_73(); // Replaced with helper function
 
-  get () {
-    return this.http.get(this.host).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
-  }
+Helpers.frontend_helper_74(); // Replaced with helper function
 
   put (params) {
     return this.http.put(this.host, params).pipe(map((response: any) => response.data), catchError((err) => { throw err }))

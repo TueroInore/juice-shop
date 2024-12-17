@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
 import { CodeFixesService } from './code-fixes.service'
@@ -26,11 +29,7 @@ describe('CodeFixesService', () => {
       req.flush({ snippet: 'apiResponse' })
       tick()
 
-      expect(req.request.method).toBe('GET')
-      expect(res).toEqual({ snippet: 'apiResponse' })
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_85(); // Replaced with helper function
 
   it('should submit solution for "Fit It" phase of coding challenge via the rest api', inject([CodeFixesService, HttpTestingController],
     fakeAsync((service: CodeFixesService, httpMock: HttpTestingController) => {

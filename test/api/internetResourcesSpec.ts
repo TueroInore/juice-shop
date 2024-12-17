@@ -1,12 +1,12 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import frisby = require('frisby')
+Helpers.test_helper_1(); // Replaced with helper function
+
+Helpers.test_helper_11(); // Replaced with helper function
 
 xdescribe('Required Internet resource', () => { // FIXME Tests fail regularly (but not always) from ECONNRESET
-  describe('PasteBin paste for "Leaked Unsafe Product" challenge available', () => {
+  describe('PasteBin paste for 'Leaked Unsafe Product' challenge available', () => {
     it('for default configuration (https://pastebin.com/90dUgd7s)', () => {
       return frisby.get('https://pastebin.com/90dUgd7s')
         .expect('status', 200)
@@ -51,20 +51,20 @@ xdescribe('Required Internet resource', () => { // FIXME Tests fail regularly (b
     })
   })
 
-  it('Comment on "Top 10 Fruits you probably dont know" blog post with PasteBin paste URL spoiler available', () => {
+  it('Comment on 'Top 10 Fruits you probably dont know' blog post with PasteBin paste URL spoiler available', () => {
     return frisby.get('https://listverse.disqus.com/top_20_fruits_you_probably_don039t_know/latest.rss')
       .expect('status', 200)
       .expect('bodyContains', 'Rippertuer Special Juice')
       .expect('bodyContains', 'https://pastebin.com/90dUgd7s')
   })
 
-  it('PasteBin paste (https://pastebin.com/4U1V1UjU) for "Leaked Access Logs" challenge available', () => {
+  it('PasteBin paste (https://pastebin.com/4U1V1UjU) for 'Leaked Access Logs' challenge available', () => {
     return frisby.get('https://pastebin.com/4U1V1UjU')
       .expect('status', 200)
       .expect('bodyContains', 'current=0Y8rMnww$*9VFYE%C2%A759-!Fg1L6t&amp;6lB')
   })
 
-  it('StackOverflow question "Less verbose access logs using expressjs/morgan" with log snippet and PasteBin paste URL spoiler available', () => {
+  it('StackOverflow question 'Less verbose access logs using expressjs/morgan' with log snippet and PasteBin paste URL spoiler available', () => {
     return frisby.get('https://stackoverflow.com/questions/57061271/less-verbose-access-logs-using-expressjs-morgan')
       .expect('status', 200)
       .expect('bodyContains', '/rest/continue-code')
@@ -72,7 +72,7 @@ xdescribe('Required Internet resource', () => { // FIXME Tests fail regularly (b
       .expect('bodyContains', 'https://pastebin.com/4U1V1UjU')
   })
 
-  it('GitHub issue (https://github.com/apostrophecms/sanitize-html/issues/29) for "Server-side XSS Protection" challenge available', () => {
+  it('GitHub issue (https://github.com/apostrophecms/sanitize-html/issues/29) for 'Server-side XSS Protection' challenge available', () => {
     return frisby.get('https://github.com/apostrophecms/sanitize-html/issues/29')
       .expect('status', 200)
       .expect('bodyContains', 'Sanitization is not applied recursively')

@@ -1,5 +1,8 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/deluxe-membership', () => {
-  describe('challenge "svgInjection"', () => {
+  describe('challenge 'svgInjection'', () => {
     it('should be possible to pass in a forgotten test parameter abusing the redirect-endpoint to load an external image', () => {
       cy.login({ email: 'jim', password: 'ncc-1701' })
       cy.location().then((loc) => {
@@ -14,7 +17,7 @@ describe('/#/deluxe-membership', () => {
     })
   })
 
-  describe('challenge "freeDeluxe"', () => {
+  describe('challenge 'freeDeluxe'', () => {
     it('should upgrade to deluxe for free by making a post request to /rest/deluxe-membership by setting the paymentMode parameter to null', () => {
       cy.login({
         email: 'jim',

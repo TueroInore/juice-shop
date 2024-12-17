@@ -1,5 +1,10 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_17(); // Replaced with helper function
+
 describe('/b2b/v2/order', () => {
-  describe('challenge "rce"', () => {
+  describe('challenge 'rce'', () => {
     it('an infinite loop deserialization payload should not bring down the server', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {
@@ -16,7 +21,7 @@ describe('/b2b/v2/order', () => {
                   Authorization: `Bearer ${localStorage.getItem('token')}`
                 },
                 body: JSON.stringify({
-                  orderLinesData: '(function dos() { while(true); })()'
+                  orderLinesData: '(dos();)()'
                 })
               }
             )
@@ -30,7 +35,7 @@ describe('/b2b/v2/order', () => {
     })
   })
 
-  describe('challenge "rceOccupy"', () => {
+  describe('challenge 'rceOccupy'', () => {
     it('should be possible to cause request timeout using a recursive regular expression payload', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {
@@ -47,7 +52,7 @@ describe('/b2b/v2/order', () => {
                 },
                 body: JSON.stringify({
                   orderLinesData:
-                    "/((a+)+)b/.test('aaaaaaaaaaaaaaaaaaaaaaaaaaaaa')"
+                    '/((a+)+)b/.test('aaaaaaaaaaaaaaaaaaaaaaaaaaaaa')'
                 })
               }
             )

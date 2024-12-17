@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { SearchResultComponent } from '../search-result/search-result.component'
 import { WindowRefService } from '../Services/window-ref.service'
@@ -73,8 +73,7 @@ describe('LoginComponent', () => {
     })
       .compileComponents()
 
-    location = TestBed.inject(Location)
-  }))
+Helpers.frontend_helper_31(); // Replaced with helper function
 
   beforeEach(() => {
     localStorage.removeItem('token')
@@ -85,9 +84,7 @@ describe('LoginComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should have email as compulsory', () => {
     component.emailControl.setValue('')

@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { inject, TestBed } from '@angular/core/testing'
 import { AccountingGuard, AdminGuard, DeluxeGuard, LoginGuard } from './app.guard'
@@ -59,8 +59,7 @@ describe('LoginGuard', () => {
 describe('AdminGuard', () => {
   let loginGuard: any
 
-  beforeEach(() => {
-    loginGuard = jasmine.createSpyObj('LoginGuard', ['tokenDecode', 'forbidRoute'])
+Helpers.frontend_helper_2(); // Replaced with helper function
 
     TestBed.configureTestingModule({
       imports: [
@@ -107,8 +106,7 @@ describe('AdminGuard', () => {
 describe('AccountingGuard', () => {
   let loginGuard: any
 
-  beforeEach(() => {
-    loginGuard = jasmine.createSpyObj('LoginGuard', ['tokenDecode', 'forbidRoute'])
+Helpers.frontend_helper_2(); // Replaced with helper function
 
     TestBed.configureTestingModule({
       imports: [

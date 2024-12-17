@@ -1,9 +1,12 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/rest/products/reviews', () => {
   beforeEach(() => {
     cy.visit('/#/search')
   })
 
-  describe('challenge "NoSQL DoS"', () => {
+  describe('challenge 'NoSQL DoS'', () => {
     beforeEach(() => {
       cy.login({ email: 'admin', password: 'admin123' })
     })
@@ -27,7 +30,7 @@ describe('/rest/products/reviews', () => {
     })
   })
 
-  describe('challenge "NoSQL Exfiltration"', () => {
+  describe('challenge 'NoSQL Exfiltration'', () => {
     it('should be possible to inject and get all the orders', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {
@@ -48,7 +51,7 @@ describe('/rest/products/reviews', () => {
     })
   })
 
-  describe('challenge "NoSQL Manipulation"', () => {
+  describe('challenge 'NoSQL Manipulation'', () => {
     beforeEach(() => {
       cy.login({ email: 'admin', password: 'admin123' })
     })
@@ -71,7 +74,7 @@ describe('/rest/products/reviews', () => {
     })
   })
 
-  describe('challenge "Forged Review"', () => {
+  describe('challenge 'Forged Review'', () => {
     beforeEach(() => {
       cy.login({ email: 'mc.safesearch', password: 'Mr. N00dles' })
     })
@@ -115,7 +118,7 @@ describe('/rest/products/reviews', () => {
     })
   })
 
-  describe('challenge "Multiple Likes"', () => {
+  describe('challenge 'Multiple Likes'', () => {
     beforeEach(() => {
       cy.login({ email: 'mc.safesearch', password: 'Mr. N00dles' })
     })

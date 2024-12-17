@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { environment } from '../../environments/environment'
 import { Injectable } from '@angular/core'
@@ -26,7 +26,7 @@ export class DeliveryService {
   private readonly hostServer = environment.hostServer
   private readonly host = this.hostServer + '/api/Deliverys'
 
-  constructor (private readonly http: HttpClient) { }
+Helpers.frontend_helper_73(); // Replaced with helper function
 
   get () {
     return this.http.get(this.host).pipe(map((response: DeliveryMultipleMethodResponse) => response.data), catchError((err) => { throw err }))

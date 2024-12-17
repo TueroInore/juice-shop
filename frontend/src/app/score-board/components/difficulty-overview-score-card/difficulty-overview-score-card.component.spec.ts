@@ -1,4 +1,7 @@
-import { type ComponentFixture, TestBed } from '@angular/core/testing'
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_59(); // Replaced with helper function
 
 import { DifficultyOverviewScoreCardComponent } from './difficulty-overview-score-card.component'
 import { ScoreCardComponent } from '../score-card/score-card.component'
@@ -24,9 +27,7 @@ describe('DifficultyOverviewScoreCardComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   describe('difficultySummaries', () => {
     it('should calculate difficulty summaries correctly for empty list of challenges', () => {

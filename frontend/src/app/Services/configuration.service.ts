@@ -1,13 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { environment } from '../../environments/environment'
-import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { catchError, map } from 'rxjs/operators'
-import { type Observable } from 'rxjs'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_87(); // Replaced with helper function
 
 interface ConfigResponse {
   config: Config

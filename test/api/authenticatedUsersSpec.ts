@@ -1,14 +1,14 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import * as security from '../../lib/insecurity'
 import { expect } from '@jest/globals'
 import config from 'config'
 
-const REST_URL = 'http://localhost:3000/rest'
+Helpers.test_helper_16(); // Replaced with helper function
 
 const jsonHeader = { ContentType: 'application/json' }
 const authHeader = { Authorization: `Bearer ${security.authorize({ data: { email: 'admin@juice-sh.op' } })}`, 'content-type': 'application/json' }

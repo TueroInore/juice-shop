@@ -1,10 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
-import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_78(); // Replaced with helper function
 
 import { ProductService } from './product.service'
 
@@ -27,12 +26,7 @@ describe('ProductService', () => {
       const req = httpMock.expectOne('http://localhost:3000/rest/products/search?q=1')
       req.flush({ data: 'apiResponse' })
 
-      tick()
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_95(); // Replaced with helper function
 
   it('should get all products directly from the rest api', inject([ProductService, HttpTestingController],
     fakeAsync((service: ProductService, httpMock: HttpTestingController) => {
@@ -41,13 +35,7 @@ describe('ProductService', () => {
       const req = httpMock.expectOne('http://localhost:3000/api/Products/')
       req.flush({ data: 'apiResponse' })
 
-      tick()
-      expect(req.request.method).toBe('GET')
-      expect(req.request.params.toString()).toBeFalsy()
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
+Helpers.frontend_helper_93(); // Replaced with helper function
 
   it('should get single product directly from the rest api', inject([ProductService, HttpTestingController],
     fakeAsync((service: ProductService, httpMock: HttpTestingController) => {
@@ -56,10 +44,4 @@ describe('ProductService', () => {
       const req = httpMock.expectOne('http://localhost:3000/api/Products/1?d=' + encodeURIComponent(new Date().toDateString()))
       req.flush({ data: 'apiResponse' })
 
-      tick()
-      expect(req.request.method).toBe('GET')
-      expect(res).toBe('apiResponse')
-      httpMock.verify()
-    })
-  ))
-})
+Helpers.frontend_helper_81(); // Replaced with helper function

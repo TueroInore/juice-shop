@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { Component, ChangeDetectorRef } from '@angular/core'
 import { KeysService } from '../Services/keys.service'
 import { SnackBarHelperService } from '../Services/snack-bar-helper.service'
@@ -249,47 +252,13 @@ contract HelloWorld {
     }
   }
 
-  async handleChainChanged (chainId: string) {
-    await this.handleAuth()
-  }
+Helpers.frontend_helper_23(); // Replaced with helper function
 
-  async handleAuth () {
-    try {
-      const { isConnected } = getAccount()
+Helpers.frontend_helper_24(); // Replaced with helper function
 
-      if (isConnected) {
-        await disconnect()
-      }
-      if (!window.ethereum) {
-        this.snackBarHelperService.open('PLEASE_INSTALL_WEB3_WALLET', 'errorBar')
-        return
-      }
+Helpers.frontend_helper_25(); // Replaced with helper function
 
-      const provider = await connect({ connector: new InjectedConnector() })
-      this.metamaskAddress = provider.account
-      this.userData = {
-        address: provider.account,
-        chain: provider.chain.id,
-        network: 'evm'
-      }
-      await ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params: [
-          {
-            chainId: '0xaa36a7',
-            chainName: 'Sepolia Test Network',
-            nativeCurrency: {
-              name: 'SepoliaETH',
-              symbol: 'ETH',
-              decimals: 18
-            },
-            rpcUrls: ['https://ethereum-sepolia.blockpi.network/v1/rpc/public'],
-            blockExplorerUrls: ['https://sepolia.etherscan.io/']
-          }
-        ]
-      })
-      const targetChainId = '11155111'
-      const currentChainId = String(provider.chain?.id)
+Helpers.frontend_helper_26(); // Replaced with helper function
 
       if (provider && currentChainId !== targetChainId) {
         this.session = false

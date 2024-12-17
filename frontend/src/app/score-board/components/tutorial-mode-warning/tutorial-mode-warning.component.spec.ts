@@ -1,4 +1,7 @@
-import { type ComponentFixture, TestBed } from '@angular/core/testing'
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_59(); // Replaced with helper function
 
 import { TutorialModeWarningComponent } from './tutorial-mode-warning.component'
 import { TranslateModule } from '@ngx-translate/core'
@@ -38,8 +41,7 @@ describe('TutorialModeWarningComponent', () => {
       }
     } as any
 
-    fixture.detectChanges()
-  })
+Helpers.frontend_helper_60(); // Replaced with helper function
 
   it('should show warning when there are configured and unsolved tutorial challenges exist', () => {
     component.ngOnChanges()

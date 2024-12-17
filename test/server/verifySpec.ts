@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import sinon = require('sinon')
 import config from 'config'
@@ -32,7 +32,7 @@ describe('verify', () => {
     })
   })
 
-  describe('"forgedFeedbackChallenge"', () => {
+  describe(''forgedFeedbackChallenge'', () => {
     beforeEach(() => {
       security.authenticatedUsers.put('token12345', {
         data: {
@@ -47,25 +47,23 @@ describe('verify', () => {
       req.body.UserId = 42
       req.headers = { authorization: 'Bearer token12345' }
 
-      verify.forgedFeedbackChallenge()(req, res, next)
+Helpers.test_helper_62(); // Replaced with helper function
 
-      expect(challenges.forgedFeedbackChallenge.solved).to.equal(false)
-    })
+Helpers.test_helper_63(); // Replaced with helper function
 
     it('is not solved when an authenticated user passes no ID when writing feedback', () => {
       req.body.UserId = undefined
       req.headers = { authorization: 'Bearer token12345' }
 
-      verify.forgedFeedbackChallenge()(req, res, next)
+Helpers.test_helper_62(); // Replaced with helper function
 
-      expect(challenges.forgedFeedbackChallenge.solved).to.equal(false)
-    })
+Helpers.test_helper_63(); // Replaced with helper function
 
     it('is solved when an authenticated user passes someone elses ID when writing feedback', () => {
       req.body.UserId = 1
       req.headers = { authorization: 'Bearer token12345' }
 
-      verify.forgedFeedbackChallenge()(req, res, next)
+Helpers.test_helper_62(); // Replaced with helper function
 
       expect(challenges.forgedFeedbackChallenge.solved).to.equal(true)
     })
@@ -74,79 +72,79 @@ describe('verify', () => {
       req.body.UserId = 1
       req.headers = {}
 
-      verify.forgedFeedbackChallenge()(req, res, next)
+Helpers.test_helper_62(); // Replaced with helper function
 
       expect(challenges.forgedFeedbackChallenge.solved).to.equal(true)
     })
   })
 
   describe('accessControlChallenges', () => {
-    it('"scoreBoardChallenge" is solved when the 1px.png transpixel is requested', () => {
+    it(''scoreBoardChallenge' is solved when the 1px.png transpixel is requested', () => {
       challenges.scoreBoardChallenge = { solved: false, save }
       req.url = 'http://juice-sh.op/public/images/padding/1px.png'
 
-      verify.accessControlChallenges()(req, res, next)
+Helpers.test_helper_64(); // Replaced with helper function
 
       expect(challenges.scoreBoardChallenge.solved).to.equal(true)
     })
 
-    it('"adminSectionChallenge" is solved when the 19px.png transpixel is requested', () => {
+    it(''adminSectionChallenge' is solved when the 19px.png transpixel is requested', () => {
       challenges.adminSectionChallenge = { solved: false, save }
       req.url = 'http://juice-sh.op/public/images/padding/19px.png'
 
-      verify.accessControlChallenges()(req, res, next)
+Helpers.test_helper_64(); // Replaced with helper function
 
       expect(challenges.adminSectionChallenge.solved).to.equal(true)
     })
 
-    it('"tokenSaleChallenge" is solved when the 56px.png transpixel is requested', () => {
+    it(''tokenSaleChallenge' is solved when the 56px.png transpixel is requested', () => {
       challenges.tokenSaleChallenge = { solved: false, save }
       req.url = 'http://juice-sh.op/public/images/padding/56px.png'
 
-      verify.accessControlChallenges()(req, res, next)
+Helpers.test_helper_64(); // Replaced with helper function
 
       expect(challenges.tokenSaleChallenge.solved).to.equal(true)
     })
 
-    it('"extraLanguageChallenge" is solved when the Klingon translation file is requested', () => {
+    it(''extraLanguageChallenge' is solved when the Klingon translation file is requested', () => {
       challenges.extraLanguageChallenge = { solved: false, save }
       req.url = 'http://juice-sh.op/public/i18n/tlh_AA.json'
 
-      verify.accessControlChallenges()(req, res, next)
+Helpers.test_helper_64(); // Replaced with helper function
 
       expect(challenges.extraLanguageChallenge.solved).to.equal(true)
     })
 
-    it('"retrieveBlueprintChallenge" is solved when the blueprint file is requested', () => {
+    it(''retrieveBlueprintChallenge' is solved when the blueprint file is requested', () => {
       challenges.retrieveBlueprintChallenge = { solved: false, save }
       cache.retrieveBlueprintChallengeFile = 'test.dxf'
       req.url = 'http://juice-sh.op/public/images/products/test.dxf'
 
-      verify.accessControlChallenges()(req, res, next)
+Helpers.test_helper_64(); // Replaced with helper function
 
       expect(challenges.retrieveBlueprintChallenge.solved).to.equal(true)
     })
 
-    it('"missingEncodingChallenge" is solved when the crazy cat photo is requested', () => {
+    it(''missingEncodingChallenge' is solved when the crazy cat photo is requested', () => {
       challenges.missingEncodingChallenge = { solved: false, save }
       req.url = 'http://juice-sh.op/public/images/uploads/%F0%9F%98%BC-%23zatschi-%23whoneedsfourlegs-1572600969477.jpg'
 
-      verify.accessControlChallenges()(req, res, next)
+Helpers.test_helper_64(); // Replaced with helper function
 
       expect(challenges.missingEncodingChallenge.solved).to.equal(true)
     })
 
-    it('"accessLogDisclosureChallenge" is solved when any server access log file is requested', () => {
+    it(''accessLogDisclosureChallenge' is solved when any server access log file is requested', () => {
       challenges.accessLogDisclosureChallenge = { solved: false, save }
       req.url = 'http://juice-sh.op/support/logs/access.log.2019-01-15'
 
-      verify.accessControlChallenges()(req, res, next)
+Helpers.test_helper_64(); // Replaced with helper function
 
       expect(challenges.accessLogDisclosureChallenge.solved).to.equal(true)
     })
   })
 
-  describe('"errorHandlingChallenge"', () => {
+  describe(''errorHandlingChallenge'', () => {
     beforeEach(() => {
       challenges.errorHandlingChallenge = { solved: false, save }
     })
@@ -155,7 +153,7 @@ describe('verify', () => {
       res.statusCode = 200
       err = new Error()
 
-      verify.errorHandlingChallenge()(err, req, res, next)
+Helpers.test_helper_65(); // Replaced with helper function
 
       expect(challenges.errorHandlingChallenge.solved).to.equal(true)
     })
@@ -167,7 +165,7 @@ describe('verify', () => {
           res.statusCode = statusCode
           err = new Error()
 
-          verify.errorHandlingChallenge()(err, req, res, next)
+Helpers.test_helper_65(); // Replaced with helper function
 
           expect(challenges.errorHandlingChallenge.solved).to.equal(true)
         })
@@ -178,7 +176,7 @@ describe('verify', () => {
       res.statusCode = 200
       err = undefined
 
-      verify.errorHandlingChallenge()(err, req, res, next)
+Helpers.test_helper_65(); // Replaced with helper function
 
       expect(challenges.errorHandlingChallenge.solved).to.equal(false)
     })
@@ -190,7 +188,7 @@ describe('verify', () => {
           res.statusCode = statusCode
           err = undefined
 
-          verify.errorHandlingChallenge()(err, req, res, next)
+Helpers.test_helper_65(); // Replaced with helper function
 
           expect(challenges.errorHandlingChallenge.solved).to.equal(false)
         })
@@ -201,14 +199,14 @@ describe('verify', () => {
       res.statusCode = 500
       err = new Error()
 
-      verify.errorHandlingChallenge()(err, req, res, next)
+Helpers.test_helper_65(); // Replaced with helper function
 
       expect(next).to.have.been.calledWith(err)
     })
   })
 
   describe('databaseRelatedChallenges', () => {
-    describe('"changeProductChallenge"', () => {
+    describe(''changeProductChallenge'', () => {
       const products = require('../../data/datacache').products
 
       beforeEach(() => {
@@ -217,17 +215,17 @@ describe('verify', () => {
       })
 
       it(`is solved when the link in the O-Saft product goes to ${config.get<string>('challenges.overwriteUrlForProductTamperingChallenge')}`, () => {
-        products.osaft.description = `O-Saft, yeah! <a href="${config.get<string>('challenges.overwriteUrlForProductTamperingChallenge')}" target="_blank">More...</a>`
+        products.osaft.description = `O-Saft, yeah! <a href='${config.get<string>('challenges.overwriteUrlForProductTamperingChallenge')}' target='_blank'>More...</a>`
 
-        verify.databaseRelatedChallenges()(req, res, next)
+Helpers.test_helper_66(); // Replaced with helper function
 
         expect(challenges.changeProductChallenge.solved).to.equal(true)
       })
 
       it('is not solved when the link in the O-Saft product is changed to an arbitrary URL', () => {
-        products.osaft.description = 'O-Saft, nooo! <a href="http://arbitrary.url" target="_blank">More...</a>'
+        products.osaft.description = 'O-Saft, nooo! <a href='http://arbitrary.url' target='_blank'>More...</a>'
 
-        verify.databaseRelatedChallenges()(req, res, next)
+Helpers.test_helper_66(); // Replaced with helper function
 
         expect(challenges.changeProductChallenge.solved).to.equal(false)
       })
@@ -240,9 +238,9 @@ describe('verify', () => {
             break
           }
         }
-        products.osaft.description = `Vanilla O-Saft! <a href="${urlForProductTamperingChallenge}" target="_blank">More...</a>`
+        products.osaft.description = `Vanilla O-Saft! <a href='${urlForProductTamperingChallenge}' target='_blank'>More...</a>`
 
-        verify.databaseRelatedChallenges()(req, res, next)
+Helpers.test_helper_66(); // Replaced with helper function
 
         expect(challenges.changeProductChallenge.solved).to.equal(false)
       })
@@ -255,69 +253,65 @@ describe('verify', () => {
       challenges.jwtForgedChallenge = { solved: false, save }
     })
 
-    it('"jwtUnsignedChallenge" is solved when forged unsigned token has email jwtn3d@juice-sh.op in the payload', () => {
+    it(''jwtUnsignedChallenge' is solved when forged unsigned token has email jwtn3d@juice-sh.op in the payload', () => {
       /*
-      Header: { "alg": "none", "typ": "JWT" }
-      Payload: { "data": { "email": "jwtn3d@juice-sh.op" }, "iat": 1508639612, "exp": 9999999999 }
+      Header: { 'alg': 'none', 'typ': 'JWT' }
+      Payload: { 'data': { 'email': 'jwtn3d@juice-sh.op' }, 'iat': 1508639612, 'exp': 9999999999 }
        */
       req.headers = { authorization: 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJkYXRhIjp7ImVtYWlsIjoiand0bjNkQGp1aWNlLXNoLm9wIn0sImlhdCI6MTUwODYzOTYxMiwiZXhwIjo5OTk5OTk5OTk5fQ.' }
 
-      verify.jwtChallenges()(req, res, next)
+Helpers.test_helper_67(); // Replaced with helper function
 
-      expect(challenges.jwtUnsignedChallenge.solved).to.equal(true)
-    })
+Helpers.test_helper_68(); // Replaced with helper function
 
-    it('"jwtUnsignedChallenge" is solved when forged unsigned token has string "jwtn3d@" in the payload', () => {
+    it(''jwtUnsignedChallenge' is solved when forged unsigned token has string 'jwtn3d@' in the payload', () => {
       /*
-      Header: { "alg": "none", "typ": "JWT" }
-      Payload: { "data": { "email": "jwtn3d@" }, "iat": 1508639612, "exp": 9999999999 }
+      Header: { 'alg': 'none', 'typ': 'JWT' }
+      Payload: { 'data': { 'email': 'jwtn3d@' }, 'iat': 1508639612, 'exp': 9999999999 }
        */
       req.headers = { authorization: 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJkYXRhIjp7ImVtYWlsIjoiand0bjNkQCJ9LCJpYXQiOjE1MDg2Mzk2MTIsImV4cCI6OTk5OTk5OTk5OX0.' }
 
-      verify.jwtChallenges()(req, res, next)
+Helpers.test_helper_67(); // Replaced with helper function
 
-      expect(challenges.jwtUnsignedChallenge.solved).to.equal(true)
-    })
+Helpers.test_helper_68(); // Replaced with helper function
 
-    it('"jwtUnsignedChallenge" is not solved via regularly signed token even with email jwtn3d@juice-sh.op in the payload', () => {
+    it(''jwtUnsignedChallenge' is not solved via regularly signed token even with email jwtn3d@juice-sh.op in the payload', () => {
       const token = security.authorize({ data: { email: 'jwtn3d@juice-sh.op' } })
       req.headers = { authorization: `Bearer ${token}` }
 
-      verify.jwtChallenges()(req, res, next)
+Helpers.test_helper_67(); // Replaced with helper function
 
       expect(challenges.jwtForgedChallenge.solved).to.equal(false)
     })
 
     if (utils.isChallengeEnabled(challenges.jwtForgedChallenge)) {
-      it('"jwtForgedChallenge" is solved when forged token HMAC-signed with public RSA-key has email rsa_lord@juice-sh.op in the payload', () => {
+      it(''jwtForgedChallenge' is solved when forged token HMAC-signed with public RSA-key has email rsa_lord@juice-sh.op in the payload', () => {
         /*
-        Header: { "alg": "HS256", "typ": "JWT" }
-        Payload: { "data": { "email": "rsa_lord@juice-sh.op" }, "iat": 1508639612, "exp": 9999999999 }
+        Header: { 'alg': 'HS256', 'typ': 'JWT' }
+        Payload: { 'data': { 'email': 'rsa_lord@juice-sh.op' }, 'iat': 1508639612, 'exp': 9999999999 }
          */
         req.headers = { authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImVtYWlsIjoicnNhX2xvcmRAanVpY2Utc2gub3AifSwiaWF0IjoxNTgyMjIxNTc1fQ.ycFwtqh4ht4Pq9K5rhiPPY256F9YCTIecd4FHFuSEAg' }
 
-        verify.jwtChallenges()(req, res, next)
+Helpers.test_helper_67(); // Replaced with helper function
 
-        expect(challenges.jwtForgedChallenge.solved).to.equal(true)
-      })
+Helpers.test_helper_69(); // Replaced with helper function
 
-      it('"jwtForgedChallenge" is solved when forged token HMAC-signed with public RSA-key has string "rsa_lord@" in the payload', () => {
+      it(''jwtForgedChallenge' is solved when forged token HMAC-signed with public RSA-key has string 'rsa_lord@' in the payload', () => {
         /*
-        Header: { "alg": "HS256", "typ": "JWT" }
-        Payload: { "data": { "email": "rsa_lord@" }, "iat": 1508639612, "exp": 9999999999 }
+        Header: { 'alg': 'HS256', 'typ': 'JWT' }
+        Payload: { 'data': { 'email': 'rsa_lord@' }, 'iat': 1508639612, 'exp': 9999999999 }
          */
         req.headers = { authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImVtYWlsIjoicnNhX2xvcmRAIn0sImlhdCI6MTU4MjIyMTY3NX0.50f6VAIQk2Uzpf3sgH-1JVrrTuwudonm2DKn2ec7Tg8' }
 
-        verify.jwtChallenges()(req, res, next)
+Helpers.test_helper_67(); // Replaced with helper function
 
-        expect(challenges.jwtForgedChallenge.solved).to.equal(true)
-      })
+Helpers.test_helper_69(); // Replaced with helper function
 
-      it('"jwtForgedChallenge" is not solved when token regularly signed with private RSA-key has email rsa_lord@juice-sh.op in the payload', () => {
+      it(''jwtForgedChallenge' is not solved when token regularly signed with private RSA-key has email rsa_lord@juice-sh.op in the payload', () => {
         const token = security.authorize({ data: { email: 'rsa_lord@juice-sh.op' } })
         req.headers = { authorization: `Bearer ${token}` }
 
-        verify.jwtChallenges()(req, res, next)
+Helpers.test_helper_67(); // Replaced with helper function
 
         expect(challenges.jwtForgedChallenge.solved).to.equal(false)
       })

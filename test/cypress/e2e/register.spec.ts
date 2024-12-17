@@ -1,9 +1,12 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/register', () => {
   beforeEach(() => {
     cy.visit('/#/register')
   })
 
-  describe('challenge "persistedXssUser"', () => {
+  describe('challenge 'persistedXssUser'', () => {
     beforeEach(() => {
       cy.login({
         email: 'admin',
@@ -24,7 +27,7 @@ describe('/#/register', () => {
                   'Content-type': 'application/json'
                 },
                 body: JSON.stringify({
-                  email: '<iframe src="javascript:alert(`xss`)">',
+                  email: '<iframe src='javascript:alert(`xss`)'>',
                   password: 'XSSed',
                   passwordRepeat: 'XSSed',
                   role: 'admin'
@@ -46,7 +49,7 @@ describe('/#/register', () => {
     })
   })
 
-  describe('challenge "registerAdmin"', () => {
+  describe('challenge 'registerAdmin'', () => {
     it('should be possible to register admin user using REST API', () => {
       cy.window().then(async () => {
         const response = await fetch(`${Cypress.config('baseUrl')}/api/Users/`, {
@@ -70,7 +73,7 @@ describe('/#/register', () => {
     })
   })
 
-  describe('challenge "passwordRepeat"', () => {
+  describe('challenge 'passwordRepeat'', () => {
     it('should be possible to register user without repeating the password', () => {
       cy.window().then(async () => {
         const response = await fetch(`${Cypress.config('baseUrl')}/api/Users/`, {
@@ -92,7 +95,7 @@ describe('/#/register', () => {
     })
   })
 
-  describe('challenge "registerEmptyUser"', () => {
+  describe('challenge 'registerEmptyUser'', () => {
     it('should be possible to register a user with blank email/password', () => {
       cy.window().then(async () => {
         const response = await fetch(`${Cypress.config('baseUrl')}/api/Users`, {

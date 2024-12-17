@@ -1,13 +1,7 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'
-import { RouterModule, type Routes } from '@angular/router'
-import { ConfigurationService } from '../Services/configuration.service'
-import { OverlayContainer } from '@angular/cdk/overlay'
-import { MatCardModule } from '@angular/material/card'
-import { MatInputModule } from '@angular/material/input'
-import { MatButtonModule } from '@angular/material/button'
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_27(); // Replaced with helper function
 
 import { Web3SandboxComponent } from './web3-sandbox.component'
 import { CodemirrorModule } from '@ctrl/ngx-codemirror'

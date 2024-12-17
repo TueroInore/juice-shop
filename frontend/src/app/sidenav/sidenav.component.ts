@@ -1,7 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_40(); // Replaced with helper function
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { environment } from '../../environments/environment'
 import { ChallengeService } from '../Services/challenge.service'
@@ -46,11 +48,7 @@ export class SidenavComponent implements OnInit {
     this.getApplicationDetails()
     this.getScoreBoardStatus()
 
-    if (localStorage.getItem('token')) {
-      this.getUserDetails()
-    } else {
-      this.userEmail = ''
-    }
+Helpers.frontend_helper_41(); // Replaced with helper function
 
     this.userService.getLoggedInState().subscribe((isLoggedIn) => {
       if (isLoggedIn) {
@@ -68,48 +66,21 @@ export class SidenavComponent implements OnInit {
     })
   }
 
-  isLoggedIn () {
-    return localStorage.getItem('token')
-  }
+Helpers.frontend_helper_43(); // Replaced with helper function
 
-  logout () {
-    this.userService.saveLastLoginIp().subscribe((user: any) => { this.noop() }, (err) => { console.log(err) })
-    localStorage.removeItem('token')
-    this.cookieService.remove('token')
-    sessionStorage.removeItem('bid')
-    sessionStorage.removeItem('itemTotal')
-    this.userService.isLoggedIn.next(false)
-    this.ngZone.run(async () => await this.router.navigate(['/']))
-  }
+Helpers.frontend_helper_44(); // Replaced with helper function
 
-  goToProfilePage () {
-    window.location.replace(environment.hostServer + '/profile')
-  }
+Helpers.frontend_helper_46(); // Replaced with helper function
 
-  goToDataErasurePage () {
-    window.location.replace(environment.hostServer + '/dataerasure')
-  }
+Helpers.frontend_helper_47(); // Replaced with helper function
 
-  // eslint-disable-next-line no-empty,@typescript-eslint/no-empty-function
-  noop () { }
+Helpers.frontend_helper_49(); // Replaced with helper function
 
-  getScoreBoardStatus () {
-    this.challengeService.find({ name: 'Score Board' }).subscribe((challenges: any) => {
-      this.ngZone.run(() => {
-        this.scoreBoardVisible = challenges[0].solved
-      })
-    }, (err) => { console.log(err) })
-  }
+Helpers.frontend_helper_45(); // Replaced with helper function
 
-  getUserDetails () {
-    this.userService.whoAmI().subscribe((user: any) => {
-      this.userEmail = user.email
-    }, (err) => { console.log(err) })
-  }
+Helpers.frontend_helper_42(); // Replaced with helper function
 
-  onToggleSidenav = () => {
-    this.sidenavToggle.emit()
-  }
+Helpers.frontend_helper_48(); // Replaced with helper function
 
   getApplicationDetails () {
     this.configurationService.getApplicationConfiguration().subscribe((config: any) => {

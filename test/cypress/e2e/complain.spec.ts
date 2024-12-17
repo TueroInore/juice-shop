@@ -1,3 +1,6 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/complain', () => {
   beforeEach(() => {
     cy.login({
@@ -8,7 +11,7 @@ describe('/#/complain', () => {
     cy.visit('/#/complain')
   })
 
-  describe('challenge "uploadSize"', () => {
+  describe('challenge 'uploadSize'', () => {
     it('should be possible to upload files greater 100 KB directly through backend', () => {
       cy.window().then(async () => {
         const over100KB = Array.apply(null, new Array(11000)).map(
@@ -30,7 +33,7 @@ describe('/#/complain', () => {
     })
   })
 
-  describe('challenge "uploadType"', () => {
+  describe('challenge 'uploadType'', () => {
     it('should be possible to upload files with other extension than .pdf directly through backend', () => {
       cy.window().then(async () => {
         const data = new FormData()
@@ -47,7 +50,7 @@ describe('/#/complain', () => {
     })
   })
 
-  describe('challenge "deprecatedInterface"', () => {
+  describe('challenge 'deprecatedInterface'', () => {
     it('should be possible to upload XML files', () => {
       cy.get('#complaintMessage').type('XML all the way!')
       cy.get('#file').selectFile('test/files/deprecatedTypeForServer.xml')
@@ -56,7 +59,7 @@ describe('/#/complain', () => {
     })
   })
 
-  describe('challenge "xxeFileDisclosure"', () => {
+  describe('challenge 'xxeFileDisclosure'', () => {
     it('should be possible to retrieve file from Windows server via .xml upload with XXE attack', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {
@@ -77,7 +80,7 @@ describe('/#/complain', () => {
     })
   })
 
-  describe('challenge "xxeDos"', () => {
+  describe('challenge 'xxeDos'', () => {
     it('should be possible to trigger request timeout via .xml upload with dev/random attack', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {
@@ -100,7 +103,7 @@ describe('/#/complain', () => {
     })
   })
 
-  describe('challenge "arbitraryFileWrite"', () => {
+  describe('challenge 'arbitraryFileWrite'', () => {
     it('should be possible to upload zip file with filenames having path traversal', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {
@@ -113,7 +116,7 @@ describe('/#/complain', () => {
     })
   })
 
-  describe('challenge "videoXssChallenge"', () => {
+  describe('challenge 'videoXssChallenge'', () => {
     it('should be possible to inject js in subtitles by uploading zip file with filenames having path traversal', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {

@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import { Joi } from 'frisby'
@@ -69,7 +69,7 @@ describe('/submitKey', () => {
 })
 
 describe('/nftUnlocked', () => {
-  it('GET solution status of "Unlock NFT" challenge', () => {
+  it('GET solution status of 'Unlock NFT' challenge', () => {
     return frisby.get(REST_URL + '/nftUnlocked')
       .expect('status', 200)
       .expect('header', 'content-type', /application\/json/)

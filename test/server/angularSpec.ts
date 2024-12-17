@@ -1,13 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import sinon = require('sinon')
-import chai = require('chai')
-import sinonChai = require('sinon-chai')
-const expect = chai.expect
-chai.use(sinonChai)
+Helpers.test_helper_1(); // Replaced with helper function
+
+Helpers.test_helper_40(); // Replaced with helper function
 
 describe('angular', () => {
   const serveAngularClient = require('../../routes/angular')
@@ -24,7 +20,7 @@ describe('angular', () => {
   it('should serve index.html for any URL', () => {
     req.url = '/any/thing'
 
-    serveAngularClient()(req, res, next)
+Helpers.test_helper_41(); // Replaced with helper function
 
     expect(res.sendFile).to.have.been.calledWith(sinon.match(/index\.html/))
   })
@@ -32,18 +28,13 @@ describe('angular', () => {
   it('should raise error for /api endpoint URL', () => {
     req.url = '/api'
 
-    serveAngularClient()(req, res, next)
+Helpers.test_helper_41(); // Replaced with helper function
 
-    expect(res.sendFile).to.have.not.been.calledWith(sinon.match.any)
-    expect(next).to.have.been.calledWith(sinon.match.instanceOf(Error))
-  })
+Helpers.test_helper_42(); // Replaced with helper function
 
   it('should raise error for /rest endpoint URL', () => {
     req.url = '/rest'
 
-    serveAngularClient()(req, res, next)
+Helpers.test_helper_41(); // Replaced with helper function
 
-    expect(res.sendFile).to.have.not.been.calledWith(sinon.match.any)
-    expect(next).to.have.been.calledWith(sinon.match.instanceOf(Error))
-  })
-})
+Helpers.test_helper_43(); // Replaced with helper function

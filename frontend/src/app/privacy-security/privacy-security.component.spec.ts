@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { LayoutModule } from '@angular/cdk/layout'
 import { type ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
@@ -52,7 +52,4 @@ describe('PrivacySecurityComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should compile', () => {
-    expect(component).toBeTruthy()
-  })
-})
+Helpers.frontend_helper_55(); // Replaced with helper function

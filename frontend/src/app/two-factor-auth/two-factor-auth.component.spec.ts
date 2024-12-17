@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { type ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 import { TwoFactorAuthComponent } from './two-factor-auth.component'
@@ -75,15 +75,13 @@ describe('TwoFactorAuthComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should compile', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_18(); // Replaced with helper function
 
   it('should set TOTP secret and URL if 2FA is not already set up', () => {
     configurationService.getApplicationConfiguration.and.returnValue(of({ application: { name: 'Test App' } }))
     twoFactorAuthService.status.and.returnValue(of({ setup: false, email: 'email', secret: 'secret', setupToken: '12345' }))
 
-    component.updateStatus()
+Helpers.frontend_helper_100(); // Replaced with helper function
 
     expect(component.setupStatus).toBe(false)
     expect(component.totpUrl).toBe('otpauth://totp/Test%20App:email?secret=secret&issuer=Test%20App')
@@ -94,7 +92,7 @@ describe('TwoFactorAuthComponent', () => {
     configurationService.getApplicationConfiguration.and.returnValue(of({ application: { name: 'Test App' } }))
     twoFactorAuthService.status.and.returnValue(of({ setup: true, email: 'email', secret: 'secret', setupToken: '12345' }))
 
-    component.updateStatus()
+Helpers.frontend_helper_100(); // Replaced with helper function
 
     expect(component.setupStatus).toBe(true)
     expect(component.totpUrl).toBe(undefined)

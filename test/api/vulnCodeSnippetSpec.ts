@@ -1,14 +1,14 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import { expect } from '@jest/globals'
 import frisby = require('frisby')
 import io from 'socket.io-client'
 const Joi = frisby.Joi
 
-const URL = 'http://localhost:3000'
+Helpers.test_helper_14(); // Replaced with helper function
 
 describe('/snippets/:challenge', () => {
   it('GET code snippet retrieval for unknown challenge key throws error', () => {
@@ -36,22 +36,9 @@ describe('/snippets/:challenge', () => {
 describe('snippets/verdict', () => {
   let socket: SocketIOClient.Socket
 
-  beforeEach(done => {
-    socket = io('http://localhost:3000', {
-      reconnectionDelay: 0,
-      forceNew: true
-    })
-    socket.on('connect', () => {
-      done()
-    })
-  })
+Helpers.test_helper_36(); // Replaced with helper function
 
-  afterEach(done => {
-    if (socket.connected) {
-      socket.disconnect()
-    }
-    done()
-  })
+Helpers.test_helper_37(); // Replaced with helper function
 
   it('should check for the incorrect lines', () => {
     return frisby.post(URL + '/snippets/verdict', {
@@ -95,6 +82,4 @@ describe('snippets/verdict', () => {
       })
       .promise()
 
-    await websocketReceivedPromise
-  })
-})
+Helpers.test_helper_38(); // Replaced with helper function

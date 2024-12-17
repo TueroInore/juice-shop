@@ -1,12 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { environment } from '../../environments/environment'
-import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
-import { catchError, map } from 'rxjs/operators'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_80(); // Replaced with helper function
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +12,7 @@ export class AdministrationService {
   private readonly hostServer = environment.hostServer
   private readonly host = this.hostServer + '/rest/admin'
 
-  constructor (private readonly http: HttpClient) { }
+Helpers.frontend_helper_73(); // Replaced with helper function
 
   getApplicationVersion () {
     return this.http.get(this.host + '/application-version').pipe(

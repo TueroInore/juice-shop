@@ -1,7 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_29(); // Replaced with helper function
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { SecurityAnswerService } from '../Services/security-answer.service'
 import { UserService } from '../Services/user.service'
@@ -86,13 +88,4 @@ export class RegisterComponent implements OnInit {
   }
 }
 
-function matchValidator (passwordControl: AbstractControl) {
-  return function matchOtherValidate (repeatPasswordControl: UntypedFormControl) {
-    const password = passwordControl.value
-    const passwordRepeat = repeatPasswordControl.value
-    if (password !== passwordRepeat) {
-      return { notSame: true }
-    }
-    return null
-  }
-}
+Helpers.frontend_helper_30(); // Replaced with helper function

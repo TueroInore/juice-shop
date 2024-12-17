@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { TranslateService } from '@ngx-translate/core'
 import { Pipe, type PipeTransform } from '@angular/core'
 import { type Observable, of } from 'rxjs'

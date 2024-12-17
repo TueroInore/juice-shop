@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 import { Component, EventEmitter, Input, type OnChanges, Output } from '@angular/core'
 
 import { FilterSetting } from '../../filter-settings/FilterSetting'
@@ -12,11 +15,9 @@ export class ChallengesUnavailableWarningComponent implements OnChanges {
   @Input()
   public challenges: EnrichedChallenge[]
 
-  @Input()
-  public filterSetting: FilterSetting
+Helpers.frontend_helper_62(); // Replaced with helper function
 
-  @Output()
-  public filterSettingChange = new EventEmitter<FilterSetting>()
+Helpers.frontend_helper_63(); // Replaced with helper function
 
   public numberOfDisabledChallenges = 0
   public disabledBecauseOfEnv: string | null = null

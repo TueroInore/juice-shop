@@ -1,16 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { MatCardModule } from '@angular/material/card'
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { type ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/core/testing'
-import { MatInputModule } from '@angular/material/input'
-import { ReactiveFormsModule } from '@angular/forms'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_53(); // Replaced with helper function
 
 import { of, throwError } from 'rxjs'
 import { RouterTestingModule } from '@angular/router/testing'
@@ -38,12 +31,7 @@ describe('WalletComponent', () => {
     translateService.onDefaultLangChange = new EventEmitter()
     snackBar = jasmine.createSpyObj('MatSnackBar', ['open'])
 
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        TranslateModule.forRoot(),
-        HttpClientTestingModule,
-        ReactiveFormsModule,
+Helpers.frontend_helper_5(); // Replaced with helper function
 
         BrowserAnimationsModule,
         MatCardModule,
@@ -67,9 +55,7 @@ describe('WalletComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should be compulsory to provide amount', () => {
     component.balanceControl.setValue('')

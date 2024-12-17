@@ -1,4 +1,7 @@
-import { type ComponentFixture, TestBed } from '@angular/core/testing'
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_59(); // Replaced with helper function
 
 import { ChallengesUnavailableWarningComponent } from './challenges-unavailable-warning.component'
 import { TranslateModule } from '@ngx-translate/core'
@@ -41,8 +44,7 @@ describe('ChallengesUnavailableWarningComponent', () => {
 
     component.filterSetting = structuredClone(DEFAULT_FILTER_SETTING)
 
-    fixture.detectChanges()
-  })
+Helpers.frontend_helper_60(); // Replaced with helper function
 
   it('should properly calculate number of disabled challenges', () => {
     component.ngOnChanges()

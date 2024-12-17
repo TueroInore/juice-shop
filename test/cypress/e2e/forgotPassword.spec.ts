@@ -1,3 +1,6 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/forgot-password', () => {
   beforeEach(() => {
     cy.get('body').then(($body) => {
@@ -21,7 +24,7 @@ describe('/#/forgot-password', () => {
       cy.get('#resetButton').click()
 
       cy.get('.confirmation').should('not.be.hidden')
-      cy.expectChallengeSolved({ challenge: "Reset Jim's Password" })
+      cy.expectChallengeSolved({ challenge: 'Reset Jim's Password' })
     })
   })
 
@@ -32,13 +35,13 @@ describe('/#/forgot-password', () => {
           cy.get('#email').type(`bender@${appDomain}`)
         }
       )
-      cy.get('#securityAnswer').type("Stop'n'Drop")
+      cy.get('#securityAnswer').type('Stop'n'Drop')
       cy.get('#newPassword').type('Brannigan 8=o Leela')
       cy.get('#newPasswordRepeat').type('Brannigan 8=o Leela')
       cy.get('#resetButton').click()
 
       cy.get('.confirmation').should('not.be.hidden')
-      cy.expectChallengeSolved({ challenge: "Reset Bender's Password" })
+      cy.expectChallengeSolved({ challenge: 'Reset Bender's Password' })
     })
   })
 
@@ -56,7 +59,7 @@ describe('/#/forgot-password', () => {
         cy.get('#resetButton').click()
 
         cy.get('.confirmation').should('not.be.hidden')
-        cy.expectChallengeSolved({ challenge: "Reset Bjoern's Password" })
+        cy.expectChallengeSolved({ challenge: 'Reset Bjoern's Password' })
       })
     })
 
@@ -69,7 +72,7 @@ describe('/#/forgot-password', () => {
         cy.get('#resetButton').click()
 
         cy.get('.confirmation').should('not.be.hidden')
-        cy.expectChallengeSolved({ challenge: "Bjoern's Favorite Pet" })
+        cy.expectChallengeSolved({ challenge: 'Bjoern's Favorite Pet' })
       })
     })
   })
@@ -87,7 +90,7 @@ describe('/#/forgot-password', () => {
       cy.get('#resetButton').click()
 
       cy.get('.confirmation').should('not.be.hidden')
-      cy.expectChallengeSolved({ challenge: "Reset Morty's Password" })
+      cy.expectChallengeSolved({ challenge: 'Reset Morty's Password' })
     })
   })
 
@@ -104,7 +107,7 @@ describe('/#/forgot-password', () => {
       cy.get('#resetButton').click()
 
       cy.get('.confirmation').should('not.be.hidden')
-      cy.expectChallengeSolved({ challenge: "Reset Uvogin's Password" })
+      cy.expectChallengeSolved({ challenge: 'Reset Uvogin's Password' })
     })
   })
 })

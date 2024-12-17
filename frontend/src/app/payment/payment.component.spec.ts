@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
@@ -126,9 +126,7 @@ describe('PaymentComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should not hold twitter or facebook URL if not defined in configuration', () => {
     configurationService.getApplicationConfiguration.and.returnValue(of({}))
@@ -153,12 +151,7 @@ describe('PaymentComponent', () => {
     expect(component.facebookUrl).toBe('facebook')
   })
 
-  it('should log error while getting application configuration from backend API directly to browser console', fakeAsync(() => {
-    configurationService.getApplicationConfiguration.and.returnValue(throwError('Error'))
-    console.log = jasmine.createSpy('log')
-    component.ngOnInit()
-    expect(console.log).toHaveBeenCalledWith('Error')
-  }))
+Helpers.frontend_helper_33(); // Replaced with helper function
 
   it('should reinitizalise coupon code form by calling resetCouponForm', () => {
     component.couponControl.setValue('1234567890')
@@ -171,9 +164,7 @@ describe('PaymentComponent', () => {
   it('should reject an invalid coupon code', fakeAsync(() => {
     basketService.applyCoupon.and.returnValue(throwError('Error'))
 
-    component.couponControl.setValue('')
-    component.couponControl.markAsPristine()
-    component.couponControl.markAsUntouched()
+Helpers.frontend_helper_51(); // Replaced with helper function
 
     component.couponControl.setValue('invalid_base85')
     component.applyCoupon()
@@ -186,12 +177,9 @@ describe('PaymentComponent', () => {
     basketService.applyCoupon.and.returnValue(of(42))
     translateService.get.and.returnValue(of('DISCOUNT_APPLIED'))
 
-    component.couponControl.setValue('')
-    component.couponControl.markAsPristine()
-    component.couponControl.markAsUntouched()
+Helpers.frontend_helper_51(); // Replaced with helper function
 
-    component.couponControl.setValue('valid_base85')
-    component.applyCoupon()
+Helpers.frontend_helper_52(); // Replaced with helper function
 
     expect(translateService.get).toHaveBeenCalledWith('DISCOUNT_APPLIED', { discount: 42 })
     expect(component.couponError).toBeUndefined()
@@ -204,8 +192,7 @@ describe('PaymentComponent', () => {
     component.couponControl.markAsPristine()
     component.couponControl.markAsUntouched()
 
-    component.couponControl.setValue('valid_base85')
-    component.applyCoupon()
+Helpers.frontend_helper_52(); // Replaced with helper function
 
     expect(component.couponConfirmation).toBe('Translation of DISCOUNT_APPLIED')
     expect(component.couponError).toBeUndefined()

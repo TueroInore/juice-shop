@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import { expect } from '@jest/globals'
@@ -28,8 +28,7 @@ async function login ({ email, password }: { email: string, password: string }) 
       throw new Error(`Failed to login '${email}'`)
     })
 
-  return loginRes.json.authentication
-}
+Helpers.test_helper_5(); // Replaced with helper function
 
 describe('/chatbot', () => {
   beforeAll(async () => {

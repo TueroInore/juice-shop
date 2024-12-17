@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { ChallengeService } from '../Services/challenge.service'
 import { type ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing'
@@ -25,11 +25,7 @@ import { AdministrationService } from '../Services/administration.service'
 import { UserService } from '../Services/user.service'
 import { Location } from '@angular/common'
 
-class MockSocket {
-  on (str: string, callback: any) {
-    callback(str)
-  }
-}
+Helpers.frontend_helper_32(); // Replaced with helper function
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent
@@ -100,21 +96,17 @@ describe('SidenavComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should show accounting functionality when user has according role', () => {
     loginGuard.tokenDecode.and.returnValue({ data: { role: roles.accounting } })
 
-    expect(component.isAccounting()).toBe(true)
-  })
+Helpers.frontend_helper_99(); // Replaced with helper function
 
   it('should set version number as retrieved with "v" prefix', () => {
     loginGuard.tokenDecode.and.returnValue({ data: { role: roles.accounting } })
 
-    expect(component.isAccounting()).toBe(true)
-  })
+Helpers.frontend_helper_99(); // Replaced with helper function
 
   it('should not show accounting functionality when user lacks according role', () => {
     administractionService.getApplicationVersion.and.returnValue(of('1.2.3'))
@@ -137,38 +129,17 @@ describe('SidenavComponent', () => {
     expect(component.scoreBoardVisible).toBe(true)
   })
 
-  it('should remove authentication token from localStorage', () => {
-    spyOn(localStorage, 'removeItem')
-    component.logout()
-    expect(localStorage.removeItem).toHaveBeenCalledWith('token')
-  })
+Helpers.frontend_helper_34(); // Replaced with helper function
 
-  it('should remove authentication token from cookies', () => {
-    component.logout()
-    expect(cookieService.remove).toHaveBeenCalledWith('token')
-  })
+Helpers.frontend_helper_35(); // Replaced with helper function
 
-  it('should remove basket id from session storage', () => {
-    spyOn(sessionStorage, 'removeItem')
-    component.logout()
-    expect(sessionStorage.removeItem).toHaveBeenCalledWith('bid')
-  })
+Helpers.frontend_helper_36(); // Replaced with helper function
 
-  it('should remove basket item total from session storage', () => {
-    spyOn(sessionStorage, 'removeItem')
-    component.logout()
-    expect(sessionStorage.removeItem).toHaveBeenCalledWith('itemTotal')
-  })
+Helpers.frontend_helper_37(); // Replaced with helper function
 
-  it('should set the login status to be false via UserService', () => {
-    component.logout()
-    expect(userService.isLoggedIn.next).toHaveBeenCalledWith(false)
-  })
+Helpers.frontend_helper_38(); // Replaced with helper function
 
-  it('should save the last login IP address', () => {
-    component.logout()
-    expect(userService.saveLastLoginIp).toHaveBeenCalled()
-  })
+Helpers.frontend_helper_39(); // Replaced with helper function
 
   it('should forward to main page', fakeAsync(() => {
     component.logout()

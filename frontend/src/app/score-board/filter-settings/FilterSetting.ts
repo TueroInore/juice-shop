@@ -1,3 +1,6 @@
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
 export interface FilterSetting {
   // categories to display. if empty, all categories are displayed
   categories: string[]

@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule } from '@ngx-translate/core'
 import { MatDividerModule } from '@angular/material/divider'
@@ -82,9 +82,7 @@ describe('OrderCompletionComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should hold order details returned by backend API', () => {
     trackOrderService.find.and.returnValue(of({ data: [{ totalPrice: 2.88, promotionalAmount: 10, deliveryPrice: 2, addressId: 1, paymentId: 1, products: [{ quantity: 1, name: 'Apple Juice (1000ml)', price: 1.99, total: 1.99, bonus: 0 }, { quantity: 1, name: 'Apple Pomace', price: 0.89, total: 0.89, bonus: 0 }], bonus: 0, eta: '5' }] }))

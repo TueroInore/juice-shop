@@ -1,16 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
 
-import {
-  waitForInputToHaveValue,
-  waitForInputToNotBeEmpty,
-  waitForElementToGetClicked,
-  waitInMs,
-  waitForAngularRouteToBeVisited, waitForLogOut
-} from '../helpers/helpers'
-import { type ChallengeInstruction } from '../'
+Helpers.frontend_helper_1(); // Replaced with helper function
+
+Helpers.frontend_helper_102(); // Replaced with helper function
 
 export const PasswordStrengthInstruction: ChallengeInstruction = {
   name: 'Password Strength',

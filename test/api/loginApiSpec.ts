@@ -1,16 +1,15 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import config from 'config'
 const Joi = frisby.Joi
 
-const API_URL = 'http://localhost:3000/api'
-const REST_URL = 'http://localhost:3000/rest'
+Helpers.test_helper_12(); // Replaced with helper function
 
-const jsonHeader = { 'content-type': 'application/json' }
+Helpers.test_helper_4(); // Replaced with helper function
 
 describe('/rest/user/login', () => {
   it('POST login newly created user', () => {
@@ -164,7 +163,7 @@ describe('/rest/user/login', () => {
       })
   })
 
-  it('POST login with known email "admin@juice-sh.op" in SQL injection attack', () => {
+  it('POST login with known email 'admin@juice-sh.op' in SQL injection attack', () => {
     return frisby.post(REST_URL + '/user/login', {
       header: jsonHeader,
       body: {
@@ -179,7 +178,7 @@ describe('/rest/user/login', () => {
       })
   })
 
-  it('POST login with known email "jim@juice-sh.op" in SQL injection attack', () => {
+  it('POST login with known email 'jim@juice-sh.op' in SQL injection attack', () => {
     return frisby.post(REST_URL + '/user/login', {
       header: jsonHeader,
       body: {
@@ -194,7 +193,7 @@ describe('/rest/user/login', () => {
       })
   })
 
-  it('POST login with known email "bender@juice-sh.op" in SQL injection attack', () => {
+  it('POST login with known email 'bender@juice-sh.op' in SQL injection attack', () => {
     return frisby.post(REST_URL + '/user/login', {
       header: jsonHeader,
       body: {
@@ -209,7 +208,7 @@ describe('/rest/user/login', () => {
       })
   })
 
-  it('POST login with non-existing email "acc0unt4nt@juice-sh.op" via UNION SELECT injection attack', () => {
+  it('POST login with non-existing email 'acc0unt4nt@juice-sh.op' via UNION SELECT injection attack', () => {
     return frisby.post(REST_URL + '/user/login', {
       header: jsonHeader,
       body: {

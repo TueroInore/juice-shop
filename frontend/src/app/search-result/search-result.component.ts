@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { ProductDetailsComponent } from '../product-details/product-details.component'
 import { ActivatedRoute, Router } from '@angular/router'
@@ -228,9 +228,7 @@ export class SearchResultComponent implements OnDestroy, AfterViewInit {
     }, (err) => { console.log(err) })
   }
 
-  isLoggedIn () {
-    return localStorage.getItem('token')
-  }
+Helpers.frontend_helper_43(); // Replaced with helper function
 
   onResize (event: any) {
     if (event.target.innerWidth < 2600) {
@@ -249,7 +247,4 @@ export class SearchResultComponent implements OnDestroy, AfterViewInit {
     }
   }
 
-  isDeluxe () {
-    return this.deluxeGuard.isDeluxe()
-  }
-}
+Helpers.frontend_helper_56(); // Replaced with helper function

@@ -1,5 +1,8 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/api', () => {
-  describe('challenge "restfulXss"', () => {
+  describe('challenge 'restfulXss'', () => {
     beforeEach(() => {
       cy.login({ email: 'admin', password: 'admin123' })
     })
@@ -21,7 +24,7 @@ describe('/api', () => {
                 },
                 body: JSON.stringify({
                   name: 'RestXSS',
-                  description: '<iframe src="javascript:alert(`xss`)">',
+                  description: '<iframe src='javascript:alert(`xss`)'>',
                   price: 47.11
                 })
               }
@@ -33,11 +36,9 @@ describe('/api', () => {
 
           cy.visit('/#/search?q=RestXSS')
           cy.reload()
-          cy.get('img[alt="RestXSS"]').click()
+          cy.get('img[alt='RestXSS']').click()
 
-          cy.on('window:alert', (t) => {
-            expect(t).to.equal('xss')
-          })
+Helpers.test_helper_39(); // Replaced with helper function
 
           cy.expectChallengeSolved({ challenge: 'API-only XSS' })
         }
@@ -45,7 +46,7 @@ describe('/api', () => {
     })
   })
 
-  describe('challenge "changeProduct"', () => {
+  describe('challenge 'changeProduct'', () => {
     it('should be possible to change product via PUT request without being logged in', () => {
       cy.task('GetTamperingProductId').then((tamperingProductId: number) => {
         cy.task('GetOverwriteUrl').then((overwriteUrl: string) => {
@@ -59,7 +60,7 @@ describe('/api', () => {
                   'Content-type': 'application/json'
                 },
                 body: JSON.stringify({
-                  description: `<a href="${overwriteUrl}" target="_blank">More...</a>`
+                  description: `<a href='${overwriteUrl}' target='_blank'>More...</a>`
                 })
               }
             )
@@ -75,7 +76,7 @@ describe('/api', () => {
 })
 
 describe('/rest/saveLoginIp', () => {
-  describe('challenge "httpHeaderXss"', () => {
+  describe('challenge 'httpHeaderXss'', () => {
     beforeEach(() => {
       cy.login({
         email: 'admin',
@@ -94,7 +95,7 @@ describe('/rest/saveLoginIp', () => {
                 cache: 'no-cache',
                 headers: {
                   Authorization: `Bearer ${localStorage.getItem('token')}`,
-                  'True-Client-IP': '<iframe src="javascript:alert(`xss`)">'
+                  'True-Client-IP': '<iframe src='javascript:alert(`xss`)'>'
                 }
               }
             )

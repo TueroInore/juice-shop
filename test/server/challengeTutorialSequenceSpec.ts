@@ -1,23 +1,13 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
 
-import chai = require('chai')
-import path from 'path'
-import { promisify } from 'util'
-import sinonChai = require('sinon-chai')
-const expect = chai.expect
-chai.use(sinonChai)
+Helpers.test_helper_1(); // Replaced with helper function
 
-const fs = require('fs')
-const { safeLoad } = require('js-yaml')
-const readFile = promisify(fs.readFile)
+Helpers.test_helper_46(); // Replaced with helper function
 
-const loadYamlFile = async (filename: string) => {
-  const contents = await readFile(filename, { encoding: 'utf8' })
-  return safeLoad(contents)
-}
+Helpers.test_helper_47(); // Replaced with helper function
+
+Helpers.test_helper_48(); // Replaced with helper function
 
 describe('challengeTutorialSequence', () => {
   let challenges: any
@@ -41,7 +31,7 @@ describe('challengeTutorialSequence', () => {
     for (const order of Object.keys(tutorialOrderCounts)) {
       const count = tutorialOrderCounts[order]
 
-      expect(count, `Tutorial order "${order}" is used for multiple challenges.`).to.equal(1)
+      expect(count, `Tutorial order '${order}' is used for multiple challenges.`).to.equal(1)
     }
   })
 })

@@ -1,7 +1,9 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_17(); // Replaced with helper function
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import { challenges } from '../../data/datacache'
 import frisby = require('frisby')
@@ -11,15 +13,15 @@ const security = require('../../lib/insecurity')
 
 const API_URL = 'http://localhost:3000/b2b/v2/orders'
 
-const authHeader = { Authorization: 'Bearer ' + security.authorize(), 'content-type': 'application/json' }
+Helpers.test_helper_18(); // Replaced with helper function
 
 describe('/b2b/v2/orders', () => {
   if (utils.isChallengeEnabled(challenges.rceChallenge) || utils.isChallengeEnabled(challenges.rceOccupyChallenge)) {
-    it('POST endless loop exploit in "orderLinesData" will raise explicit error', () => {
+    it('POST endless loop exploit in 'orderLinesData' will raise explicit error', () => {
       return frisby.post(API_URL, {
         headers: authHeader,
         body: {
-          orderLinesData: '(function dos() { while(true); })()'
+          orderLinesData: '(dos();)()'
         }
       })
         .expect('status', 500)
@@ -30,17 +32,17 @@ describe('/b2b/v2/orders', () => {
       return frisby.post(API_URL, {
         headers: authHeader,
         body: {
-          orderLinesData: '/((a+)+)b/.test("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa")'
+          orderLinesData: '/((a+)+)b/.test('aaaaaaaaaaaaaaaaaaaaaaaaaaaaa')'
         }
       })
         .expect('status', 503)
     })
 
-    it('POST sandbox breakout attack in "orderLinesData" will raise error', () => {
+    it('POST sandbox breakout attack in 'orderLinesData' will raise error', () => {
       return frisby.post(API_URL, {
         headers: authHeader,
         body: {
-          orderLinesData: 'this.constructor.constructor("return process")().exit()'
+          orderLinesData: 'this.constructor.constructor('return process')().exit()'
         }
       })
         .expect('status', 500)
@@ -69,7 +71,7 @@ describe('/b2b/v2/orders', () => {
       })
   })
 
-  it('POST new B2B order has passed "cid" in response', () => {
+  it('POST new B2B order has passed 'cid' in response', () => {
     return frisby.post(API_URL, {
       headers: authHeader,
       body: {

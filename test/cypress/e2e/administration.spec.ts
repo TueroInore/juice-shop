@@ -1,3 +1,6 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/administration', () => {
   beforeEach(() => {
     cy.login({
@@ -5,7 +8,7 @@ describe('/#/administration', () => {
       password: 'admin123'
     })
   })
-  describe('challenge "adminSection"', () => {
+  describe('challenge 'adminSection'', () => {
     it('should be possible to access administration section with admin user', () => {
       cy.visit('/#/administration')
       cy.url().should('match', /\/administration/)
@@ -14,7 +17,7 @@ describe('/#/administration', () => {
     })
   })
 
-  describe('challenge "fiveStarFeedback"', () => {
+  describe('challenge 'fiveStarFeedback'', () => {
     it('should be possible for any admin user to delete feedback', () => {
       cy.visit('/#/administration')
       cy.wait(1000)

@@ -1,3 +1,6 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/privacy-security/change-password', () => {
   describe('as Morty', () => {
     beforeEach(() => {
@@ -18,7 +21,7 @@ describe('/#/privacy-security/change-password', () => {
     })
   })
 
-  describe('challenge "changePasswordBenderChallenge"', () => {
+  describe('challenge 'changePasswordBenderChallenge'', () => {
     it('should be able to change password via XSS-powered attack on password change without passing current password', () => {
       cy.login({
         email: 'bender',
@@ -31,7 +34,7 @@ describe('/#/privacy-security/change-password', () => {
       cy.login({ email: 'bender', password: 'slurmCl4ssic' })
       cy.url().should('match', /\/search/)
 
-      cy.expectChallengeSolved({ challenge: "Change Bender's Password" })
+      cy.expectChallengeSolved({ challenge: 'Change Bender's Password' })
     })
   })
 })

@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
+Helpers.test_helper_1(); // Replaced with helper function
 
 import * as webhook from '../../lib/webhook'
 import chai = require('chai')
@@ -22,7 +22,7 @@ describe('webhook', () => {
     })
 
     it('fails when supplied webhook is not a valid URL', () => {
-      void expect(webhook.notify(challenge, 0, 'localhorst')).to.eventually.throw('Invalid URI "localhorst"')
+      void expect(webhook.notify(challenge, 0, 'localhorst')).to.eventually.throw('Invalid URI 'localhorst'')
     })
 
     it('submits POST with payload to existing URL', () => {

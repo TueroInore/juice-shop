@@ -1,3 +1,6 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 import type { Product as ProductConfig } from '../../../lib/config.types'
 
 describe('/#/contact', () => {
@@ -6,7 +9,7 @@ describe('/#/contact', () => {
     solveNextCaptcha()
   })
 
-  describe('challenge "forgedFeedback"', () => {
+  describe('challenge 'forgedFeedback'', () => {
     beforeEach(() => {
       cy.login({ email: 'admin', password: 'admin123' })
       cy.visit('/#/contact')
@@ -42,7 +45,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "persistedXssFeedback"', () => {
+  describe('challenge 'persistedXssFeedback'', () => {
     beforeEach(() => {
       cy.login({ email: 'admin', password: 'admin123' })
       cy.visit('/#/contact')
@@ -55,7 +58,7 @@ describe('/#/contact', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {
           cy.get('#comment').type(
-            '<<script>Foo</script>iframe src="javascript:alert(`xss`)">'
+            '<<script>Foo</script>iframe src='javascript:alert(`xss`)'>'
           )
           cy.get('#rating').click()
           cy.get('#submitButton').click()
@@ -75,7 +78,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "vulnerableComponent"', () => {
+  describe('challenge 'vulnerableComponent'', () => {
     it('should be possible to post known vulnerable component(s) as feedback', () => {
       cy.get('#comment').type('sanitize-html 1.4.2 is non-recursive.')
       cy.get('#comment').type('express-jwt 0.1.3 has broken crypto.')
@@ -86,7 +89,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "weirdCrypto"', () => {
+  describe('challenge 'weirdCrypto'', () => {
     it('should be possible to post weird crypto algorithm/library as feedback', () => {
       cy.get('#comment').type(
         'The following libraries are bad for crypto: z85, base85, md5 and hashids'
@@ -97,7 +100,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "typosquattingNpm"', () => {
+  describe('challenge 'typosquattingNpm'', () => {
     it('should be possible to post typosquatting NPM package as feedback', () => {
       cy.get('#comment').type(
         'You are a typosquatting victim of this NPM package: epilogue-js'
@@ -108,7 +111,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "typosquattingAngular"', () => {
+  describe('challenge 'typosquattingAngular'', () => {
     it('should be possible to post typosquatting Bower package as feedback', () => {
       cy.get('#comment').type(
         'You are a typosquatting victim of this Bower package: anuglar2-qrcode'
@@ -119,7 +122,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "hiddenImage"', () => {
+  describe('challenge 'hiddenImage'', () => {
     it('should be possible to post hidden character name as feedback', () => {
       cy.get('#comment').type(
         'Pickle Rick is hiding behind one of the support team ladies'
@@ -130,7 +133,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "zeroStars"', () => {
+  describe('challenge 'zeroStars'', () => {
     it('should be possible to post feedback with zero stars by double-clicking rating widget', () => {
       cy.visit('/')
       cy.window().then(async () => {
@@ -180,7 +183,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "captchaBypass"', () => {
+  describe('challenge 'captchaBypass'', () => {
     it('should be possible to post 10 or more customer feedbacks in less than 20 seconds', () => {
       cy.window().then(async () => {
         for (let i = 0; i < 15; i++) {
@@ -223,7 +226,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "supplyChainAttack"', () => {
+  describe('challenge 'supplyChainAttack'', () => {
     it('should be possible to post GitHub issue URL reporting malicious eslint-scope package as feedback', () => {
       cy.get('#comment').type(
         'Turn on 2FA! Now!!! https://github.com/eslint/eslint-scope/issues/39'
@@ -234,7 +237,7 @@ describe('/#/contact', () => {
     })
   })
 
-  describe('challenge "dlpPastebinDataLeak"', () => {
+  describe('challenge 'dlpPastebinDataLeak'', () => {
     it('should be possible to post dangerous ingredients of unsafe product as feedback', () => {
       cy.task<ProductConfig>('GetPastebinLeakProduct').then((pastebinLeakProduct: ProductConfig) => {
         cy.get('#comment').type(

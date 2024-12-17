@@ -1,5 +1,8 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/privacy-security/data-export', () => {
-  describe('challenge "dataExportChallenge"', () => {
+  describe('challenge 'dataExportChallenge'', () => {
     beforeEach(() => {
       cy.visit('/#/register')
 
@@ -11,7 +14,7 @@ describe('/#/privacy-security/data-export', () => {
       cy.get('#passwordControl').type('admun123')
       cy.get('#repeatPasswordControl').type('admun123')
 
-      cy.get('mat-select[name="securityQuestion"]').click()
+      cy.get('mat-select[name='securityQuestion']').click()
       cy.get('.mat-option')
         .contains('Your eldest siblings middle name?')
         .click()

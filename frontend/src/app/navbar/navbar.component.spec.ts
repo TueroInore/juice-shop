@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { ChallengeService } from '../Services/challenge.service'
 import { SearchResultComponent } from '../search-result/search-result.component'
@@ -38,11 +38,7 @@ import { LoginGuard } from '../app.guard'
 import { MatRadioModule } from '@angular/material/radio'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
-class MockSocket {
-  on (str: string, callback: any) {
-    callback(str)
-  }
-}
+Helpers.frontend_helper_32(); // Replaced with helper function
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent
@@ -130,9 +126,7 @@ describe('NavbarComponent', () => {
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+Helpers.frontend_helper_3(); // Replaced with helper function
 
   it('should hold application version', () => {
     administrationService.getApplicationVersion.and.returnValue(of('x.y.z'))
@@ -205,12 +199,7 @@ describe('NavbarComponent', () => {
     expect(component.showGitHubLink).toBe(false)
   })
 
-  it('should log error while getting application configuration from backend API directly to browser console', fakeAsync(() => {
-    configurationService.getApplicationConfiguration.and.returnValue(throwError('Error'))
-    console.log = jasmine.createSpy('log')
-    component.ngOnInit()
-    expect(console.log).toHaveBeenCalledWith('Error')
-  }))
+Helpers.frontend_helper_33(); // Replaced with helper function
 
   it('should hide Score Board menu item when corresponding challenge was not solved yet', () => {
     challengeService.find.and.returnValue(of([{ solved: false }]))
@@ -236,38 +225,17 @@ describe('NavbarComponent', () => {
     expect(location.path()).toBe(encodeURI('/search'))
   }))
 
-  it('should remove authentication token from localStorage', () => {
-    spyOn(localStorage, 'removeItem')
-    component.logout()
-    expect(localStorage.removeItem).toHaveBeenCalledWith('token')
-  })
+Helpers.frontend_helper_34(); // Replaced with helper function
 
-  it('should remove authentication token from cookies', () => {
-    component.logout()
-    expect(cookieService.remove).toHaveBeenCalledWith('token')
-  })
+Helpers.frontend_helper_35(); // Replaced with helper function
 
-  it('should remove basket id from session storage', () => {
-    spyOn(sessionStorage, 'removeItem')
-    component.logout()
-    expect(sessionStorage.removeItem).toHaveBeenCalledWith('bid')
-  })
+Helpers.frontend_helper_36(); // Replaced with helper function
 
-  it('should remove basket item total from session storage', () => {
-    spyOn(sessionStorage, 'removeItem')
-    component.logout()
-    expect(sessionStorage.removeItem).toHaveBeenCalledWith('itemTotal')
-  })
+Helpers.frontend_helper_37(); // Replaced with helper function
 
-  it('should set the login status to be false via UserService', () => {
-    component.logout()
-    expect(userService.isLoggedIn.next).toHaveBeenCalledWith(false)
-  })
+Helpers.frontend_helper_38(); // Replaced with helper function
 
-  it('should save the last login IP address', () => {
-    component.logout()
-    expect(userService.saveLastLoginIp).toHaveBeenCalled()
-  })
+Helpers.frontend_helper_39(); // Replaced with helper function
 
   it('should forward to main page', fakeAsync(() => {
     component.logout()

@@ -1,10 +1,13 @@
+import * as Helpers from './utils/test_helpers';
+import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+
 describe('/#/basket', () => {
   describe('as admin', () => {
     beforeEach(() => {
       cy.login({ email: 'admin', password: 'admin123' })
     })
 
-    describe('challenge "negativeOrder"', () => {
+    describe('challenge 'negativeOrder'', () => {
       it('should be possible to update a basket to a negative quantity via the Rest API', () => {
         cy.window().then(async () => {
           const response = await fetch(
@@ -40,7 +43,7 @@ describe('/#/basket', () => {
       })
     })
 
-    describe('challenge "basketAccessChallenge"', () => {
+    describe('challenge 'basketAccessChallenge'', () => {
       it('should access basket with id from session storage instead of the one associated to logged-in user', () => {
         cy.window().then(() => {
           window.sessionStorage.bid = 3
@@ -53,7 +56,7 @@ describe('/#/basket', () => {
       })
     })
 
-    describe('challenge "basketManipulateChallenge"', () => {
+    describe('challenge 'basketManipulateChallenge'', () => {
       it('should manipulate basket of other user instead of the one associated to logged-in user', () => {
         cy.window().then(async () => {
           await fetch(`${Cypress.config('baseUrl')}/api/BasketItems/`, {
@@ -63,7 +66,7 @@ describe('/#/basket', () => {
               'Content-type': 'application/json',
               Authorization: `Bearer ${localStorage.getItem('token')}`
             },
-            body: '{ "ProductId": 14,"BasketId":"1","quantity":1,"BasketId":"2" }'
+            body: '{ 'ProductId': 14,'BasketId':'1','quantity':1,'BasketId':'2' }'
           })
         })
         cy.expectChallengeSolved({ challenge: 'Manipulate Basket' })
@@ -75,7 +78,7 @@ describe('/#/basket', () => {
     beforeEach(() => {
       cy.login({ email: 'jim', password: 'ncc-1701' })
     })
-    describe('challenge "manipulateClock"', () => {
+    describe('challenge 'manipulateClock'', () => {
       it('should be possible to enter WMNSDY2019 coupon & place order with this expired coupon', () => {
         cy.window().then(() => {
           window.localStorage.couponPanelExpanded = false
@@ -88,7 +91,7 @@ describe('/#/basket', () => {
             return false
           })
           win.eval(
-            'event = new Date("March 08, 2019 00:00:00"); Date = function(Date){return function() {date = event; return date; }}(Date);'
+            'event = new Date('March 08, 2019 00:00:00'); Date = function(Date){return function() {date = event; return date; }}(Date);'
           )
         })
         cy.get('#collapseCouponElement').click()
@@ -102,7 +105,7 @@ describe('/#/basket', () => {
       })
     })
 
-    describe('challenge "forgedCoupon"', () => {
+    describe('challenge 'forgedCoupon'', () => {
       it('should be able to access file /ftp/coupons_2013.md.bak with poison null byte attack', () => {
         cy.request(`${Cypress.config('baseUrl')}/ftp/coupons_2013.md.bak%2500.md`)
       })

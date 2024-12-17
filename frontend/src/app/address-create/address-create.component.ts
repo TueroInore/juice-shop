@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors.
- * SPDX-License-Identifier: MIT
- */
+import * as Helpers from './utils/frontend_helpers';
+import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+
+Helpers.frontend_helper_1(); // Replaced with helper function
 
 import { UntypedFormControl, Validators } from '@angular/forms'
 import { Component, type OnInit } from '@angular/core'
@@ -103,9 +103,7 @@ export class AddressCreateComponent implements OnInit {
     this.stateControl.setValue(address.state)
   }
 
-  routeToPreviousUrl () {
-    this.location.back()
-  }
+Helpers.frontend_helper_7(); // Replaced with helper function
 
   resetForm () {
     this.countryControl.markAsUntouched()
