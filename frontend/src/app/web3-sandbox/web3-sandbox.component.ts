@@ -1,5 +1,4 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
 import { Component, ChangeDetectorRef } from '@angular/core'
 import { KeysService } from '../Services/keys.service'
@@ -252,13 +251,13 @@ contract HelloWorld {
     }
   }
 
-Helpers.frontend_helper_23(); // Replaced with helper function
+frontend_helper_23(); // Replaced with helper function
 
-Helpers.frontend_helper_24(); // Replaced with helper function
+frontend_helper_24(); // Replaced with helper function
 
-Helpers.frontend_helper_25(); // Replaced with helper function
+frontend_helper_25(); // Replaced with helper function
 
-Helpers.frontend_helper_26(); // Replaced with helper function
+frontend_helper_26(); // Replaced with helper function
 
       if (provider && currentChainId !== targetChainId) {
         this.session = false

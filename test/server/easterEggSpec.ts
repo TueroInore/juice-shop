@@ -1,9 +1,8 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_40(); // Replaced with helper function
+test_helper_40(); // Replaced with helper function
 
 describe('easterEgg', () => {
   const serveEasterEgg = require('../../routes/easterEgg')
@@ -12,7 +11,7 @@ describe('easterEgg', () => {
   let res: any
   let save: any
 
-Helpers.test_helper_53(); // Replaced with helper function
+test_helper_53(); // Replaced with helper function
 
   it('should serve /frontend/dist/frontend/assets/private/threejs-demo.html', () => {
     serveEasterEgg()(req, res)

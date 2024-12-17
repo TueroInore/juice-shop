@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_59(); // Replaced with helper function
+frontend_helper_59(); // Replaced with helper function
 
 import { ScoreBoardAdditionalSettingsDialogComponent } from './score-board-additional-settings-dialog.component'
 import { TranslateModule } from '@ngx-translate/core'
@@ -32,6 +31,6 @@ describe('ScoreBoardAdditionalSettingsDialogComponent', () => {
     )
     component = fixture.componentInstance
 
-Helpers.frontend_helper_60(); // Replaced with helper function
+frontend_helper_60(); // Replaced with helper function
 
-Helpers.frontend_helper_22(); // Replaced with helper function
+frontend_helper_22(); // Replaced with helper function

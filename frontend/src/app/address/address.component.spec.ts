@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { MatCardModule } from '@angular/material/card'
@@ -47,7 +46,7 @@ describe('AddressComponent', () => {
     snackBar = jasmine.createSpyObj('MatSnackBar', ['open'])
     snackBar.open.and.returnValue(null)
 
-Helpers.frontend_helper_4(); // Replaced with helper function
+frontend_helper_4(); // Replaced with helper function
 
         BrowserAnimationsModule,
         MatCardModule,
@@ -77,7 +76,7 @@ Helpers.frontend_helper_4(); // Replaced with helper function
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should hold no addresses when get API call fails', () => {
     addressService.get.and.returnValue(throwError('Error'))

@@ -1,11 +1,10 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_33(); // Replaced with helper function
+test_helper_33(); // Replaced with helper function
 
-Helpers.test_helper_16(); // Replaced with helper function
+test_helper_16(); // Replaced with helper function
 
 describe('/rest/track-order/:id', () => {
   it('GET tracking results for the order id', () => {

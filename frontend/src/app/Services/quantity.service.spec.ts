@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_78(); // Replaced with helper function
+frontend_helper_78(); // Replaced with helper function
 
 import { QuantityService } from './quantity.service'
 
@@ -26,7 +25,7 @@ describe('QuantityService', () => {
       const req = httpMock.expectOne('http://localhost:3000/api/Quantitys/')
       req.flush({ data: 'apiResponse' })
 
-Helpers.frontend_helper_93(); // Replaced with helper function
+frontend_helper_93(); // Replaced with helper function
 
   it('should change quantity directly via the rest api', inject([QuantityService, HttpTestingController],
     fakeAsync((service: QuantityService, httpMock: HttpTestingController) => {

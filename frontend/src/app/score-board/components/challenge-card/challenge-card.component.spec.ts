@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_59(); // Replaced with helper function
+frontend_helper_59(); // Replaced with helper function
 
 import { ChallengeCardComponent } from './challenge-card.component'
 import { type Config } from 'src/app/Services/configuration.service'
@@ -44,9 +43,9 @@ describe('ChallengeCard', () => {
       }
     } as Config
 
-Helpers.frontend_helper_60(); // Replaced with helper function
+frontend_helper_60(); // Replaced with helper function
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should not show a mitigation link when challenge has it but isnt solved', () => {
     component.challenge.solved = false

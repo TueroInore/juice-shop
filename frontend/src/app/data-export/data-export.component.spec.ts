@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { type ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/core/testing'
 import { DataExportComponent } from './data-export.component'
@@ -60,7 +59,7 @@ describe('DataExportComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_18(); // Replaced with helper function
+frontend_helper_18(); // Replaced with helper function
 
   it('should reinitizalise form by calling resetForm', () => {
     component.captchaControl.setValue('captcha')

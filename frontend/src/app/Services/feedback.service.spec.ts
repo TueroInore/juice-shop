@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_78(); // Replaced with helper function
+frontend_helper_78(); // Replaced with helper function
 
 import { FeedbackService } from './feedback.service'
 
@@ -26,7 +25,7 @@ describe('FeedbackService', () => {
       const req = httpMock.expectOne('http://localhost:3000/api/Feedbacks/')
       req.flush({ data: 'apiResponse' })
 
-Helpers.frontend_helper_93(); // Replaced with helper function
+frontend_helper_93(); // Replaced with helper function
 
   it('should delete feedback directly via the rest api', inject([FeedbackService, HttpTestingController],
     fakeAsync((service: FeedbackService, httpMock: HttpTestingController) => {
@@ -49,4 +48,4 @@ Helpers.frontend_helper_93(); // Replaced with helper function
       const req = httpMock.expectOne('http://localhost:3000/api/Feedbacks/')
       req.flush({ data: 'apiResponse' })
 
-Helpers.frontend_helper_88(); // Replaced with helper function
+frontend_helper_88(); // Replaced with helper function

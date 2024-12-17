@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule } from '@ngx-translate/core'
 import { MatInputModule } from '@angular/material/input'
@@ -74,9 +73,9 @@ describe('DeliveryMethodComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
-Helpers.frontend_helper_19(); // Replaced with helper function
+frontend_helper_19(); // Replaced with helper function
 
   it('should log errors from delivery service directly to browser console', fakeAsync(() => {
     deliveryService.get.and.returnValue(throwError('Error'))
@@ -85,7 +84,7 @@ Helpers.frontend_helper_19(); // Replaced with helper function
     expect(console.log).toHaveBeenCalledWith('Error')
   }))
 
-Helpers.frontend_helper_20(); // Replaced with helper function
+frontend_helper_20(); // Replaced with helper function
 
   it('should hold delivery methods on ngOnInit', () => {
     deliveryService.get.and.returnValue(of([{ id: 1, name: '1', price: 1, eta: 1, icon: '1' }]))

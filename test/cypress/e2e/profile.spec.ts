@@ -1,5 +1,4 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
 describe('/profile', () => {
   beforeEach(() => {
@@ -30,7 +29,7 @@ describe('/profile', () => {
           cy.get('#username').type('<<a|ascript>alert(`xss`)</script>')
           cy.get('#submit').click()
 
-Helpers.test_helper_39(); // Replaced with helper function
+test_helper_39(); // Replaced with helper function
 
           cy.get('#username').clear()
           cy.get('#username').type('αδмιη')

@@ -1,14 +1,13 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import { expect } from '@jest/globals'
 import frisby = require('frisby')
 import io from 'socket.io-client'
 import { Joi } from 'frisby'
 
-Helpers.test_helper_14(); // Replaced with helper function
+test_helper_14(); // Replaced with helper function
 
 describe('/snippets/fixes/:key', () => {
   it('GET fixes for unknown challenge key throws error', () => {
@@ -32,9 +31,9 @@ describe('/snippets/fixes/:key', () => {
 describe('/snippets/fixes', () => {
   let socket: SocketIOClient.Socket
 
-Helpers.test_helper_36(); // Replaced with helper function
+test_helper_36(); // Replaced with helper function
 
-Helpers.test_helper_37(); // Replaced with helper function
+test_helper_37(); // Replaced with helper function
 
   it('POST fix for non-existing challenge key throws error', () => {
     return frisby.post(URL + '/snippets/fixes', {
@@ -98,4 +97,4 @@ Helpers.test_helper_37(); // Replaced with helper function
       })
       .promise()
 
-Helpers.test_helper_38(); // Replaced with helper function
+test_helper_38(); // Replaced with helper function

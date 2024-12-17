@@ -1,9 +1,8 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_40(); // Replaced with helper function
+test_helper_40(); // Replaced with helper function
 
 describe('continueCode', () => {
   const continueCode = require('../../routes/continueCode').continueCode
@@ -19,13 +18,13 @@ describe('continueCode', () => {
   it('should be undefined when no challenges exist', () => {
     Object.keys(challenges).forEach(key => { delete challenges[key] }) // eslint-disable-line @typescript-eslint/no-dynamic-delete
 
-Helpers.test_helper_52(); // Replaced with helper function
+test_helper_52(); // Replaced with helper function
 
   it('should be empty when no challenges are solved', () => {
     challenges.c1 = { solved: false }
     challenges.c2 = { solved: false }
 
-Helpers.test_helper_52(); // Replaced with helper function
+test_helper_52(); // Replaced with helper function
 
   it('should be hashid value of IDs of solved challenges', () => {
     challenges.c1 = { id: 1, solved: true }

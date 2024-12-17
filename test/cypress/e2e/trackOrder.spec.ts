@@ -1,5 +1,4 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
 describe('/#/track-order', () => {
   describe('challenge 'reflectedXss'', () => {
@@ -15,7 +14,7 @@ describe('/#/track-order', () => {
           cy.visit('/#/track-result?id=<iframe src='javascript:alert(`xss`)'>')
           cy.reload()
 
-Helpers.test_helper_39(); // Replaced with helper function
+test_helper_39(); // Replaced with helper function
 
           cy.expectChallengeSolved({ challenge: 'Reflected XSS' })
         }

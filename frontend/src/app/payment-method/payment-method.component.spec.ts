@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_53(); // Replaced with helper function
+frontend_helper_53(); // Replaced with helper function
 
 import { of, throwError } from 'rxjs'
 import { MatTableModule } from '@angular/material/table'
@@ -35,7 +34,7 @@ describe('PaymentMethodComponent', () => {
     translateService.onDefaultLangChange = new EventEmitter()
     snackBar = jasmine.createSpyObj('MatSnackBar', ['open'])
 
-Helpers.frontend_helper_54(); // Replaced with helper function
+frontend_helper_54(); // Replaced with helper function
 
         BrowserAnimationsModule,
         MatCardModule,
@@ -63,7 +62,7 @@ Helpers.frontend_helper_54(); // Replaced with helper function
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should hold cards returned by backend API', () => {
     paymentService.get.and.returnValue(of([{ cardNum: '************1231' }, { cardNum: '************6454' }]))
@@ -112,7 +111,7 @@ Helpers.frontend_helper_3(); // Replaced with helper function
     expect(component.yearControl.untouched).toBe(true)
   })
 
-Helpers.frontend_helper_6(); // Replaced with helper function
+frontend_helper_6(); // Replaced with helper function
 
   it('should be compulsory to provide card number', () => {
     component.numberControl.setValue('')

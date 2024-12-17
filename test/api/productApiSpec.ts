@@ -1,7 +1,6 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import type { Product as ProductConfig } from '../../lib/config.types'
 import { challenges } from '../../data/datacache'
@@ -14,7 +13,7 @@ const security = require('../../lib/insecurity')
 // array index of the items is incremented by one because the db id starts with 1
 const tamperingProductId = config.get<ProductConfig[]>('products').findIndex((product) => !!product.urlForProductTamperingChallenge) + 1
 
-Helpers.test_helper_22(); // Replaced with helper function
+test_helper_22(); // Replaced with helper function
 
 const authHeader = { Authorization: 'Bearer ' + security.authorize(), 'content-type': 'application/json' }
 const jsonHeader = { 'content-type': 'application/json' }

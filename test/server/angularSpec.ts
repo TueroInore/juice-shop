@@ -1,9 +1,8 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_40(); // Replaced with helper function
+test_helper_40(); // Replaced with helper function
 
 describe('angular', () => {
   const serveAngularClient = require('../../routes/angular')
@@ -20,7 +19,7 @@ describe('angular', () => {
   it('should serve index.html for any URL', () => {
     req.url = '/any/thing'
 
-Helpers.test_helper_41(); // Replaced with helper function
+test_helper_41(); // Replaced with helper function
 
     expect(res.sendFile).to.have.been.calledWith(sinon.match(/index\.html/))
   })
@@ -28,13 +27,13 @@ Helpers.test_helper_41(); // Replaced with helper function
   it('should raise error for /api endpoint URL', () => {
     req.url = '/api'
 
-Helpers.test_helper_41(); // Replaced with helper function
+test_helper_41(); // Replaced with helper function
 
-Helpers.test_helper_42(); // Replaced with helper function
+test_helper_42(); // Replaced with helper function
 
   it('should raise error for /rest endpoint URL', () => {
     req.url = '/rest'
 
-Helpers.test_helper_41(); // Replaced with helper function
+test_helper_41(); // Replaced with helper function
 
-Helpers.test_helper_43(); // Replaced with helper function
+test_helper_43(); // Replaced with helper function

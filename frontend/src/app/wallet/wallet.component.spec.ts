@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_53(); // Replaced with helper function
+frontend_helper_53(); // Replaced with helper function
 
 import { of, throwError } from 'rxjs'
 import { RouterTestingModule } from '@angular/router/testing'
@@ -31,7 +30,7 @@ describe('WalletComponent', () => {
     translateService.onDefaultLangChange = new EventEmitter()
     snackBar = jasmine.createSpyObj('MatSnackBar', ['open'])
 
-Helpers.frontend_helper_5(); // Replaced with helper function
+frontend_helper_5(); // Replaced with helper function
 
         BrowserAnimationsModule,
         MatCardModule,
@@ -55,7 +54,7 @@ Helpers.frontend_helper_5(); // Replaced with helper function
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should be compulsory to provide amount', () => {
     component.balanceControl.setValue('')

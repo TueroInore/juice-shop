@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_8(); // Replaced with helper function
+frontend_helper_8(); // Replaced with helper function
 
 import { MatTableModule } from '@angular/material/table'
 import { MatExpansionModule } from '@angular/material/expansion'
@@ -36,7 +35,7 @@ describe('AddressSelectComponent', () => {
     snackBar = jasmine.createSpyObj('MatSnackBar', ['open'])
     snackBar.open.and.returnValue(null)
 
-Helpers.frontend_helper_4(); // Replaced with helper function
+frontend_helper_4(); // Replaced with helper function
 
         BrowserAnimationsModule,
         MatCardModule,
@@ -64,7 +63,7 @@ Helpers.frontend_helper_4(); // Replaced with helper function
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should store address id on calling getMessage', () => {
     component.getMessage(1)

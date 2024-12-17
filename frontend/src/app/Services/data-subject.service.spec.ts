@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
 import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing'
@@ -41,4 +40,4 @@ describe('DataSubjectService', () => {
       const req = httpMock.expectOne('http://localhost:3000/rest/user/data-export')
       req.flush('apiResponse')
 
-Helpers.frontend_helper_92(); // Replaced with helper function
+frontend_helper_92(); // Replaced with helper function

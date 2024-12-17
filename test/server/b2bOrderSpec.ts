@@ -1,11 +1,10 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_17(); // Replaced with helper function
+test_helper_17(); // Replaced with helper function
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_40(); // Replaced with helper function
+test_helper_40(); // Replaced with helper function
 
 describe('b2bOrder', () => {
   const createB2bOrder = require('../../routes/b2bOrder')
@@ -29,7 +28,7 @@ describe('b2bOrder', () => {
 
     req.body.orderLinesData = '(dos();)()'
 
-Helpers.test_helper_45(); // Replaced with helper function
+test_helper_45(); // Replaced with helper function
 
     expect(challenges.rceChallenge.solved).to.equal(true)
   })
@@ -40,7 +39,7 @@ Helpers.test_helper_45(); // Replaced with helper function
 
     req.body.orderLinesData = '/((a+)+)b/.test('aaaaaaaaaaaaaaaaaaaaaaaaaaaaa')'
 
-Helpers.test_helper_45(); // Replaced with helper function
+test_helper_45(); // Replaced with helper function
 
     expect(challenges.rceOccupyChallenge.solved).to.equal(true)
   }/*, 3000 */)
@@ -50,7 +49,7 @@ Helpers.test_helper_45(); // Replaced with helper function
 
     req.body.orderLinesData = '{'productId': 12,'quantity': 10000,'customerReference': ['PO0000001.2', 'SM20180105|042'],'couponCode': 'pes[Bh.u*t'}'
 
-Helpers.test_helper_45(); // Replaced with helper function
+test_helper_45(); // Replaced with helper function
 
     expect(challenges.rceChallenge.solved).to.equal(false)
   })
@@ -69,7 +68,7 @@ Helpers.test_helper_45(); // Replaced with helper function
 
     req.body.orderLinesData = '{ "productId: 28'
 
-Helpers.test_helper_45(); // Replaced with helper function
+test_helper_45(); // Replaced with helper function
 
     expect(challenges.rceChallenge.solved).to.equal(false)
   })

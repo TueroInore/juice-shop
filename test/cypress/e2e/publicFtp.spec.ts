@@ -1,5 +1,4 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
 describe('/ftp', () => {
   describe('challenge 'confidentialDocument'', () => {

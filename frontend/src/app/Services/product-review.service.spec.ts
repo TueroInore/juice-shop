@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_78(); // Replaced with helper function
+frontend_helper_78(); // Replaced with helper function
 
 import { ProductReviewService } from './product-review.service'
 
@@ -26,7 +25,7 @@ describe('ProductReviewService', () => {
       const req = httpMock.expectOne('http://localhost:3000/rest/products/42/reviews')
       req.flush({ data: 'apiResponse' })
 
-Helpers.frontend_helper_95(); // Replaced with helper function
+frontend_helper_95(); // Replaced with helper function
 
   it('should create product reviews directly via the rest api', inject([ProductReviewService, HttpTestingController],
     fakeAsync((service: ProductReviewService, httpMock: HttpTestingController) => {

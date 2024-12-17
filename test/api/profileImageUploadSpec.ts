@@ -1,7 +1,6 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import config from 'config'
@@ -90,13 +89,13 @@ describe('/profile/image/url', () => {
     const form = frisby.formData()
     form.append('imageUrl', 'https://placekitten.com/g/100/100')
 
-Helpers.test_helper_34(); // Replaced with helper function
+test_helper_34(); // Replaced with helper function
 
   it('POST profile image URL redirects even for invalid image URL', () => {
     const form = frisby.formData()
     form.append('imageUrl', 'https://notanimage.here/100/100')
 
-Helpers.test_helper_34(); // Replaced with helper function
+test_helper_34(); // Replaced with helper function
 
   xit('POST profile image URL forbidden for anonymous user', () => { // FIXME runs into 'socket hang up'
     const form = frisby.formData()

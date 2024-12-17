@@ -1,12 +1,11 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import type { ChallengeModel } from 'models/challenge'
 import { getChallengeEnablementStatus } from '../../lib/utils'
 
-Helpers.test_helper_49(); // Replaced with helper function
+test_helper_49(); // Replaced with helper function
 
 describe('utils', () => {
   const utils = require('../../lib/utils')

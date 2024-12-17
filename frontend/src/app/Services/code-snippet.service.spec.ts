@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_78(); // Replaced with helper function
+frontend_helper_78(); // Replaced with helper function
 
 import { CodeSnippetService } from './code-snippet.service'
 
@@ -28,7 +27,7 @@ describe('CodeSnippetService', () => {
       req.flush({ snippet: 'apiResponse' })
       tick()
 
-Helpers.frontend_helper_85(); // Replaced with helper function
+frontend_helper_85(); // Replaced with helper function
 
   it('should get list of challenges with code snippets directly from the rest api', inject([CodeSnippetService, HttpTestingController],
     fakeAsync((service: CodeSnippetService, httpMock: HttpTestingController) => {

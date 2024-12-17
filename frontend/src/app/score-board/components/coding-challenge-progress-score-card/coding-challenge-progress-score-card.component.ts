@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_64(); // Replaced with helper function
+frontend_helper_64(); // Replaced with helper function
 
-Helpers.frontend_helper_65(); // Replaced with helper function
+frontend_helper_65(); // Replaced with helper function
 
 @Component({
   selector: 'coding-challenge-progress-score-card',
@@ -17,9 +16,9 @@ export class CodingChallengeProgressScoreCardComponent implements OnInit, OnChan
   public availableCodingChallenges: number
   public solvedCodingChallenges: number
 
-Helpers.frontend_helper_66(); // Replaced with helper function
+frontend_helper_66(); // Replaced with helper function
 
-Helpers.frontend_helper_67(); // Replaced with helper function
+frontend_helper_67(); // Replaced with helper function
 
   private updatedNumberOfSolvedChallenges (): void {
     const availableCodingChallenges = this.allChallenges

@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_59(); // Replaced with helper function
+frontend_helper_59(); // Replaced with helper function
 
 import { FilterSettingsComponent } from './filter-settings.component'
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component'
@@ -53,6 +52,6 @@ describe('FilterSettingsComponent', () => {
     component.allChallenges = []
     component.filterSetting = { ...DEFAULT_FILTER_SETTING }
 
-Helpers.frontend_helper_60(); // Replaced with helper function
+frontend_helper_60(); // Replaced with helper function
 
-Helpers.frontend_helper_22(); // Replaced with helper function
+frontend_helper_22(); // Replaced with helper function

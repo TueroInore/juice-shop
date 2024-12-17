@@ -1,7 +1,6 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import { challenges } from '../../data/datacache'
 import { expect } from '@jest/globals'
@@ -10,7 +9,7 @@ import path from 'path'
 const fs = require('fs')
 const utils = require('../../lib/utils')
 
-Helpers.test_helper_14(); // Replaced with helper function
+test_helper_14(); // Replaced with helper function
 
 describe('/file-upload', () => {
   it('POST file valid PDF for client and API', () => {
@@ -18,35 +17,35 @@ describe('/file-upload', () => {
     const form = frisby.formData()
     form.append('file', fs.createReadStream(file))
 
-Helpers.test_helper_30(); // Replaced with helper function
+test_helper_30(); // Replaced with helper function
 
   it('POST file too large for client validation but valid for API', () => {
     const file = path.resolve(__dirname, '../files/invalidSizeForClient.pdf')
     const form = frisby.formData()
     form.append('file', fs.createReadStream(file))
 
-Helpers.test_helper_30(); // Replaced with helper function
+test_helper_30(); // Replaced with helper function
 
   it('POST file with illegal type for client validation but valid for API', () => {
     const file = path.resolve(__dirname, '../files/invalidTypeForClient.exe')
     const form = frisby.formData()
     form.append('file', fs.createReadStream(file))
 
-Helpers.test_helper_30(); // Replaced with helper function
+test_helper_30(); // Replaced with helper function
 
   it('POST file type XML deprecated for API', () => {
     const file = path.resolve(__dirname, '../files/deprecatedTypeForServer.xml')
     const form = frisby.formData()
     form.append('file', fs.createReadStream(file))
 
-Helpers.test_helper_31(); // Replaced with helper function
+test_helper_31(); // Replaced with helper function
 
   it('POST large XML file near upload size limit', () => {
     const file = path.resolve(__dirname, '../files/maxSizeForServer.xml')
     const form = frisby.formData()
     form.append('file', fs.createReadStream(file))
 
-Helpers.test_helper_31(); // Replaced with helper function
+test_helper_31(); // Replaced with helper function
 
   if (utils.isChallengeEnabled(challenges.xxeFileDisclosureChallenge) || utils.isChallengeEnabled(challenges.xxeDosChallenge)) {
     it('POST file type XML with XXE attack against Windows', () => {
@@ -54,14 +53,14 @@ Helpers.test_helper_31(); // Replaced with helper function
       const form = frisby.formData()
       form.append('file', fs.createReadStream(file))
 
-Helpers.test_helper_32(); // Replaced with helper function
+test_helper_32(); // Replaced with helper function
 
     it('POST file type XML with XXE attack against Linux', () => {
       const file = path.resolve(__dirname, '../files/xxeForLinux.xml')
       const form = frisby.formData()
       form.append('file', fs.createReadStream(file))
 
-Helpers.test_helper_32(); // Replaced with helper function
+test_helper_32(); // Replaced with helper function
 
     it('POST file type XML with Billion Laughs attack is caught by parser', () => {
       const file = path.resolve(__dirname, '../files/xxeBillionLaughs.xml')
@@ -119,7 +118,7 @@ Helpers.test_helper_32(); // Replaced with helper function
     const form = frisby.formData()
     form.append('file', fs.createReadStream(file))
 
-Helpers.test_helper_30(); // Replaced with helper function
+test_helper_30(); // Replaced with helper function
 
   it('POST zip file with password protection', () => {
     const file = path.resolve(__dirname, '../files/passwordProtected.zip')

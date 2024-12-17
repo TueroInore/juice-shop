@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_64(); // Replaced with helper function
+frontend_helper_64(); // Replaced with helper function
 
-Helpers.frontend_helper_65(); // Replaced with helper function
+frontend_helper_65(); // Replaced with helper function
 
 interface DifficultySummary {
   difficulty: 0 | 1 | 2 | 3 | 4 | 5 | 6
@@ -46,9 +45,9 @@ export class DifficultyOverviewScoreCardComponent implements OnInit, OnChanges {
     { difficulty: 6, availableChallenges: 0, solvedChallenges: 0 }
   ]
 
-Helpers.frontend_helper_66(); // Replaced with helper function
+frontend_helper_66(); // Replaced with helper function
 
-Helpers.frontend_helper_67(); // Replaced with helper function
+frontend_helper_67(); // Replaced with helper function
 
   private updatedNumberOfSolvedChallenges (): void {
     const solvedHackingChallenges = this.allChallenges

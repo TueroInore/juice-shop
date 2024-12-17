@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { CookieModule, CookieService } from 'ngx-cookie'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
@@ -63,7 +62,7 @@ describe('ServerStartedNotificationComponent', () => {
     })
       .compileComponents()
 
-Helpers.frontend_helper_71(); // Replaced with helper function
+frontend_helper_71(); // Replaced with helper function
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ServerStartedNotificationComponent)
@@ -72,7 +71,7 @@ Helpers.frontend_helper_71(); // Replaced with helper function
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should keep continue code cookie after successfully restoring progress on server start', () => {
     spyOn(mockSocket, 'on')

@@ -1,9 +1,8 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_49(); // Replaced with helper function
+test_helper_49(); // Replaced with helper function
 
 describe('fileUpload', () => {
   const {
@@ -28,7 +27,7 @@ describe('fileUpload', () => {
         challenges.uploadSizeChallenge = { solved: false, save }
         req.file.size = size
 
-Helpers.test_helper_56(); // Replaced with helper function
+test_helper_56(); // Replaced with helper function
 
         expect(challenges.uploadSizeChallenge.solved).to.equal(false)
       })
@@ -39,7 +38,7 @@ Helpers.test_helper_56(); // Replaced with helper function
     challenges.uploadSizeChallenge = { solved: false, save }
     req.file.size = 100001
 
-Helpers.test_helper_56(); // Replaced with helper function
+test_helper_56(); // Replaced with helper function
 
     expect(challenges.uploadSizeChallenge.solved).to.equal(true)
   })
@@ -48,7 +47,7 @@ Helpers.test_helper_56(); // Replaced with helper function
     challenges.uploadTypeChallenge = { solved: false, save }
     req.file.originalname = 'hack.exe'
 
-Helpers.test_helper_57(); // Replaced with helper function
+test_helper_57(); // Replaced with helper function
 
     expect(challenges.uploadTypeChallenge.solved).to.equal(true)
   })
@@ -57,7 +56,7 @@ Helpers.test_helper_57(); // Replaced with helper function
     challenges.uploadTypeChallenge = { solved: false, save }
     req.file.originalname = 'hack.pdf'
 
-Helpers.test_helper_57(); // Replaced with helper function
+test_helper_57(); // Replaced with helper function
 
     expect(challenges.uploadTypeChallenge.solved).to.equal(false)
   })

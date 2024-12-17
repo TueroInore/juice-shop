@@ -1,7 +1,6 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import chai = require('chai')
 import sinonChai = require('sinon-chai')
@@ -239,7 +238,7 @@ describe('configValidation', () => {
         }
       ]
 
-Helpers.test_helper_50(); // Replaced with helper function
+test_helper_50(); // Replaced with helper function
 
     it('should fail if a required challenge memory is missing', () => {
       const memories = [
@@ -250,7 +249,7 @@ Helpers.test_helper_50(); // Replaced with helper function
         }
       ]
 
-Helpers.test_helper_50(); // Replaced with helper function
+test_helper_50(); // Replaced with helper function
 
     it('should fail if memories have mixed up the required challenge keys', () => {
       const memories = [
@@ -319,7 +318,7 @@ Helpers.test_helper_50(); // Replaced with helper function
         }
       ]
 
-Helpers.test_helper_51(); // Replaced with helper function
+test_helper_51(); // Replaced with helper function
 
     it('should accept a config where the default users are associated', () => {
       const memories = [
@@ -337,7 +336,7 @@ Helpers.test_helper_51(); // Replaced with helper function
         }
       ]
 
-Helpers.test_helper_51(); // Replaced with helper function
+test_helper_51(); // Replaced with helper function
 
     it('should fail if a memory is linked to another user', () => {
       const memories = [

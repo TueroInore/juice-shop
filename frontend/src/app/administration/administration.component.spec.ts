@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { UserDetailsComponent } from '../user-details/user-details.component'
 import { FeedbackDetailsComponent } from '../feedback-details/feedback-details.component'
@@ -66,7 +65,7 @@ describe('AdministrationComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should find all users via the UserService', () => {
     component.findAllUsers()
@@ -81,7 +80,7 @@ Helpers.frontend_helper_3(); // Replaced with helper function
 
     tick()
 
-Helpers.frontend_helper_11(); // Replaced with helper function
+frontend_helper_11(); // Replaced with helper function
 
   it('should find all feedbacks via FeedbackService', () => {
     component.findAllFeedbacks()
@@ -96,7 +95,7 @@ Helpers.frontend_helper_11(); // Replaced with helper function
 
     tick()
 
-Helpers.frontend_helper_11(); // Replaced with helper function
+frontend_helper_11(); // Replaced with helper function
 
   it('should refresh all feedbacks after deletion', () => {
     spyOn(component, 'findAllFeedbacks')
@@ -111,7 +110,7 @@ Helpers.frontend_helper_11(); // Replaced with helper function
 
     tick()
 
-Helpers.frontend_helper_11(); // Replaced with helper function
+frontend_helper_11(); // Replaced with helper function
 
   it('should open the UserDetailsComponent to show details', () => {
     component.showUserDetail(1)

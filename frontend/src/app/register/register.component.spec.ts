@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { LoginComponent } from '../login/login.component'
 import { SecurityAnswerService } from '../Services/security-answer.service'
@@ -74,7 +73,7 @@ describe('RegisterComponent', () => {
     })
       .compileComponents()
 
-Helpers.frontend_helper_31(); // Replaced with helper function
+frontend_helper_31(); // Replaced with helper function
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RegisterComponent)
@@ -82,7 +81,7 @@ Helpers.frontend_helper_31(); // Replaced with helper function
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should be compulsory to provid email', () => {
     component.emailControl.setValue('')

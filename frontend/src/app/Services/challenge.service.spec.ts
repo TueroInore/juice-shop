@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_78(); // Replaced with helper function
+frontend_helper_78(); // Replaced with helper function
 
 import { ChallengeService } from './challenge.service'
 
@@ -30,7 +29,7 @@ describe('ChallengeService', () => {
       req.flush({ data: 'apiResponse' })
       tick()
 
-Helpers.frontend_helper_83(); // Replaced with helper function
+frontend_helper_83(); // Replaced with helper function
 
   it('should get current continue code directly from the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -41,7 +40,7 @@ Helpers.frontend_helper_83(); // Replaced with helper function
       req.flush({ continueCode: 'apiResponse' })
       tick()
 
-Helpers.frontend_helper_83(); // Replaced with helper function
+frontend_helper_83(); // Replaced with helper function
 
   it('should pass continue code for restoring challenge progress on to the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -52,7 +51,7 @@ Helpers.frontend_helper_83(); // Replaced with helper function
       req.flush({ data: 'apiResponse' })
       tick()
 
-Helpers.frontend_helper_84(); // Replaced with helper function
+frontend_helper_84(); // Replaced with helper function
 
   it('should get current "Find It" coding challenge continue code directly from the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -63,7 +62,7 @@ Helpers.frontend_helper_84(); // Replaced with helper function
       req.flush({ continueCode: 'apiResponse' })
       tick()
 
-Helpers.frontend_helper_83(); // Replaced with helper function
+frontend_helper_83(); // Replaced with helper function
 
   it('should pass "Find It" coding challenge continue code for restoring progress on to the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -74,7 +73,7 @@ Helpers.frontend_helper_83(); // Replaced with helper function
       req.flush({ data: 'apiResponse' })
       tick()
 
-Helpers.frontend_helper_84(); // Replaced with helper function
+frontend_helper_84(); // Replaced with helper function
 
   it('should get current "Fix It" coding challenge continue code directly from the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -85,7 +84,7 @@ Helpers.frontend_helper_84(); // Replaced with helper function
       req.flush({ continueCode: 'apiResponse' })
       tick()
 
-Helpers.frontend_helper_83(); // Replaced with helper function
+frontend_helper_83(); // Replaced with helper function
 
   it('should pass "Fix It" coding challenge continue code for restoring progress on to the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {
@@ -96,7 +95,7 @@ Helpers.frontend_helper_83(); // Replaced with helper function
       req.flush({ data: 'apiResponse' })
       tick()
 
-Helpers.frontend_helper_84(); // Replaced with helper function
+frontend_helper_84(); // Replaced with helper function
 
   it('should repeat notification directly from the rest api', inject([ChallengeService, HttpTestingController],
     fakeAsync((service: ChallengeService, httpMock: HttpTestingController) => {

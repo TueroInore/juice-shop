@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { MatDatepickerModule } from '@angular/material/datepicker'
@@ -97,7 +96,7 @@ describe('RecycleComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should reset the form by calling resetForm', () => {
     component.addressId = '1'
@@ -127,7 +126,7 @@ Helpers.frontend_helper_3(); // Replaced with helper function
     expect(component.userEmail).toBeUndefined()
   })
 
-Helpers.frontend_helper_17(); // Replaced with helper function
+frontend_helper_17(); // Replaced with helper function
 
   it('should display pickup message and reset recycle form on saving', () => {
     recycleService.save.and.returnValue(of({}))

@@ -1,13 +1,12 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_15(); // Replaced with helper function
+test_helper_15(); // Replaced with helper function
 
-Helpers.test_helper_12(); // Replaced with helper function
+test_helper_12(); // Replaced with helper function
 
-Helpers.test_helper_4(); // Replaced with helper function
+test_helper_4(); // Replaced with helper function
 
 describe('/rest/user/change-password', () => {
   it('GET password change for newly created user with recognized token as Authorization header', () => {

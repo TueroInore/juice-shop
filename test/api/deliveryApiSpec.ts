@@ -1,13 +1,12 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_20(); // Replaced with helper function
+test_helper_20(); // Replaced with helper function
 
-Helpers.test_helper_12(); // Replaced with helper function
+test_helper_12(); // Replaced with helper function
 
-Helpers.test_helper_19(); // Replaced with helper function
+test_helper_19(); // Replaced with helper function
 
 describe('/api/Deliverys', () => {
   describe('for regular customer', () => {
@@ -39,7 +38,7 @@ describe('/api/Deliverys', () => {
     })
   })
 
-Helpers.test_helper_29(); // Replaced with helper function
+test_helper_29(); // Replaced with helper function
 
     it('GET delivery methods', () => {
       return frisby.get(API_URL + '/Deliverys', { headers: authHeader })
@@ -85,7 +84,7 @@ describe('/api/Deliverys/:id', () => {
     })
   })
 
-Helpers.test_helper_29(); // Replaced with helper function
+test_helper_29(); // Replaced with helper function
 
     it('GET delivery method', () => {
       return frisby.get(API_URL + '/Deliverys/2', { headers: authHeader })

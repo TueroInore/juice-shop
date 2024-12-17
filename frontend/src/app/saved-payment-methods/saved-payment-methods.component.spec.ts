@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_8(); // Replaced with helper function
+frontend_helper_8(); // Replaced with helper function
 
 import { MatTableModule } from '@angular/material/table'
 import { MatExpansionModule } from '@angular/material/expansion'
@@ -30,7 +29,7 @@ describe('SavedPaymentMethodsComponent', () => {
     translateService.onDefaultLangChange = new EventEmitter()
     snackBar = jasmine.createSpyObj('MatSnackBar', ['open'])
 
-Helpers.frontend_helper_54(); // Replaced with helper function
+frontend_helper_54(); // Replaced with helper function
 
         BrowserAnimationsModule,
         MatCardModule,
@@ -57,4 +56,4 @@ Helpers.frontend_helper_54(); // Replaced with helper function
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_22(); // Replaced with helper function
+frontend_helper_22(); // Replaced with helper function

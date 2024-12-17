@@ -1,7 +1,6 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import { expect } from '@jest/globals'
@@ -12,7 +11,7 @@ const security = require('../../lib/insecurity')
 const christmasProduct = config.get<ProductConfig[]>('products').filter(({ useForChristmasSpecialChallenge }) => useForChristmasSpecialChallenge)[0]
 const pastebinLeakProduct = config.get<ProductConfig[]>('products').filter(({ keywordsForPastebinDataLeakChallenge }) => keywordsForPastebinDataLeakChallenge)[0]
 
-Helpers.test_helper_12(); // Replaced with helper function
+test_helper_12(); // Replaced with helper function
 
 describe('/rest/products/search', () => {
   it('GET product search with no matches returns no products', () => {

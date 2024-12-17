@@ -1,7 +1,6 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import config from 'config'
@@ -11,7 +10,7 @@ const Joi = frisby.Joi
 const security = require('../../lib/insecurity')
 const http = require('http')
 
-Helpers.test_helper_16(); // Replaced with helper function
+test_helper_16(); // Replaced with helper function
 
 const jsonHeader = { 'content-type': 'application/json' }
 const authHeader = { Authorization: `Bearer ${security.authorize()}`, 'content-type': 'application/json' }

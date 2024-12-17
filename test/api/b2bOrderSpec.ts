@@ -1,9 +1,8 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_17(); // Replaced with helper function
+test_helper_17(); // Replaced with helper function
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import { challenges } from '../../data/datacache'
 import frisby = require('frisby')
@@ -13,7 +12,7 @@ const security = require('../../lib/insecurity')
 
 const API_URL = 'http://localhost:3000/b2b/v2/orders'
 
-Helpers.test_helper_18(); // Replaced with helper function
+test_helper_18(); // Replaced with helper function
 
 describe('/b2b/v2/orders', () => {
   if (utils.isChallengeEnabled(challenges.rceChallenge) || utils.isChallengeEnabled(challenges.rceOccupyChallenge)) {

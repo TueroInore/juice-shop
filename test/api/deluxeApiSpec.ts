@@ -1,9 +1,8 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
-Helpers.test_helper_15(); // Replaced with helper function
+test_helper_15(); // Replaced with helper function
 
 const jsonHeader = { 'content-type': 'application/json' }
 const REST_URL = 'http://localhost:3000/rest'
@@ -22,7 +21,7 @@ async function login ({ email, password }: { email: string, password: string }) 
       throw new Error(`Failed to login '${email}'`)
     })
 
-Helpers.test_helper_5(); // Replaced with helper function
+test_helper_5(); // Replaced with helper function
 
 describe('/rest/deluxe-membership', () => {
   it('GET deluxe membership status for customers', () => {

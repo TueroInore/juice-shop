@@ -1,16 +1,15 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import io from 'socket.io-client'
 
 describe('WebSocket', () => {
   let socket: SocketIOClient.Socket
 
-Helpers.test_helper_36(); // Replaced with helper function
+test_helper_36(); // Replaced with helper function
 
-Helpers.test_helper_37(); // Replaced with helper function
+test_helper_37(); // Replaced with helper function
 
   it('server handles confirmation messages for emitted challenge resolutions', done => {
     socket.emit('notification received', 'Find the carefully hidden \'Score Board\' page.')

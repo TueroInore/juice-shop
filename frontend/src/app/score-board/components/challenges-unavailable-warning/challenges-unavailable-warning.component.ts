@@ -1,5 +1,4 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
 import { Component, EventEmitter, Input, type OnChanges, Output } from '@angular/core'
 
@@ -15,9 +14,9 @@ export class ChallengesUnavailableWarningComponent implements OnChanges {
   @Input()
   public challenges: EnrichedChallenge[]
 
-Helpers.frontend_helper_62(); // Replaced with helper function
+frontend_helper_62(); // Replaced with helper function
 
-Helpers.frontend_helper_63(); // Replaced with helper function
+frontend_helper_63(); // Replaced with helper function
 
   public numberOfDisabledChallenges = 0
   public disabledBecauseOfEnv: string | null = null

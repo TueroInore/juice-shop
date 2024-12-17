@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { ChallengeService } from '../Services/challenge.service'
 import { type ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing'
@@ -25,7 +24,7 @@ import { AdministrationService } from '../Services/administration.service'
 import { UserService } from '../Services/user.service'
 import { Location } from '@angular/common'
 
-Helpers.frontend_helper_32(); // Replaced with helper function
+frontend_helper_32(); // Replaced with helper function
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent
@@ -96,17 +95,17 @@ describe('SidenavComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should show accounting functionality when user has according role', () => {
     loginGuard.tokenDecode.and.returnValue({ data: { role: roles.accounting } })
 
-Helpers.frontend_helper_99(); // Replaced with helper function
+frontend_helper_99(); // Replaced with helper function
 
   it('should set version number as retrieved with "v" prefix', () => {
     loginGuard.tokenDecode.and.returnValue({ data: { role: roles.accounting } })
 
-Helpers.frontend_helper_99(); // Replaced with helper function
+frontend_helper_99(); // Replaced with helper function
 
   it('should not show accounting functionality when user lacks according role', () => {
     administractionService.getApplicationVersion.and.returnValue(of('1.2.3'))
@@ -129,17 +128,17 @@ Helpers.frontend_helper_99(); // Replaced with helper function
     expect(component.scoreBoardVisible).toBe(true)
   })
 
-Helpers.frontend_helper_34(); // Replaced with helper function
+frontend_helper_34(); // Replaced with helper function
 
-Helpers.frontend_helper_35(); // Replaced with helper function
+frontend_helper_35(); // Replaced with helper function
 
-Helpers.frontend_helper_36(); // Replaced with helper function
+frontend_helper_36(); // Replaced with helper function
 
-Helpers.frontend_helper_37(); // Replaced with helper function
+frontend_helper_37(); // Replaced with helper function
 
-Helpers.frontend_helper_38(); // Replaced with helper function
+frontend_helper_38(); // Replaced with helper function
 
-Helpers.frontend_helper_39(); // Replaced with helper function
+frontend_helper_39(); // Replaced with helper function
 
   it('should forward to main page', fakeAsync(() => {
     component.logout()

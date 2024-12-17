@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { ClipboardModule } from 'ngx-clipboard'
 import { MatButtonModule } from '@angular/material/button'
@@ -25,7 +24,7 @@ class MockSocket {
     callback()
   }
 
-Helpers.frontend_helper_12(); // Replaced with helper function
+frontend_helper_12(); // Replaced with helper function
 
 describe('ChallengeSolvedNotificationComponent', () => {
   let component: ChallengeSolvedNotificationComponent
@@ -80,7 +79,7 @@ describe('ChallengeSolvedNotificationComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should delete notifictions', () => {
     component.notifications = [
@@ -148,13 +147,13 @@ Helpers.frontend_helper_3(); // Replaced with helper function
     configurationService.getApplicationConfiguration.and.returnValue(of({ ctf: { showFlagsInNotifications: false } }))
     component.ngOnInit()
 
-Helpers.frontend_helper_13(); // Replaced with helper function
+frontend_helper_13(); // Replaced with helper function
 
   it('should hide CTF flag codes by default', () => {
     configurationService.getApplicationConfiguration.and.returnValue(of({ ctf: { } }))
     component.ngOnInit()
 
-Helpers.frontend_helper_13(); // Replaced with helper function
+frontend_helper_13(); // Replaced with helper function
 
   it('should hide FBCTF-specific country details by default', () => {
     configurationService.getApplicationConfiguration.and.returnValue(of({ ctf: { } }))

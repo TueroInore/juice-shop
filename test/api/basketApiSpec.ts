@@ -1,21 +1,20 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import { expect } from '@jest/globals'
 const security = require('../../lib/insecurity')
 
-Helpers.test_helper_12(); // Replaced with helper function
+test_helper_12(); // Replaced with helper function
 
-Helpers.test_helper_19(); // Replaced with helper function
+test_helper_19(); // Replaced with helper function
 
 const validCoupon = security.generateCoupon(15)
 const outdatedCoupon = security.generateCoupon(20, new Date(2001, 0, 1))
 const forgedCoupon = security.generateCoupon(99)
 
-Helpers.test_helper_13(); // Replaced with helper function
+test_helper_13(); // Replaced with helper function
 
 describe('/rest/basket/:id', () => {
   it('GET existing basket by id is not allowed via public API', () => {

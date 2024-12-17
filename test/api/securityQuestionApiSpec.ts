@@ -1,16 +1,15 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import config from 'config'
 const Joi = frisby.Joi
 const security = require('../../lib/insecurity')
 
-Helpers.test_helper_12(); // Replaced with helper function
+test_helper_12(); // Replaced with helper function
 
-Helpers.test_helper_35(); // Replaced with helper function
+test_helper_35(); // Replaced with helper function
 
 describe('/api/SecurityQuestions', () => {
   it('GET all security questions ', () => {

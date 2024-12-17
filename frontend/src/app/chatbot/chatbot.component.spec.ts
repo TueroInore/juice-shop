@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { ChatbotService } from '../Services/chatbot.service'
 import { ReactiveFormsModule } from '@angular/forms'
@@ -20,7 +19,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { EventEmitter } from '@angular/core'
 import { CookieModule } from 'ngx-cookie'
 
-Helpers.frontend_helper_15(); // Replaced with helper function
+frontend_helper_15(); // Replaced with helper function
 
 describe('ComplaintComponent', () => {
   let component: ChatbotComponent
@@ -71,7 +70,7 @@ describe('ComplaintComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should initially have 1 message intially', () => {
     expect(component.messages.length).toEqual(1)

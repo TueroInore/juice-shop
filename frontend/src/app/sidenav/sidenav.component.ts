@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_40(); // Replaced with helper function
+frontend_helper_40(); // Replaced with helper function
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { environment } from '../../environments/environment'
 import { ChallengeService } from '../Services/challenge.service'
@@ -48,7 +47,7 @@ export class SidenavComponent implements OnInit {
     this.getApplicationDetails()
     this.getScoreBoardStatus()
 
-Helpers.frontend_helper_41(); // Replaced with helper function
+frontend_helper_41(); // Replaced with helper function
 
     this.userService.getLoggedInState().subscribe((isLoggedIn) => {
       if (isLoggedIn) {
@@ -66,21 +65,21 @@ Helpers.frontend_helper_41(); // Replaced with helper function
     })
   }
 
-Helpers.frontend_helper_43(); // Replaced with helper function
+frontend_helper_43(); // Replaced with helper function
 
-Helpers.frontend_helper_44(); // Replaced with helper function
+frontend_helper_44(); // Replaced with helper function
 
-Helpers.frontend_helper_46(); // Replaced with helper function
+frontend_helper_46(); // Replaced with helper function
 
-Helpers.frontend_helper_47(); // Replaced with helper function
+frontend_helper_47(); // Replaced with helper function
 
-Helpers.frontend_helper_49(); // Replaced with helper function
+frontend_helper_49(); // Replaced with helper function
 
-Helpers.frontend_helper_45(); // Replaced with helper function
+frontend_helper_45(); // Replaced with helper function
 
-Helpers.frontend_helper_42(); // Replaced with helper function
+frontend_helper_42(); // Replaced with helper function
 
-Helpers.frontend_helper_48(); // Replaced with helper function
+frontend_helper_48(); // Replaced with helper function
 
   getApplicationDetails () {
     this.configurationService.getApplicationConfiguration().subscribe((config: any) => {

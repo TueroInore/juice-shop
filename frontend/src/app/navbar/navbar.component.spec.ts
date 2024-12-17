@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { ChallengeService } from '../Services/challenge.service'
 import { SearchResultComponent } from '../search-result/search-result.component'
@@ -38,7 +37,7 @@ import { LoginGuard } from '../app.guard'
 import { MatRadioModule } from '@angular/material/radio'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
-Helpers.frontend_helper_32(); // Replaced with helper function
+frontend_helper_32(); // Replaced with helper function
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent
@@ -126,7 +125,7 @@ describe('NavbarComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should hold application version', () => {
     administrationService.getApplicationVersion.and.returnValue(of('x.y.z'))
@@ -199,7 +198,7 @@ Helpers.frontend_helper_3(); // Replaced with helper function
     expect(component.showGitHubLink).toBe(false)
   })
 
-Helpers.frontend_helper_33(); // Replaced with helper function
+frontend_helper_33(); // Replaced with helper function
 
   it('should hide Score Board menu item when corresponding challenge was not solved yet', () => {
     challengeService.find.and.returnValue(of([{ solved: false }]))
@@ -225,17 +224,17 @@ Helpers.frontend_helper_33(); // Replaced with helper function
     expect(location.path()).toBe(encodeURI('/search'))
   }))
 
-Helpers.frontend_helper_34(); // Replaced with helper function
+frontend_helper_34(); // Replaced with helper function
 
-Helpers.frontend_helper_35(); // Replaced with helper function
+frontend_helper_35(); // Replaced with helper function
 
-Helpers.frontend_helper_36(); // Replaced with helper function
+frontend_helper_36(); // Replaced with helper function
 
-Helpers.frontend_helper_37(); // Replaced with helper function
+frontend_helper_37(); // Replaced with helper function
 
-Helpers.frontend_helper_38(); // Replaced with helper function
+frontend_helper_38(); // Replaced with helper function
 
-Helpers.frontend_helper_39(); // Replaced with helper function
+frontend_helper_39(); // Replaced with helper function
 
   it('should forward to main page', fakeAsync(() => {
     component.logout()

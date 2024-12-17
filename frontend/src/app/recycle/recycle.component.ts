@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { ConfigurationService } from '../Services/configuration.service'
 import { UserService } from '../Services/user.service'
@@ -114,4 +113,4 @@ export class RecycleComponent implements OnInit {
     this.pickup.setValue(false)
   }
 
-Helpers.frontend_helper_10(); // Replaced with helper function
+frontend_helper_10(); // Replaced with helper function

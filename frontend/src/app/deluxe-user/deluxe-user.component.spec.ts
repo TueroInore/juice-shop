@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule } from '@ngx-translate/core'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
@@ -87,7 +86,7 @@ describe('DeluxeUserComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should hold membership cost on ngOnInit', () => {
     userService.deluxeStatus.and.returnValue(of({ membershipCost: 30 }))
@@ -110,4 +109,4 @@ Helpers.frontend_helper_3(); // Replaced with helper function
     expect(component.logoSrc).toBe('assets/public/images/logo.jpg')
   })
 
-Helpers.frontend_helper_21(); // Replaced with helper function
+frontend_helper_21(); // Replaced with helper function

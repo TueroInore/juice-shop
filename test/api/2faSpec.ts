@@ -1,7 +1,6 @@
-import * as Helpers from './utils/test_helpers';
-import { Helpers.test_helper_1, Helpers.test_helper_2 } from './utils/test_helpers';
+import { test_helper_1, test_helper_2 } from './utils/test_helpers';
 
-Helpers.test_helper_1(); // Replaced with helper function
+test_helper_1(); // Replaced with helper function
 
 import frisby = require('frisby')
 import config from 'config'
@@ -11,9 +10,9 @@ const security = require('../../lib/insecurity')
 
 const otplib = require('otplib')
 
-Helpers.test_helper_3(); // Replaced with helper function
+test_helper_3(); // Replaced with helper function
 
-Helpers.test_helper_4(); // Replaced with helper function
+test_helper_4(); // Replaced with helper function
 
 async function login ({ email, password, totpSecret }: { email: string, password: string, totpSecret?: string }) {
   // @ts-expect-error FIXME promise return handling broken
@@ -39,7 +38,7 @@ async function login ({ email, password, totpSecret }: { email: string, password
     return totpRes.json.authentication
   }
 
-Helpers.test_helper_5(); // Replaced with helper function
+test_helper_5(); // Replaced with helper function
 
 async function register ({ email, password, totpSecret }: { email: string, password: string, totpSecret?: string }) {
   // @ts-expect-error FIXME promise return handling broken
@@ -99,7 +98,7 @@ describe('/rest/2fa/verify', () => {
       type: 'password_valid_needs_second_factor_token'
     })
 
-Helpers.test_helper_6(); // Replaced with helper function
+test_helper_6(); // Replaced with helper function
 
     // @ts-expect-error FIXME promise return handling broken
     await frisby.post(REST_URL + '/2fa/verify', {
@@ -146,7 +145,7 @@ Helpers.test_helper_6(); // Replaced with helper function
       type: 'password_valid_needs_second_factor_token'
     }, 'this_surly_isnt_the_right_key')
 
-Helpers.test_helper_6(); // Replaced with helper function
+test_helper_6(); // Replaced with helper function
 
     // @ts-expect-error FIXME promise return handling broken
     await frisby.post(REST_URL + '/2fa/verify', {
@@ -228,9 +227,9 @@ describe('/rest/2fa/setup', () => {
     const email = 'fooooo1@bar.com'
     const password = '123456'
 
-Helpers.test_helper_7(); // Replaced with helper function
+test_helper_7(); // Replaced with helper function
 
-Helpers.test_helper_8(); // Replaced with helper function
+test_helper_8(); // Replaced with helper function
 
     // @ts-expect-error FIXME promise return handling broken
     await frisby.post(
@@ -273,9 +272,9 @@ Helpers.test_helper_8(); // Replaced with helper function
     const email = 'fooooo2@bar.com'
     const password = '123456'
 
-Helpers.test_helper_7(); // Replaced with helper function
+test_helper_7(); // Replaced with helper function
 
-Helpers.test_helper_8(); // Replaced with helper function
+test_helper_8(); // Replaced with helper function
 
     // @ts-expect-error FIXME promise return handling broken
     await frisby.post(
@@ -301,9 +300,9 @@ Helpers.test_helper_8(); // Replaced with helper function
     const email = 'fooooo3@bar.com'
     const password = '123456'
 
-Helpers.test_helper_7(); // Replaced with helper function
+test_helper_7(); // Replaced with helper function
 
-Helpers.test_helper_8(); // Replaced with helper function
+test_helper_8(); // Replaced with helper function
 
     // @ts-expect-error FIXME promise return handling broken
     await frisby.post(
@@ -329,9 +328,9 @@ Helpers.test_helper_8(); // Replaced with helper function
     const email = 'fooooo4@bar.com'
     const password = '123456'
 
-Helpers.test_helper_7(); // Replaced with helper function
+test_helper_7(); // Replaced with helper function
 
-Helpers.test_helper_8(); // Replaced with helper function
+test_helper_8(); // Replaced with helper function
 
     // @ts-expect-error FIXME promise return handling broken
     await frisby.post(
@@ -387,9 +386,9 @@ describe('/rest/2fa/disable', () => {
     const password = '123456'
     const totpSecret = 'ASDVAJSDUASZGDIADBJS'
 
-Helpers.test_helper_9(); // Replaced with helper function
+test_helper_9(); // Replaced with helper function
 
-Helpers.test_helper_10(); // Replaced with helper function
+test_helper_10(); // Replaced with helper function
 
     // @ts-expect-error FIXME promise return handling broken
     await frisby.post(
@@ -418,9 +417,9 @@ Helpers.test_helper_10(); // Replaced with helper function
     const password = '123456'
     const totpSecret = 'ASDVAJSDUASZGDIADBJS'
 
-Helpers.test_helper_9(); // Replaced with helper function
+test_helper_9(); // Replaced with helper function
 
-Helpers.test_helper_10(); // Replaced with helper function
+test_helper_10(); // Replaced with helper function
 
     // @ts-expect-error FIXME promise return handling broken
     await frisby.post(

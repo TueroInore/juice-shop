@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_29(); // Replaced with helper function
+frontend_helper_29(); // Replaced with helper function
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { UserService } from '../Services/user.service'
 import { SecurityQuestionService } from '../Services/security-question.service'
@@ -15,7 +14,7 @@ import { faEdit } from '@fortawesome/free-regular-svg-icons'
 import { type SecurityQuestion } from '../Models/securityQuestion.model'
 import { TranslateService } from '@ngx-translate/core'
 
-Helpers.frontend_helper_14(); // Replaced with helper function
+frontend_helper_14(); // Replaced with helper function
 
 @Component({
   selector: 'app-forgot-password',
@@ -113,4 +112,4 @@ export class ForgotPasswordComponent {
   }
 }
 
-Helpers.frontend_helper_30(); // Replaced with helper function
+frontend_helper_30(); // Replaced with helper function

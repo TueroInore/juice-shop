@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_27(); // Replaced with helper function
+frontend_helper_27(); // Replaced with helper function
 
 import { WalletWeb3Component } from './wallet-web3.component'
 import { TranslateModule } from '@ngx-translate/core'

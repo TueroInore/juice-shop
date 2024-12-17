@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
@@ -126,7 +125,7 @@ describe('PaymentComponent', () => {
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should not hold twitter or facebook URL if not defined in configuration', () => {
     configurationService.getApplicationConfiguration.and.returnValue(of({}))
@@ -151,7 +150,7 @@ Helpers.frontend_helper_3(); // Replaced with helper function
     expect(component.facebookUrl).toBe('facebook')
   })
 
-Helpers.frontend_helper_33(); // Replaced with helper function
+frontend_helper_33(); // Replaced with helper function
 
   it('should reinitizalise coupon code form by calling resetCouponForm', () => {
     component.couponControl.setValue('1234567890')
@@ -164,7 +163,7 @@ Helpers.frontend_helper_33(); // Replaced with helper function
   it('should reject an invalid coupon code', fakeAsync(() => {
     basketService.applyCoupon.and.returnValue(throwError('Error'))
 
-Helpers.frontend_helper_51(); // Replaced with helper function
+frontend_helper_51(); // Replaced with helper function
 
     component.couponControl.setValue('invalid_base85')
     component.applyCoupon()
@@ -177,9 +176,9 @@ Helpers.frontend_helper_51(); // Replaced with helper function
     basketService.applyCoupon.and.returnValue(of(42))
     translateService.get.and.returnValue(of('DISCOUNT_APPLIED'))
 
-Helpers.frontend_helper_51(); // Replaced with helper function
+frontend_helper_51(); // Replaced with helper function
 
-Helpers.frontend_helper_52(); // Replaced with helper function
+frontend_helper_52(); // Replaced with helper function
 
     expect(translateService.get).toHaveBeenCalledWith('DISCOUNT_APPLIED', { discount: 42 })
     expect(component.couponError).toBeUndefined()
@@ -192,7 +191,7 @@ Helpers.frontend_helper_52(); // Replaced with helper function
     component.couponControl.markAsPristine()
     component.couponControl.markAsUntouched()
 
-Helpers.frontend_helper_52(); // Replaced with helper function
+frontend_helper_52(); // Replaced with helper function
 
     expect(component.couponConfirmation).toBe('Translation of DISCOUNT_APPLIED')
     expect(component.couponError).toBeUndefined()

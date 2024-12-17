@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { Component, type OnInit } from '@angular/core'
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms'
@@ -13,7 +12,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { SnackBarHelperService } from '../Services/snack-bar-helper.service'
 
-Helpers.frontend_helper_50(); // Replaced with helper function
+frontend_helper_50(); // Replaced with helper function
 
 @Component({
   selector: 'app-photo-wall',
@@ -81,7 +80,7 @@ export class PhotoWallComponent implements OnInit {
     })
   }
 
-Helpers.frontend_helper_43(); // Replaced with helper function
+frontend_helper_43(); // Replaced with helper function
 
   resetForm () {
     this.form.get('image').setValue('')

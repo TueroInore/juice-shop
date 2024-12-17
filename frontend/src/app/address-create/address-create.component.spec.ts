@@ -1,7 +1,6 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
@@ -41,7 +40,7 @@ describe('AddressCreateComponent', () => {
     snackBar = jasmine.createSpyObj('MatSnackBar', ['open'])
     snackBar.open.and.returnValue(null)
 
-Helpers.frontend_helper_5(); // Replaced with helper function
+frontend_helper_5(); // Replaced with helper function
 
         BrowserAnimationsModule,
         MatCardModule,
@@ -67,7 +66,7 @@ Helpers.frontend_helper_5(); // Replaced with helper function
     fixture.detectChanges()
   })
 
-Helpers.frontend_helper_3(); // Replaced with helper function
+frontend_helper_3(); // Replaced with helper function
 
   it('should reinitizalise forms by calling resetForm', () => {
     component.countryControl.setValue('US')
@@ -106,7 +105,7 @@ Helpers.frontend_helper_3(); // Replaced with helper function
     expect(component.countryControl.valid).toBeFalsy()
   })
 
-Helpers.frontend_helper_6(); // Replaced with helper function
+frontend_helper_6(); // Replaced with helper function
 
   it('should be compulsory to provide number', () => {
     component.numberControl.setValue('')

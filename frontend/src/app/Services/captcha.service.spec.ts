@@ -1,9 +1,8 @@
-import * as Helpers from './utils/frontend_helpers';
-import { Helpers.frontend_helper_1, Helpers.frontend_helper_2 } from './utils/frontend_helpers';
+import { frontend_helper_1, frontend_helper_2 } from './utils/frontend_helpers';
 
-Helpers.frontend_helper_1(); // Replaced with helper function
+frontend_helper_1(); // Replaced with helper function
 
-Helpers.frontend_helper_78(); // Replaced with helper function
+frontend_helper_78(); // Replaced with helper function
 
 import { CaptchaService } from './captcha.service'
 
@@ -26,4 +25,4 @@ describe('CaptchaService', () => {
       const req = httpMock.expectOne('http://localhost:3000/rest/captcha/')
       req.flush('apiResponse')
 
-Helpers.frontend_helper_81(); // Replaced with helper function
+frontend_helper_81(); // Replaced with helper function
