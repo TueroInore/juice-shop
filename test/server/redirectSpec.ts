@@ -12,10 +12,10 @@ chai.use(sinonChai)
 describe('redirect', () => {
   const performRedirect = require('../../routes/redirect')
   const challenges = require('../../data/datacache').challenges
-  let req: any
-  let res: any
-  let next: any
-  let save: any
+  let req: unknown
+  let res: unknown
+  let next: unknown
+  let save: unknown
 
   beforeEach(() => {
     req = { query: {} }

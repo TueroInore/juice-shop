@@ -12,8 +12,8 @@ chai.use(sinonChai)
 describe('continueCode', () => {
   const continueCode = require('../../routes/continueCode').continueCode
   const challenges = require('../../data/datacache').challenges
-  let req: any
-  let res: any
+  let req: unknown
+  let res: unknown
 
   beforeEach(() => {
     req = {}

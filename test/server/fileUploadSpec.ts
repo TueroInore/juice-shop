@@ -12,8 +12,8 @@ describe('fileUpload', () => {
     checkFileType
   } = require('../../routes/fileUpload')
   const challenges = require('../../data/datacache').challenges
-  let req: any
-  let save: any
+  let req: unknown
+  let save: unknown
 
   beforeEach(() => {
     req = { file: { originalname: '' } }

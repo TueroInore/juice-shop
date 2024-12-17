@@ -12,8 +12,8 @@ chai.use(sinonChai)
 
 describe('countryMapping', () => {
   const countryMapping = require('../../routes/countryMapping')
-  let req: any
-  let res: any
+  let req: unknown
+  let res: unknown
 
   beforeEach(() => {
     req = {}

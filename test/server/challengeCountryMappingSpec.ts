@@ -20,8 +20,8 @@ const loadYamlFile = async (filename: string) => {
 }
 
 describe('challengeCountryMapping', () => {
-  let challenges: any
-  let countryMapping: Record<string, { code: any }>
+  let challenges: unknown
+  let countryMapping: Record<string, { code: unknown }>
   before(async () => {
     challenges = await loadYamlFile(path.resolve('data/static/challenges.yml'))
     countryMapping = (await loadYamlFile(path.resolve('config/fbctf.yml'))).ctf.countryMapping
@@ -33,7 +33,7 @@ describe('challengeCountryMapping', () => {
   })
 
   it('should have unique country codes in every mapping', async () => {
-    const countryCodeCounts: any = {}
+    const countryCodeCounts: unknown = {}
 
     for (const key of Object.keys(countryMapping)) {
       const { code } = countryMapping[key]

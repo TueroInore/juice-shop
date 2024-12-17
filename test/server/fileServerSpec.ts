@@ -12,10 +12,10 @@ chai.use(sinonChai)
 describe('fileServer', () => {
   const servePublicFiles = require('../../routes/fileServer')
   const challenges = require('../../data/datacache').challenges
-  let req: any
-  let res: any
-  let next: any
-  let save: any
+  let req: unknown
+  let res: unknown
+  let next: unknown
+  let save: unknown
 
   beforeEach(() => {
     res = { sendFile: sinon.spy(), status: sinon.spy() }

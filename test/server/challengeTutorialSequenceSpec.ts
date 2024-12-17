@@ -20,13 +20,13 @@ const loadYamlFile = async (filename: string) => {
 }
 
 describe('challengeTutorialSequence', () => {
-  let challenges: any
+  let challenges: unknown
   before(async () => {
     challenges = await loadYamlFile(path.resolve('data/static/challenges.yml'))
   })
 
   it('should have unique tutorial orders', async () => {
-    const tutorialOrderCounts: any = {}
+    const tutorialOrderCounts: unknown = {}
 
     for (const { tutorial } of challenges) {
       if (tutorial) {
