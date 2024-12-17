@@ -83,7 +83,20 @@ async function register ({ email, password, totpSecret }: { email: string, passw
   return res
 }
 
-function getStatus (token: string) {
+// Helper function to setup authenticated requests
+function setupAuthenticatedRequest(token: string) {
+  return frisby.setup({
+    request: {
+      headers: {
+        Authorization: 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      }
+    }
+  }, true);
+}
+
+// Helper function to get 2FA status
+function getStatus(token: string) {
   return frisby.get(
     REST_URL + '/2fa/status',
     {
@@ -91,7 +104,7 @@ function getStatus (token: string) {
         Authorization: 'Bearer ' + token,
         'content-type': 'application/json'
       }
-    })
+    });
 }
 
 describe('/rest/2fa/verify', () => {
@@ -171,14 +184,7 @@ describe('/rest/2fa/status', () => {
     })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.get(
-      REST_URL + '/2fa/status',
-      {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        }
-      })
+    await getStatus(token)
       .expect('status', 200)
       .expect('header', 'content-type', /application\/json/)
       .expect('jsonTypes', {
@@ -196,14 +202,7 @@ describe('/rest/2fa/status', () => {
     })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.get(
-      REST_URL + '/2fa/status',
-      {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        }
-      })
+    await getStatus(token)
       .expect('status', 200)
       .expect('header', 'content-type', /application\/json/)
       .expect('jsonTypes', {
@@ -236,13 +235,9 @@ describe('/rest/2fa/setup', () => {
     const { token } = await login({ email, password })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.post(
+    await setupAuthenticatedRequest(token).post(
       REST_URL + '/2fa/setup',
       {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        },
         body: {
           password,
           setupToken: security.authorize({
@@ -255,14 +250,7 @@ describe('/rest/2fa/setup', () => {
       .expect('status', 200)
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.get(
-      REST_URL + '/2fa/status',
-      {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        }
-      })
+    await getStatus(token)
       .expect('status', 200)
       .expect('jsonTypes', {
         setup: Joi.boolean()
@@ -282,13 +270,9 @@ describe('/rest/2fa/setup', () => {
     const { token } = await login({ email, password })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.post(
+    await setupAuthenticatedRequest(token).post(
       REST_URL + '/2fa/setup',
       {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        },
         body: {
           password: password + ' this makes the password wrong',
           setupToken: security.authorize({
@@ -311,13 +295,9 @@ describe('/rest/2fa/setup', () => {
     const { token } = await login({ email, password })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.post(
+    await setupAuthenticatedRequest(token).post(
       REST_URL + '/2fa/setup',
       {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        },
         body: {
           password,
           setupToken: security.authorize({
@@ -340,13 +320,9 @@ describe('/rest/2fa/setup', () => {
     const { token } = await login({ email, password })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.post(
+    await setupAuthenticatedRequest(token).post(
       REST_URL + '/2fa/setup',
       {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        },
         body: {
           password,
           setupToken: security.authorize({
@@ -367,13 +343,9 @@ describe('/rest/2fa/setup', () => {
     const { token } = await login({ email, password, totpSecret })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.post(
+    await setupAuthenticatedRequest(token).post(
       REST_URL + '/2fa/setup',
       {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        },
         body: {
           password,
           setupToken: security.authorize({
@@ -404,13 +376,9 @@ describe('/rest/2fa/disable', () => {
       })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.post(
+    await setupAuthenticatedRequest(token).post(
       REST_URL + '/2fa/disable',
       {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        },
         body: {
           password
         }
@@ -441,13 +409,9 @@ describe('/rest/2fa/disable', () => {
       })
 
     // @ts-expect-error FIXME promise return handling broken
-    await frisby.post(
+    await setupAuthenticatedRequest(token).post(
       REST_URL + '/2fa/disable',
       {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'content-type': 'application/json'
-        },
         body: {
           password: password + ' this makes the password wrong'
         }
